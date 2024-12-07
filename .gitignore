@@ -359,3 +359,4 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/nextjs,dotenv,storybookjs,android,androidstudio,node,yarn
+*storybook.log
