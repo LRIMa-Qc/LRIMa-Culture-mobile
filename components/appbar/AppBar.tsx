@@ -5,7 +5,7 @@ import { Nav } from "../nav/Nav";
 
 import { TbAlignLeft as MenuIcon } from "react-icons/tb";
 
-export function AppBar() {
+export function AppBar({ label }: { label: string }) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -20,7 +20,7 @@ export function AppBar() {
             </div>
             <div className="flex gap-2 font-medium text-stone-900">
                 <MenuIcon onClick={toggleMenu} className="text-2xl" />
-                <p>Vue d'ensemble</p>
+                <p>{label}</p>
             </div>
         </header>
     )
