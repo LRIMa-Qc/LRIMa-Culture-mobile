@@ -6,7 +6,7 @@ import { TbTemperature as Temperature } from "react-icons/tb";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="space-y-5">
       <AppBar label="Vue d'ensemble" />
       <div className="mx-5">
         <Widget label="Statistiques">

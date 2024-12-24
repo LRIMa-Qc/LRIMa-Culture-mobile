@@ -10,6 +10,7 @@ export function AppBar({ label }: { label: string }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
+        console.log("hello, world!")
         setIsOpen((isOpen) => !isOpen);
     }
 
