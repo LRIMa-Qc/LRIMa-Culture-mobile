@@ -12,11 +12,6 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        active: {
-            control: 'boolean'
-        }
-    }
 } satisfies Meta<typeof NavItem>;
 
 export default meta;
@@ -24,16 +19,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Inactive: Story = {
     args: {
-        icon: <HomeIcon />,
-        label: "Home",
-        active: false
+        label: "Capteurs",
+        href: "capteurs",
+        Icon: HomeIcon
     }
 };
 
 export const Active: Story = {
     args: {
-        icon: <HomeIcon />,
-        label: "Home",
-        active: true
+        label: "Capteurs",
+        href: "capteurs",
+        Icon: HomeIcon
     }
 };

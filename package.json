@@ -15,6 +15,7 @@
     "@capacitor/android": "^6.2.0",
     "@capacitor/core": "^6.2.0",
     "@capacitor/ios": "^6.2.0",
+    "dayjs": "^1.11.13",
     "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -22,7 +23,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^6.2.0",
-    "@chromatic-com/storybook": "^3.2.2",
+    "@chromatic-com/storybook": "^3.2.3",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
     "@storybook/addon-onboarding": "^8.4.7",

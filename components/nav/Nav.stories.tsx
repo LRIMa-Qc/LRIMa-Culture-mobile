@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import { Nav } from './Nav';
+
+import { NAV_ELEMENTS } from '@/app/NavElements';
+
 const meta = {
     title: 'AliveCulture/Nav',
     component: Nav,
@@ -18,5 +21,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
-
+    args: {
+        elements: NAV_ELEMENTS
+    }
 };
