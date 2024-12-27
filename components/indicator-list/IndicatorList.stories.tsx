@@ -2,15 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { TbTemperature as Icon } from "react-icons/tb"
 
-import { IndicatorList } from './InidicatorList';
+import { ChangeIndicatorList } from './ChangeInidicatorList';
 const meta = {
     title: 'AliveCulture/IndicatorList',
-    component: IndicatorList,
+    component: ChangeIndicatorList,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof IndicatorList>;
+} satisfies Meta<typeof ChangeIndicatorList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

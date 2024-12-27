@@ -16,12 +16,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Temperature: Story = {
+export const Compact: Story = {
+    args: {
+        Icon,
+        label: "Capteur 2",
+        color: "sky",
+        children: <p className='font-medium'>En marche</p>,
+        variant: "compact"
+    }
+};
+
+export const Large: Story = {
     args: {
         Icon,
         label: "Température",
         color: "sky",
         children: <ChangeIndication change='+2%' value="25.7 °C" />,
-        variant: "compact"
+        variant: "large"
     }
 };

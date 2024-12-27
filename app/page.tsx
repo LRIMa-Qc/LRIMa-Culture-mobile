@@ -1,6 +1,6 @@
 import { AppBar } from "@/components/appbar/AppBar";
 import { Widget } from "@/components/dashboard/widget/Widget";
-import { IndicatorList } from "@/components/indicator-list/InidicatorList";
+import { ChangeIndicatorList } from "@/components/indicator-list/ChangeInidicatorList";
 
 import { TbTemperature as Temperature } from "react-icons/tb";
 
@@ -10,7 +10,7 @@ export default function Home() {
       <AppBar label="Vue d'ensemble" />
       <div className="mx-5">
         <Widget label="Statistiques">
-          <IndicatorList
+          <ChangeIndicatorList
             indicators={[
               {
                 Icon: Temperature,
