@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">aliveculture-mobile</string>
-    <string name="title_activity_main">aliveculture-mobile</string>
+    <string name="app_name">aliveculture</string>
+    <string name="title_activity_main">aliveculture</string>
     <string name="package_name">ca.aliveculture.app</string>
     <string name="custom_url_scheme">ca.aliveculture.app</string>
 </resources>
