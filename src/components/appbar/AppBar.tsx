@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Nav } from "../nav/Nav";
 

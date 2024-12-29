@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 
 export interface NavItemType {
     Icon: JSX.ElementType,
