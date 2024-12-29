@@ -2,7 +2,7 @@ import React from "react";
 import type { Preview } from "@storybook/react";
 import '../src/index.css';
 
-import { MemoryRouter } from "react-router";
+import { MemoryRouter } from "react-router-dom";
 
 const preview: Preview = {
   parameters: {
