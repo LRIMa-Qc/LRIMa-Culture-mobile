@@ -2,7 +2,7 @@ import { TbTemperature as Temperature } from "react-icons/tb";
 import { AppBar } from "../components/appbar/AppBar";
 import { ChangeIndicatorList } from "../components/indicator-list/ChangeInidicatorList";
 import { Widget } from "../components/dashboard/widget/Widget";
-import { LogsList } from "../components/logs/LogsList";
+import { LogsList } from "../components/loggings/LogsList";
 
 export default function Overview() {
     return (
