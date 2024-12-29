@@ -1,6 +1,7 @@
 import { RouterInterface } from '@alivecode/core/router';
 import React from 'react';
 import SignIn from '../pages/SignIn';
+import SignUp from '../pages/Signup';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Capteurs = React.lazy(() => import('../pages/Capteurs'));
@@ -34,6 +35,11 @@ const router = {
         path: '/signin',
         exact: true,
         component: <SignIn />
+      },
+      sign_up: {
+        path: '/signup',
+        exact: true,
+        component: <SignUp />
       }
     },
     error: {
