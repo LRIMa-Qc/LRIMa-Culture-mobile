@@ -1,5 +1,6 @@
 import { RouterInterface } from '@alivecode/core/router';
 import React from 'react';
+import SignIn from '../pages/SignIn';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Capteurs = React.lazy(() => import('../pages/Capteurs'));
@@ -15,6 +16,8 @@ const router = {
         exact: true,
         component: <Home />,
       },
+    },
+    auth: {
       capteurs: {
         path: '/capteurs',
         exact: true,
@@ -26,8 +29,13 @@ const router = {
         component: <Overview />,
       },
     },
-    auth: {},
-    non_auth: {},
+    non_auth: {
+      sign_in: {
+        path: '/signin',
+        exact: true,
+        component: <SignIn />
+      }
+    },
     error: {
       404: {
         path: '/404',
