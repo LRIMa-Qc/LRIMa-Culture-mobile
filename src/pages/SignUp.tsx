@@ -1,5 +1,4 @@
-"use client";
-import { useUserApi } from "@alivecode/core/api";
+// import { useUserApi } from "@alivecode/core/api";
 import Grass from "../assets/Grass2.svg";
 import { Input } from "../components/forms/input/Input";
 import { ErrorBoundary } from "react-error-boundary";
@@ -9,13 +8,13 @@ import { TbLock as PasswordIcon } from "react-icons/tb";
 import { SubmitButton } from "../components/button/SubmitButton";
 
 export default function SignUp() {
-    const { login } = useUserApi();
+    // const { login } = useUserApi();
 
-    function signUp(formData: FormData) {
-        const email = formData.get("email") as string;
-        const password = formData.get("password") as string;
+    function signUp(/*formData: FormData*/) {
+        // const email = formData.get("email") as string;
+        // const password = formData.get("password") as string;
 
-        console.log("Signin Up");
+        // console.log("Signin Up");
 
     }
 

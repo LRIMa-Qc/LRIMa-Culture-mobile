@@ -3,15 +3,16 @@ import { AppBar } from "../components/appbar/AppBar";
 import { UserContext } from "@alivecode/core";
 
 export default function Home() {
-
     const { user } = useContext(UserContext);
-
-    console.log(user);
 
 
     return (
         <div className="space-y-5">
             <AppBar label="Home" />
+
+            <a href="/signin">Sign In</a>
+            <a href="/singup">Sign Up</a>
+
             {user?.email ?? '...'}
         </div>
     );

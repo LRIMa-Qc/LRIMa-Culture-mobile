@@ -1,12 +1,13 @@
 "use client";
 import { useUserApi } from "@alivecode/core/api";
-import Grass from "../assets/Grass1.svg";
+import Grass2 from "../assets/Grass2.svg";
 import { Input } from "../components/forms/input/Input";
 import { ErrorBoundary } from "react-error-boundary";
 
 import { TbAt as EmailIcon } from "react-icons/tb";
 import { TbLock as PasswordIcon } from "react-icons/tb";
 import { SubmitButton } from "../components/button/SubmitButton";
+import { CapteurCanvas } from "../components/capteur/CapteurCanvas";
 
 export default function SignIn() {
     const { login } = useUserApi();
@@ -25,15 +26,21 @@ export default function SignIn() {
 
     return (
         <div className="flex flex-col justify-between h-screen">
-            <div className="space-y-10">
-                <div className="px-5 float-start">
-                    <img src={Grass} alt="Grass" />
+            <div className="space-y-12">
+
+                <div className="w-full relative">
+                    <CapteurCanvas />
+                    <div className="absolute inset-0 -z-10 w-full flex items-center justify-center">
+                        <img src={Grass2} alt="Grass" />
+                    </div>
+
                 </div>
 
                 <div className="mx-5">
                     <p className="font-semibold text-2xl">Bienvenue!</p>
                     <p className="text-slate-600">Veuillez vous connecter à votre compte</p>
                 </div>
+
 
                 <ErrorBoundary
                     fallback={<p>There was an error while submitting the form</p>}

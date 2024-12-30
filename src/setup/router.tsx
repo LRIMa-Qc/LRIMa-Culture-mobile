@@ -1,7 +1,7 @@
 import { RouterInterface } from '@alivecode/core/router';
 import React from 'react';
 import SignIn from '../pages/SignIn';
-import SignUp from '../pages/Signup';
+import SignUp from '../pages/SignUp';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Capteurs = React.lazy(() => import('../pages/Capteurs'));
