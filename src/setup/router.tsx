@@ -2,6 +2,7 @@ import { RouterInterface } from '@alivecode/core/router';
 import React from 'react';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import { Navigate } from 'react-router-dom';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Capteurs = React.lazy(() => import('../pages/Capteurs'));
@@ -16,6 +17,11 @@ const router = {
         path: '/',
         exact: true,
         component: <Home />,
+        pageTitle: 'Alive Culture',
+        redirect: {
+          action: "navigate",
+          to: "/signin"
+        }
       },
     },
     auth: {
@@ -51,7 +57,7 @@ const router = {
     },
   },
   redirects: {
-    authRouteWhenNonAuth: <></>,
+    authRouteWhenNonAuth: <Navigate to="/signin" replace />,
     nonAuthRouteWhenAuth: <></>,
   },
 } satisfies RouterInterface;

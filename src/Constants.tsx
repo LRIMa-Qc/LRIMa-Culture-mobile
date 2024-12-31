@@ -1,9 +1,13 @@
 import { TbHome as HomeIcon } from "react-icons/tb";
 import { TbBuildingBroadcastTower as CapteursIcon } from "react-icons/tb";
+
+import { TbDoorEnter as SignIn } from "react-icons/tb";
+import { TbDoorEnter as SignUp } from "react-icons/tb";
+
 import { NavItemType } from "./components/nav/NavItem";
 
 
-export const NAV_ELEMENTS = [
+export const AUTH_NAV_ELEMENTS = [
     {
         label: "Vue d'ensemble",
         href: "/overview",
@@ -13,5 +17,20 @@ export const NAV_ELEMENTS = [
         label: "Capteurs",
         href: "/capteurs",
         Icon: CapteursIcon
+    }
+] satisfies NavItemType[]
+
+export const NON_AUTH_NAV_ELEMENTS = [
+    {
+        label: "Se connecter",
+        href: "/signin",
+        Icon: SignIn,
+        reload: true,
+    },
+    {
+        label: "S'inscrire",
+        href: "/signup",
+        Icon: SignUp,
+        reload: true,
     }
 ] satisfies NavItemType[]

@@ -1,3 +1,5 @@
+import "reflect-metadata";
+
 import './index.css'
 import Root from './setup/app.tsx'
 
