@@ -2,10 +2,12 @@ import { RouterInterface } from '@alivecode/core/router';
 import React from 'react';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
+import Capteurs from '../pages/Capteurs/Capteurs';
+import Serres from '../pages/Serres';
+
 
 const Home = React.lazy(() => import('../pages/Home'));
-const Capteurs = React.lazy(() => import('../pages/Capteurs'));
 const Overview = React.lazy(() => import('../pages/Overview'));
 const Detection = React.lazy(() => import('../pages/Detection'));
 
@@ -26,15 +28,20 @@ const router = {
       },
     },
     auth: {
-      capteurs: {
-        path: '/capteurs',
-        exact: true,
-        component: <Capteurs />,
-      },
       detection: {
         path: '/detection',
         exact: true,
         component: <Detection />,
+      },
+      serres: {
+        path: 'serres',
+        exact: true,
+        component: <Serres />
+      },
+      capteurs: {
+        path: '/capteurs',
+        exact: true,
+        component: <Capteurs />,
       },
       overview: {
         path: '/overview',
@@ -63,8 +70,10 @@ const router = {
     },
   },
   redirects: {
-    authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
-    nonAuthRouteWhenAuth: <Navigate to="/overview" replace/>,
+    // authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
+    // nonAuthRouteWhenAuth: <Navigate to="/overview" replace/>,
+    authRouteWhenNonAuth: <></>,
+    nonAuthRouteWhenAuth: <></>
   },
 } satisfies RouterInterface;
 

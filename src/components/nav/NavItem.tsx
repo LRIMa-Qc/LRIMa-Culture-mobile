@@ -5,7 +5,7 @@ export interface NavItemType {
     Icon: JSX.ElementType,
     label: string,
     href: string,
-    reload?: boolean
+    reload?: boolean,
 }
 
 export function NavItem({ Icon, label, href, reload }: NavItemType) {

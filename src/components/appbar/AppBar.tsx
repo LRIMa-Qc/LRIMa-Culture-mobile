@@ -10,7 +10,7 @@ export function AppBar({ label }: { label: string }) {
     const { user } = useContext(UserContext);
 
     const [isOpen, setIsOpen] = useState(false);
-
+    
     const toggleMenu = () => {
         setIsOpen((isOpen) => !isOpen);
     }
