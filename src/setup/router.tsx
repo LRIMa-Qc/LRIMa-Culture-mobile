@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 const Home = React.lazy(() => import('../pages/Home'));
 const Capteurs = React.lazy(() => import('../pages/Capteurs'));
 const Overview = React.lazy(() => import('../pages/Overview'));
+const Detection = React.lazy(() => import('../pages/Detection'));
 
 const NotFound = React.lazy(() => import('../pages/NotFound'));
 
@@ -29,6 +30,11 @@ const router = {
         path: '/capteurs',
         exact: true,
         component: <Capteurs />,
+      },
+      detection: {
+        path: '/detection',
+        exact: true,
+        component: <Detection />,
       },
       overview: {
         path: '/overview',
@@ -57,8 +63,8 @@ const router = {
     },
   },
   redirects: {
-    authRouteWhenNonAuth: <Navigate to="/signin" replace />,
-    nonAuthRouteWhenAuth: <></>,
+    authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
+    nonAuthRouteWhenAuth: <Navigate to="/overview" replace/>,
   },
 } satisfies RouterInterface;
 

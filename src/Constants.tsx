@@ -3,6 +3,7 @@ import { TbBuildingBroadcastTower as CapteursIcon } from "react-icons/tb";
 
 import { TbDoorEnter as SignIn } from "react-icons/tb";
 import { TbDoorEnter as SignUp } from "react-icons/tb";
+import { TbObjectScan as Detection } from "react-icons/tb";
 
 import { NavItemType } from "./components/nav/NavItem";
 
@@ -17,6 +18,11 @@ export const AUTH_NAV_ELEMENTS = [
         label: "Capteurs",
         href: "/capteurs",
         Icon: CapteursIcon
+    },
+    {
+        label: "Detection",
+        href: "/detection",
+        Icon: Detection
     }
 ] satisfies NavItemType[]
 

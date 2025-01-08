@@ -1,18 +1,18 @@
-import { useContext } from "react";
-import { AppBar } from "../components/appbar/AppBar";
-import { UserContext } from "@alivecode/core";
+// import { useContext, useState } from "react";
+// import { AppBar } from "../components/appbar/AppBar";
+// import { UserContext } from "@alivecode/core";
+import { Navigate } from "react-router-dom";
 
 export default function Home() {
-    const { user } = useContext(UserContext);
+    // const { user } = useContext(UserContext);
 
+    return <Navigate to="/overview" replace/>
 
-    console.log(user);
+    // return (
+    //     <div className="space-y-5">
+    //         <AppBar label="Home" />
 
-    return (
-        <div className="space-y-5">
-            <AppBar label="Home" />
-
-            {user?.email ?? '...'}
-        </div>
-    );
+    //         {user?.email ?? '...'}
+    //     </div>
+    // );
 }
