@@ -18,7 +18,6 @@ export const AUTH_NAV_ELEMENTS = [
         label: "Capteurs",
         href: "/capteurs",
         Icon: CapteursIcon,
-        reload: true,
     },
     {
         label: "Detection",

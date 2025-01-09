@@ -12,7 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@alivecode/core": "^1.0.11",
+    "@alivecode/core": "^1.0.12",
     "@alivecode/ui": "^1.0.2",
     "@capacitor/android": "^6.2.0",
     "@capacitor/camera": "^6.1.2",
@@ -20,6 +20,8 @@
     "@capacitor/core": "^6.2.0",
     "@capacitor/ios": "^6.2.0",
     "@ionic/pwa-elements": "^3.3.0",
+    "@tanstack/react-query": "^5.63.0",
+    "axios": "^1.7.9",
     "class-transformer": "^0.5.1",
     "dayjs": "^1.11.13",
     "i18next": "^24.2.0",

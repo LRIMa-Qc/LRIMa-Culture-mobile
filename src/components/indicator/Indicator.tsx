@@ -4,7 +4,7 @@ import { LargeIndicator } from "./LargeIndicator";
 
 // NOTE: These colors have been safelisted in tailwind.config.ts for bg, text at 100, 200 only
 // TODO: Add more colors
-type Color = "sky" | "red" | "emerald";
+type Color = "sky" | "red" | "emerald" | "indigo";
 
 export interface IndicatorType extends React.HTMLAttributes<HTMLDivElement> {
     Icon: JSX.ElementType;

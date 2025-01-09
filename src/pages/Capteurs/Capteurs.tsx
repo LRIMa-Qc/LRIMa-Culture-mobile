@@ -1,25 +1,40 @@
-import { IoTProject } from "@alivecode/core/iot";
-import IoTCapteurs from "./IoTProjet";
-import { Navigate, useNavigate } from "react-router-dom";
-import { useSerreStore } from "../../stores/serreStore";
+import { IoTProject, useIoTProject } from "@alivecode/core/iot";
+import { useIoTProjectApi } from "@alivecode/core/api/iot";
+import { AppBar } from "../../components/appbar/AppBar";
+import CapteursList, { Capteur } from "../../components/capteurs/CapteursList";
+import { Widget } from "../../components/dashboard/widget/Widget";
+import { useContext, useEffect, useState } from "react";
+import { plainToClass } from 'class-transformer';
+import { ApiContext } from "@alivecode/core/api";
+import {
+	plainToInstance,
+} from 'class-transformer'
 
-export default function Capteurs() {
+export interface CultureCapteur {
+    batteryRef: string;
+    category: string;
+    gndHumidRef: string;
+    gndTempRef: string;
+    humidRef: string;
+    id: string;
+    lumiRef: string;
+    name: string;
+    no: string;
+    tempRef: string; 
+}
 
-    const navigate = useNavigate();
-    const {serreId} = useSerreStore();
+export default function IoTCapteurs() {
 
-    console.log("serreid1 ", serreId)
+    const { project } = useIoTProject();
 
-    if (typeof serreId === 'undefined') return <Navigate to="/serres" replace/>
-    console.log("serreid2 ", serreId)
     return (
-        <IoTProject
-        projectId={serreId}
-        onLoadError={() => {
-            navigate('/serres')
-        }}
-      >
-        <IoTCapteurs />
-      </IoTProject>
+        <div className="space-y-5">
+            <AppBar label="Capteurs" />
+            <div className="mx-5 space-y-10">
+                <Widget label="Capteurs">
+                    <CapteursList capteurs={(project.layout as unknown as {capteurs: CultureCapteur[]}).capteurs} />
+                </Widget>
+            </div>
+        </div>
     );
 }

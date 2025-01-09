@@ -79,7 +79,6 @@ export default function SignIn() {
             decoration={(
                 <img src={Grass1} alt="Grass" />
             )}
-
         />
     )
 }

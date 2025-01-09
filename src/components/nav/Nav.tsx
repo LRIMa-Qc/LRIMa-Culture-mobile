@@ -7,6 +7,7 @@ import { UserContext } from "@alivecode/core";
 
 import { TbArrowNarrowRight as SerreIcon } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useIoTProject } from "@alivecode/core/iot";
 import { useSerreStore } from "../../stores/serreStore";
 
 export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elements: NavItemType[] }) {
@@ -17,7 +18,8 @@ export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elem
         logout();
     }
 
-    const serre = useSerreStore();
+    const { project } = useIoTProject();
+    const { serreId } = useSerreStore();
 
     return (
         <nav className={"h-screen absolute top-0 left-0 w-full max-w-xs border border-l-0 rounded-r-xl border-slate-200 p-5  bg-white/80 backdrop-blur flex flex-col justify-between"}>
@@ -38,7 +40,7 @@ export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elem
                         <SerreIcon/>
                     </Link>
                     <div className="flex items-center justify-between p-5 bg-emerald-200 rounded-b-xl line-clamp-1">
-                        <p>{serre.serreId}</p>
+                        <p>{project ? project.name : serreId}</p>
                     </div>
                 </div>
                 {user &&

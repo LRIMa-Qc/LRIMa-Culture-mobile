@@ -1,45 +1,78 @@
-import { TbTemperature as Temperature } from "react-icons/tb";
 import { AppBar } from "../components/appbar/AppBar";
 import { ChangeIndicatorList } from "../components/indicator-list/ChangeInidicatorList";
 import { Widget } from "../components/dashboard/widget/Widget";
 import { LogsList } from "../components/loggings/LogsList";
+import { CultureCapteur } from "./Capteurs/Capteurs";
+import { useIoTProject } from "@alivecode/core/iot";
+import { CAPTEUR_BATTERY_VOLTAGE, CapteurInfo } from "./Capteurs/Capteur";
+
+
+import { TbTemperature as Temperature } from "react-icons/tb";
+import { TbDroplet as Humidity } from "react-icons/tb";
+import { TbBulb as Luminosity } from "react-icons/tb";
+import { TbBolt as Battery } from "react-icons/tb";
 
 export default function Overview() {
+    const { project } = useIoTProject();
+
+    const capteurs = (project.layout as unknown as {capteurs: CultureCapteur[]}).capteurs;
+    const capteursInfo = capteurs.map(capteur => project.document[capteur.no]);
+
+    const average = capteursInfo.reduce((prev: any, curr: any) => ({
+        temperature: prev.temperature || 0 + curr.temperature / capteursInfo.length,
+        batterie: prev.batterie || 0 + curr.batterie / capteursInfo.length,
+        gnd_humidity: prev.gnd_humidity || 0 + curr.gnd_humidity / capteursInfo.length,
+        gnd_temperature: prev.gnd_temperature || 0 + curr.gnd_temperature / capteursInfo.length,
+        humidity: prev.humidity || 0 + curr.humidity / capteursInfo.length,
+        luminosite: prev.luminosite || 0 + curr.luminosite / capteursInfo.length,
+    })) as unknown as CapteurInfo;
+
+    const {batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature} = average;
+
+
     return (
         <div className="space-y-5">
             <AppBar label="Vue d'ensemble" />
             <div className="mx-5 space-y-10">
-                <Widget label="Statistiques">
+                <Widget label="Statistiques (moyenne)">
                     <ChangeIndicatorList
                         indicators={[
                             {
                                 Icon: Temperature,
-                                change: '+2%',
                                 color: 'sky',
                                 label: 'Température',
-                                value: '25.7 °C'
+                                value: temperature + '°C'
                             },
                             {
                                 Icon: Temperature,
-                                change: '-12%',
+                                color: 'sky',
+                                label: 'Temperature du sol',
+                                value: gnd_temperature + '°C'
+                            },
+                            {
+                                Icon: Luminosity,
                                 color: 'emerald',
                                 label: 'Luminosité',
-                                value: '2643 lumens'
+                                value: luminosite + '%'
                             },
                             {
-                                Icon: Temperature,
-                                change: '+2%',
-                                color: 'red',
+                                Icon: Humidity,
+                                color: 'indigo',
                                 label: 'Humidité',
-                                value: '26%'
+                                value: humidity + '%',
                             },
                             {
-                                Icon: Temperature,
-                                change: '+2%',
-                                color: 'sky',
-                                label: 'Temperature',
-                                value: '25.7 °C'
-                            }
+                                Icon: Humidity,
+                                color: 'indigo',
+                                label: 'Humidité du sol',
+                                value: gnd_humidity + '%'
+                            },
+                            {
+                                Icon: Battery,
+                                color: 'red',
+                                label: 'Batterie',
+                                value: (100*(batterie / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                            },                            
                         ]}
                     />
                 </Widget>

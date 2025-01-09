@@ -5,6 +5,9 @@ import SignUp from '../pages/SignUp';
 // import { Navigate } from 'react-router-dom';
 import Capteurs from '../pages/Capteurs/Capteurs';
 import Serres from '../pages/Serres';
+import { IoTProjectDecorator } from './AppDecorator/IoTProjectDecorator';
+import Capteur from '../pages/Capteurs/Capteur';
+import { Navigate } from 'react-router-dom';
 
 
 const Home = React.lazy(() => import('../pages/Home'));
@@ -31,7 +34,7 @@ const router = {
       detection: {
         path: '/detection',
         exact: true,
-        component: <Detection />,
+        component: <IoTProjectDecorator><Detection /></IoTProjectDecorator>,
       },
       serres: {
         path: 'serres',
@@ -41,12 +44,17 @@ const router = {
       capteurs: {
         path: '/capteurs',
         exact: true,
-        component: <Capteurs />,
+        component: <IoTProjectDecorator><Capteurs /></IoTProjectDecorator>,
+      },
+      capteur: {
+        path: '/capteurs/:capteurId',
+        exact: true,
+        component: <IoTProjectDecorator><Capteur /></IoTProjectDecorator>,
       },
       overview: {
         path: '/overview',
         exact: true,
-        component: <Overview />,
+        component: <IoTProjectDecorator><Overview /></IoTProjectDecorator>,
       },
     },
     non_auth: {
@@ -70,10 +78,10 @@ const router = {
     },
   },
   redirects: {
-    // authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
-    // nonAuthRouteWhenAuth: <Navigate to="/overview" replace/>,
-    authRouteWhenNonAuth: <></>,
-    nonAuthRouteWhenAuth: <></>
+    authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
+    nonAuthRouteWhenAuth: <Navigate to="/overview" replace/>,
+    // authRouteWhenNonAuth: <></>,
+    // nonAuthRouteWhenAuth: <></>
   },
 } satisfies RouterInterface;
 
