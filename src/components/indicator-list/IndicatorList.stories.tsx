@@ -22,28 +22,24 @@ export const Temperature: Story = {
                 Icon,
                 label: "Température",
                 value: "25.7 °C",
-                change: "+2%",
                 color: "sky"
             },
             {
                 Icon,
                 label: "Luminosité",
                 value: "2643 lumens",
-                change: "-12%",
                 color: "emerald"
             },
             {
                 Icon,
                 label: "Humidité",
                 value: "26%",
-                change: "+2%",
                 color: "red"
             },
             {
                 Icon,
                 label: "Température",
                 value: "25.7 °C",
-                change: "+2%",
                 color: "sky"
             },
         ]

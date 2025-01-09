@@ -1,7 +1,6 @@
 import { ChangeIndicatorList } from "../../components/indicator-list/ChangeInidicatorList";
 import { Widget } from "../../components/dashboard/widget/Widget";
 import { AppBar } from "../../components/appbar/AppBar";
-import { LogsList } from "../../components/loggings/LogsList";
 import { Navigate, useParams } from "react-router-dom";
 import { useIoTProject } from "@alivecode/core/iot";
 

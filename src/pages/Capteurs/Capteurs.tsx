@@ -1,15 +1,7 @@
-import { IoTProject, useIoTProject } from "@alivecode/core/iot";
-import { useIoTProjectApi } from "@alivecode/core/api/iot";
+import { useIoTProject } from "@alivecode/core/iot";
 import { AppBar } from "../../components/appbar/AppBar";
-import CapteursList, { Capteur } from "../../components/capteurs/CapteursList";
+import CapteursList from "../../components/capteurs/CapteursList";
 import { Widget } from "../../components/dashboard/widget/Widget";
-import { useContext, useEffect, useState } from "react";
-import { plainToClass } from 'class-transformer';
-import { ApiContext } from "@alivecode/core/api";
-import {
-	plainToInstance,
-} from 'class-transformer'
-
 export interface CultureCapteur {
     batteryRef: string;
     category: string;

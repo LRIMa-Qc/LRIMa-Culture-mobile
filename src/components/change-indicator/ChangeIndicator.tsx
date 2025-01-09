@@ -3,10 +3,10 @@ import { ChangeIndication, ChangeIndicationType } from "./ChangeIndication";
 
 export interface ChangeIndicatorType extends ChangeIndicationType, Omit<IndicatorType, "children"> { }
 
-export function ChangeIndicator({ change, value, ...indicatorProps }: ChangeIndicatorType) {
+export function ChangeIndicator({ value, ...indicatorProps }: ChangeIndicatorType) {
     return (
         <Indicator {...indicatorProps}>
-            <ChangeIndication change={change} value={value} />
+            <ChangeIndication value={value} />
         </Indicator>
     )
 }

@@ -31,7 +31,7 @@ export const Large: Story = {
         Icon,
         label: "Température",
         color: "sky",
-        children: <ChangeIndication change='+2%' value="25.7 °C" />,
+        children: <ChangeIndication value="25.7 °C" />,
         variant: "large"
     }
 };

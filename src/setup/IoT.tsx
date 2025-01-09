@@ -6,10 +6,10 @@ class MyIoTComponent extends IoTComponent {
     acceptsControllable: boolean = false;
     acceptsUncontrollable: boolean = false;
 
-    validate(val: any): boolean {
+    validate(): boolean {
         throw new Error("Method not implemented.");
     }
-    update(data: any): void {
+    update(): void {
         throw new Error("Method not implemented.");
     }
     value: any;
