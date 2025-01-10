@@ -11,12 +11,12 @@ export function IoTProjectDecorator({children}: IoTProjectDecoratorProps) {
     const navigate = useNavigate();
     return (
         <IoTProject
-        projectId={serreId}
-        onLoadError={() => {
-            navigate('/serres')
-        }}
-    >
-        {children}
-    </IoTProject>
+            projectId={serreId}
+            onLoadError={() => {
+                navigate('/serres')
+            }}
+        >
+            {children}
+        </IoTProject>
     )
 }
