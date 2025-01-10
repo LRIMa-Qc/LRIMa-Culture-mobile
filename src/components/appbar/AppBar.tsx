@@ -2,8 +2,16 @@ import { useContext, useState } from "react";
 import { Nav } from "../nav/Nav";
 
 import { TbAlignLeft as MenuIcon } from "react-icons/tb";
-import { AUTH_NAV_ELEMENTS, NON_AUTH_NAV_ELEMENTS } from "../../Constants";
 import { UserContext } from "@alivecode/core";
+
+import { TbHome as HomeIcon } from "react-icons/tb";
+import { TbBuildingBroadcastTower as CapteursIcon } from "react-icons/tb";
+
+import { TbDoorEnter as SignIn } from "react-icons/tb";
+import { TbDoorEnter as SignUp } from "react-icons/tb";
+import { TbObjectScan as Detection } from "react-icons/tb";
+import { NavItemType } from "../nav/NavItem";
+import { useTranslation } from "react-i18next";
 
 export function AppBar({ label }: { label: string }) {
 
@@ -14,6 +22,41 @@ export function AppBar({ label }: { label: string }) {
     const toggleMenu = () => {
         setIsOpen((isOpen) => !isOpen);
     }
+
+    const {t} = useTranslation();
+
+    const AUTH_NAV_ELEMENTS = [
+        {
+            label: t('iot.project.summary.name'),
+            href: "/overview",
+            Icon: HomeIcon
+        },
+        {
+            label: t('iot.project.interface.name'),
+            href: "/capteurs",
+            Icon: CapteursIcon,
+        },
+        {
+            label: t('iot.project.camera.name'),
+            href: "/detection",
+            Icon: Detection
+        }
+    ] satisfies NavItemType[]
+    
+    const NON_AUTH_NAV_ELEMENTS = [
+        {
+            label: t('msg.auth.signin'),
+            href: "/signin",
+            Icon: SignIn,
+            reload: true,
+        },
+        {
+            label: t('msg.auth.signup'),
+            href: "/signup",
+            Icon: SignUp,
+            reload: true,
+        }
+    ] satisfies NavItemType[]
 
     return (
         <header className="p-5">

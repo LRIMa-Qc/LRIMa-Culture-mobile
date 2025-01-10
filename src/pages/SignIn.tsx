@@ -10,10 +10,12 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { SignPage } from "../components/templates/SignPage";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function SignIn() {
     const { login } = useUserApi();
     const navigate = useNavigate();
+    const {t} = useTranslation();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -28,18 +30,18 @@ export default function SignIn() {
     function handleFormSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        if (!email) toast.error('Vous devez fournir un email');
-        if (!password) toast.error('Vous devez fournir un mot de passe');
+        if (!email) return toast.error(t('form.email.required'));
+        if (!password) return toast.error(t('form.pwd.required'));
 
         login({ email, password }).match(
             () => {
-                toast.success("Identification réussi!")
+                toast.success(t('msg.auth.signin_success'))
                 navigate("/");
             },
             (err) => {
                 setError(true);
-                toast.error('Mauvais identifiants');
-                toast.error(err.error.message);
+                toast.error(t('error.signin'));
+                // toast.error(err.error.message);
                 resetForm();
             }
         );
@@ -47,10 +49,10 @@ export default function SignIn() {
 
     return (
         <SignPage
-            instruction="Veuillez vous connecter à votre compte"
+            instruction={t('msg.auth.signin_instruction')}
             form={(
                 <form className="mx-5 space-y-4" onSubmit={handleFormSubmit}>
-                    {error && <p className="text-red-500 text-center">Courriel ou mot de passe invalid</p>}
+                    {error && <p className="text-red-500 text-center">{t('error.signin')}</p>}
                     <div className="space-y-2">
                         <Input
                             setValue={setEmail}
@@ -58,7 +60,7 @@ export default function SignIn() {
                             Icon={EmailIcon}
                             name="email"
                             type="email"
-                            placeholder="Entrez votre adresse courriel"
+                            placeholder={t('form.email.label')}
                         />
                         <Input
                             setValue={setPassword}
@@ -66,15 +68,15 @@ export default function SignIn() {
                             Icon={PasswordIcon}
                             name="password"
                             type="password"
-                            placeholder="Entrez votre mot de passe"
+                            placeholder={t('form.pwd.label')}
                         />
                     </div>
 
-                    <SubmitButton submitLabel="Se connecter" />
+                    <SubmitButton submitLabel={t('form.title.signin')} />
                 </form>
             )}
             footer={(
-                <p className="text-center p-5">Pas de compte? <a href="/signup" className="underline text-[#96E072]">S’inscrire</a></p>
+                <p className="text-center p-5">{t('msg.auth.not_registered')} <a href="/signup" className="underline text-[#96E072]">{t('form.title.signup')}</a></p>
             )}
             decoration={(
                 <img src={Grass1} alt="Grass" />

@@ -16,6 +16,7 @@ import { LineChart } from '@mui/x-charts/LineChart';
 
 import _ from "lodash";
 import { LineSeriesType } from "@mui/x-charts";
+import { useTranslation } from "react-i18next";
 
 const NUMBER_OF_ELEMENTS = 15;
 
@@ -32,6 +33,8 @@ export interface CapteurInfo {
 }
 
 export default function Capteur() {
+    const {t} = useTranslation();
+
     const {capteurId} = useParams();
 
     const {project} = useIoTProject();
@@ -60,8 +63,6 @@ export default function Capteur() {
                 axios.get(`datasets/${c.id}/rows/all`).then(data => {
                     const rows = data.data as any[];
 
-                    console.log(c);
-
                     const processed = _.unzip(
                         rows
                         .sort((a, b) => {
@@ -71,38 +72,31 @@ export default function Capteur() {
                             return bDate.getTime() - aDate.getTime();
                         })
                         .slice(0, NUMBER_OF_ELEMENTS)
-                        .map(c => {
-                            console.log(c);
-                            
-                            return c.data
-                        })
+                        .map(c => c.data)
                     );
 
                     const series: LineSeriesType[] = [
                         {
-                            label: "Température",
+                            label: `${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`,
                             data: processed[0] as number[],
                             type: "line"
                         },
                         {
-                            label: "Température (sol)",
+                            label: `${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`,
                             data: processed[1] as number[],
                             type: "line"
                         },
                         {
-                            label: "Humidité (sol)",
+                            label: `${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`,
                             data: processed[2] as number[],
                             type: "line"
                         },
                         {
-                            label: "Luminosité",
+                            label: t('culture.sensor.luminosity'),
                             data: processed[3] as number[],
                             type: "line"
                         }
                     ]
-
-                    console.log("Rows", rows);
-                    console.log("Series", series);
 
                     setSeries(series);
                 })
@@ -111,51 +105,51 @@ export default function Capteur() {
 
     return (
         <div className="space-y-5">
-            <AppBar label={"Capteur: " + capteur!.name} />
+            <AppBar label={`${t('iot.project.interface.name')}: ` + capteur!.name} />
             <div className="mx-5 space-y-10">
-                <Widget label="Statistiques">
-                    <ChangeIndicatorList
+                <Widget label={t('module.settings.stats.title')}>
+                <ChangeIndicatorList
                         indicators={[
                             {
                                 Icon: Temperature,
                                 color: 'sky',
-                                label: 'Température',
+                                label: `${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`,
                                 value: temperature + '°C'
                             },
                             {
                                 Icon: Temperature,
                                 color: 'sky',
-                                label: 'Temperature du sol',
+                                label: `${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`,
                                 value: gnd_temperature + '°C'
                             },
                             {
                                 Icon: Luminosity,
                                 color: 'emerald',
-                                label: 'Luminosité',
+                                label: t('culture.sensor.luminosity'),
                                 value: luminosite + '%'
                             },
                             {
                                 Icon: Humidity,
                                 color: 'indigo',
-                                label: 'Humidité',
+                                label: `${t('culture.sensor.humidity')} (${t('culture.sensor.air')})`,
                                 value: humidity + '%',
                             },
                             {
                                 Icon: Humidity,
                                 color: 'indigo',
-                                label: 'Humidité du sol',
+                                label: `${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`,
                                 value: gnd_humidity + '%'
                             },
                             {
                                 Icon: Battery,
                                 color: 'red',
-                                label: 'Batterie',
-                                value: (100*(batterie / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
-                            },
+                                label: t('culture.sensor.battery'),
+                                value: (100*(Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                            },                            
                         ]}
                     />
                 </Widget>
-                <Widget label="Graphique">
+                <Widget label={t('iot.project.interface.components.graph.name')}>
                     {
                         series && series[0]?.data ? (
                             <LineChart
@@ -166,7 +160,7 @@ export default function Capteur() {
                                 className="[&>*]:-z-10"
                             /> 
                         ) : (
-                            <p>No Data</p>
+                            <p>{t('datasets.noData')}</p>
                         )
                     }
                                                     

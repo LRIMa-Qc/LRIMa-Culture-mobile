@@ -1,4 +1,5 @@
 import { ErrorBoundary } from "react-error-boundary";
+import { Trans, useTranslation } from "react-i18next";
 
 export interface ISignPage {
     form: React.ReactNode,
@@ -8,6 +9,7 @@ export interface ISignPage {
 }
 
 export function SignPage({ form, decoration, footer, instruction }: ISignPage) {
+    const {t} = useTranslation();
     return (
         <div className="flex flex-col justify-between h-screen">
             <div className="space-y-8">
@@ -16,13 +18,18 @@ export function SignPage({ form, decoration, footer, instruction }: ISignPage) {
                 </div>
 
                 <div className="mx-5">
-                    <p className="font-semibold text-2xl">Bienvenue!</p>
+                    <p className="font-semibold text-2xl">
+                        <Trans
+                            components={{ accent: <span className="text-emerald-500" /> }}
+                            i18nKey="home.header.msg"
+                        />
+                    </p>
                     <p className="text-slate-600">{instruction}</p>
                 </div>
 
 
                 <ErrorBoundary
-                    fallback={<p>Une erreur c'est produite</p>}
+                    fallback={<p>{t('error.unknown')}</p>}
                 >
                     {form}
                 </ErrorBoundary>

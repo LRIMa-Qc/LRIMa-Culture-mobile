@@ -4,9 +4,11 @@ import { UserContext } from "@alivecode/core";
 
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { Widget } from "../components/dashboard/widget/Widget";
+import { useTranslation } from "react-i18next";
 
 export default function Detection() {
     const { user } = useContext(UserContext);
+    const {t} = useTranslation();
 
     const [imageSrc, setImageSrc] = useState("");
 
@@ -37,23 +39,21 @@ export default function Detection() {
       };
 
 
-    console.log(user);
-
     return (
         <div className="space-y-5">
-            <AppBar label="Home" />
+            <AppBar label={t('iot.project.camera.name')} />
             <div className="mx-5">
-                <Widget label="Detection">
+                <Widget label={t('iot.project.camera.name')}>
                     <div className="w-full flex justify-center flex-col gap-5 py-2">
                         {imageSrc ? 
                         <img className="rounded-xl ring-1 ring-zinc-400" src={imageSrc} alt="hmmm, not showing..."/> :
-                        <p className="text-center">Prenez une photo pour commencer la détection</p>    
+                        <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>    
                         } 
                         <button
                             onClick={takePicture}
                             className="bg-emerald-400 text-white rounded-xl p-3 hover:underline"
                         >
-                            Prendre une photo
+                            {t('iot.project.camera.takePicture')}
                         </button>
                     </div>
                 </Widget>

@@ -7,6 +7,9 @@ import { useSerreStore } from "../stores/serreStore";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "@alivecode/core/api";
+import { useTranslation } from "react-i18next";
+
+import {TbArrowNarrowRight as RightArrow} from 'react-icons/tb';
 
 export interface Project {
     id: string;
@@ -16,6 +19,7 @@ export interface Project {
 export default function Serres() {
     const serre = useSerreStore();
     const navigate = useNavigate();
+    const {t} = useTranslation();
 
     const [projects, setProjects] = useState<Project[]>([])
 
@@ -34,15 +38,19 @@ export default function Serres() {
     // TODO: Connect
     return (
         <div className="space-y-5">
-            <AppBar label="Serres" />
+            <AppBar label={t('dashboard.culture.title')} />
             <div className="mx-5 space-y-10">
-                <Widget label="Mes serres">
+                <Widget label={t('dashboard.culture.title')}>
                 <IndicatorList indicators={
                         projects.map((project) => ({
                             label: project.name,
                             color: 'sky',
                             Icon,
-                            children: <button onClick={() => {serre.updateSerreId(project.id); navigate('/')}}>Choisir</button>
+                            children: (
+                                <button onClick={() => {serre.updateSerreId(project.id); navigate('/')}}>
+                                    <RightArrow/>
+                                </button>
+                            )
                         }))
                     }
                 />

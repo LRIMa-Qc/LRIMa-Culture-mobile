@@ -8,6 +8,7 @@ import Serres from '../pages/Serres';
 import { IoTProjectDecorator } from './AppDecorator/IoTProjectDecorator';
 import Capteur from '../pages/Capteurs/Capteur';
 import { Navigate } from 'react-router-dom';
+import Languages from '../pages/Languages';
 
 
 const Home = React.lazy(() => import('../pages/Home'));
@@ -28,6 +29,12 @@ const router = {
           action: "navigate",
           to: "/signin"
         }
+      },
+      languages: {
+        path: '/languages',
+        exact: true,
+        component: <Languages />,
+        pageTitle: 'Langauges',
       },
     },
     auth: {

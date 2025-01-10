@@ -1,0 +1,2867 @@
+{
+	"lang": "fr",
+	"error": {
+		"sorry": "Désolé.",
+		"saving": "Une erreur est survenue lors de la sauvegarde. Veuillez réessayer.",
+		"unknown": "Une erreur inconnue est survenue, veuillez réessayer.",
+		"custom": "Erreur: {{error}}.",
+		"back": "Retour en arrière",
+		"home": "Retour à la page d'accueil",
+		"no_result": "Aucun résultat trouvé correspondant à vos critères de recherche.",
+		"signout": "Une erreur est survenue lors de la déconnexion, veuillez réessayer.",
+		"signin": "Informations erronées, veuillez réessayer.",
+		"signin_first_time": "une erreur est survenue lors de votre connexion automatique à votre nouveau compte.",
+		"401": "Non autorisé. Assurez-vous d'être connecté ou alors essayez à nouveau.",
+		"403": "Interdit. Vous n'avez pas les permissions nécessaires pour faire cela.",
+		"413": "La taille de votre requête est trop grande pour être traîtée.",
+		"storage_limit": "Vous avez dépassez votre capacité maximum de stockage. Essayez de supprimer des resources dans l'onglet Ressources de votre tableau de bord.",
+		"500": "Une erreur est survenue, veuillez réessayer.",
+		"page404": "Cette page n'existe pas.",
+		"page501": "Cette page est en construction.",
+		"wip": "Cette fonctionnalité est en cours de développement.",
+		"maintenance": {
+			"ongoing": "Une maintenance est en cours du {{startDate}} et prend fin le {{finishDate}}, cette page n'a pas pu être affichée.",
+			"short": "La requête n'a pas pu être faite, le site est présentement en maintenance."
+		}
+	},
+	"feedback": {
+		"title": "À quoi pensez-vous?",
+		"button": "Donner votre avis!",
+		"send": "Envoyer",
+		"cancel": "Annuler",
+		"choices": {
+			"like": "Quelque chose que j'aime",
+			"dislike": "Quelque chose que je n'aime pas",
+			"idea": "Une idée que j'ai",
+			"bug": "Un bug que j'ai rencontré"
+		},
+		"information": "informations",
+		"authorization_infos": "J'autorise de joindre (de manière anonyme) mes {{infos}} à cet avis.",
+		"info_collected": {
+			"url": "L'URL de la page que vous êtes en train de visiter",
+			"browser": "Le navigateur que vous utilisez",
+			"theme": "Le thème que vous utilisez (thème sombre/clair)",
+			"language": "La langue que vous utilisez"
+		},
+		"placeholder": "Veuillez entrer votre avis ici..."
+	},
+	"form": {
+		"optional": "Optionnel",
+		"required": "Requis",
+		"submit": {
+			"POST": "Créer {{name}}",
+			"PATCH": "Modifier {{name}}",
+			"DELETE": "Supprimer {{name}}"
+		},
+		"error": {
+			"cant_submit": "Votre requête n'a pas pu être envoyée, assurez-vous que tous les champs requis sont remplis et réessayez.",
+			"generic": "Ce champs est erroné",
+			"required": "Ce champs est requis",
+			"maxLength": "Ce champs dépasse {{max}} caractères",
+			"minLength": "Ce champs devrait être d'au moins {{min}} caractères",
+			"too_long": "Ce champs est trop long",
+			"too_short": "Ce champs est trop court",
+			"match": {
+				"alphabetic": "Ce champs doit contenir uniquement des lettres",
+				"alphabetic_lower": "Ce champs doit contenir uniquement des lettres minuscules",
+				"alphabetic_upper": "Ce champs doit contenir uniquement des lettres majuscules",
+				"alphanumeric": "Ce champs doit contenir uniquement des lettres et des chiffres",
+				"alphanumeric_underscore": "Ce champs doit contenir uniquement des lettres, des chiffres et des tirets vers le bas _",
+				"numbers": "Ce champs doit contenir uniquement des chiffes",
+				"name": "Ce champs doit contenir uniquement des lettres et des chiffres"
+			}
+		},
+		"title": {
+			"signin": "Connexion",
+			"signup": "Inscription",
+			"create_course": "Création d'un cours",
+			"create_module": "Création d'un module",
+			"create_quiz": "Création d'un quiz",
+			"create_iot_project": "Création d'un projet IoT",
+			"create_culture_project": "Création d'une serre",
+			"create_iot_object": "Création d'un Objet IoT",
+			"update_course": "Modification des paramètres du cours"
+		},
+		"join_course": {
+			"title": "Rejoindre un cours",
+			"submit": "Rejoindre",
+			"code": "Code du cours",
+			"invalid_code": "Code non-valide",
+			"already_in": "You are already in this course",
+			"success": "Vous avez rejoint le cours avec succès"
+		},
+		"pwd": {
+			"label": "Mot de passe",
+			"placeholder": "***********",
+			"required": "Un mot de passe est requis",
+			"pattern": "Le mot de passe doit uniquement contenir des lettres, des chiffres et: !@#\\$&*~"
+		},
+		"pwd_forgot": {
+			"title": "Mot de passe oublié?",
+			"desc": "Entrez votre adresse courriel et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+			"submit": "Envoyez-moi un lien de réinitialisation",
+			"success": "Un lien de réinitialisation a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception. Si vous ne le recevez pas, vérifiez votre dossier de courriers indésirables ou réessayez plus tard.",
+			"resend": "Renvoyer le lien"
+		},
+		"pwd_reset": {
+			"title": "Réinitialisez votre mot de passe",
+			"new": "Écrivez votre nouveau mot de passe",
+			"confirm": "Écrivez votre nouveau mot de passe à nouveau",
+			"submit": "Réinitialiser mon mot de passe",
+			"success": "Votre mot de passe a été réinitialisé avec succès. Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.",
+			"bad_token": "Votre mot de passe n'a pas pu être réinitialisé. Le lien de réinitialisation est invalide ou a expiré. Veuillez réessayer.",
+			"not_match": "Les mots de passe ne correspondent pas"
+		},
+		"email": {
+			"label": "Adresse courriel",
+			"placeholder": "exemple@domaine.ca",
+			"required": "Une adresse courriel est requise",
+			"not_found": "Cette adresse courriel n'est associée à aucun compte",
+			"taken": "Cette adresse courriel est déjà prise",
+			"info": "Nous ne partagerons pas votre adresse courriel"
+		},
+		"email_not_verified": {
+			"title": "Adresse courriel non-vérifiée",
+			"desc": "Votre adresse courriel n'est pas vérifiée. Vous devez vérifier votre adresse courriel pour pouvoir utiliser votre compte.",
+			"verify": "Vérifier mon adresse courriel",
+			"change": "Changer mon adresse courriel"
+		},
+		"email_update": {
+			"title": "Changer mon adresse courriel",
+			"desc": "Entrez votre nouvelle adresse courriel et nous vous enverrons un lien de vérification.",
+			"old_email": "Votre adresse courriel actuelle",
+			"label": "Votre nouvelle adresse courriel",
+			"placeholder": "nouveau@courriel.ca",
+			"submit": "Envoyez-moi un lien de vérification",
+			"success": "Un lien de vérification a été envoyé à votre adresse courriel. Veuillez vérifier votre boîte de réception. Si vous ne le recevez pas, vérifiez votre dossier spam ou réessayez plus tard.",
+			"resend": "Renvoyer le lien"
+		},
+		"email_confirm_new": {
+			"success": "Votre adresse e-mail a été vérifiée et mise à jour avec succès. Vous serez redirigé vers votre tableau de bord dans quelques secondes.",
+			"bad_token": "La mise à jour de votre adresse e-mail n'a pas pu être complétée. Le lien a expiré ou est invalide. Veuillez réessayer."
+		},
+		"email_validate": {
+			"title": "Vérifier mon adresse courriel",
+			"submit": "Envoyez-moi un lien de vérification",
+			"success": "Un lien de vérification a été envoyé à votre adresse courriel. Veuillez vérifier votre boîte de réception. Si vous ne le recevez pas, vérifiez votre dossier spam ou réessayez plus tard.",
+			"resend": "Renvoyer le lien"
+		},
+		"email_confirm": {
+			"success": "Votre adresse courriel a été vérifiée avec succès. Vous serez redirigé vers votre tableau de bord dans quelques secondes.",
+			"bad_token": "La vérification de votre adresse courriel n'a pas pu être effecutée. Le lien de vérification est invalide ou a expiré. Veuillez réessayer."
+		},
+		"firstName": {
+			"label": "Prénom",
+			"placeholder": "John",
+			"required": "Votre prénom est requis",
+			"pattern": "Votre prénom doit contenir uniquement des lettres et des tirets"
+		},
+		"lastName": {
+			"label": "Nom",
+			"placeholder": "Doe",
+			"required": "Votre nom de famille est requis",
+			"pattern": "Votre nom de famille doit contenir uniquement des lettres et des tirets"
+		},
+		"scolarity": {
+			"label": "Niveau scolaire",
+			"placeholder": "4e année",
+			"required": "Votre niveau scolaire est requis"
+		}
+	},
+	"modal": {
+		"close": "Fermer",
+		"save": "Enregistrer",
+		"confirm": "Confirmer",
+		"cancel": "Annuler"
+	},
+	"msg": {
+		"address": "Adresse",
+		"access": "Accéder à la serre",
+		"change_serre": "Changer de serre",
+		"change_langauge": "Changer de langage",
+		"language": "Langage",
+		"save": "Sauvegarder",
+		"cancel": "Annuler",
+		"saving": "Sauvegarde...",
+		"saved": "Sauvegardé ✔",
+		"loading": "Chargement...",
+		"unsaved_changes": "Êtes-vous sûr de vouloir quitter cette page? Tous les changements non enregistrés seront perdus.",
+		"open_in_fullscreen": "Ouvrir en vue plein écran",
+		"open_dropdown": "Ouvrir le menu",
+		"by": "Par",
+		"or": "ou",
+		"results": "résultats",
+		"learn_more": "En savoir plus",
+		"continue_reading": "Continuer à lire",
+		"retract": "Rétracter",
+		"expand": "Révéler",
+		"showcase_project": "Projet en vedette",
+		"moduleTemplate": "modèle de modules",
+		"bundle": "trousse pédagogique",
+		"resource": "ressource",
+		"user": "Utilisateur",
+		"professor": "professeur",
+		"student": "étudiant",
+		"admin": "administrateur",
+		"farmer": "agriculteur",
+		"creator": "Créateur",
+		"challenge": "Défi",
+		"initial_code": "Code initial",
+		"solution": "Solution",
+		"showcased_project": "Projet vedette",
+		"understood": "C'est compris!",
+		"description": "description",
+		"deleted_user": "Ancien utilisateur",
+		"community_challenges": "Défis de la communauté",
+		"public_courses": "Cours publics",
+		"courses": "Cours",
+		"modules": "Modules",
+		"search": "Rechercher",
+		"search_anything": "Recherche globale",
+		"untitled": "Sans nom",
+		"creation_date": "Date de création",
+		"update_date": "Date de modification",
+		"see_links": "Voir les liens",
+		"copied": "Copié",
+		"id_copied": "Id copié",
+		"prompt": "Entrez une valeur",
+		"activity": "Activité",
+		"section": "Section",
+		"activities": "Activités",
+		"sections": "Sections",
+		"activity_type": {
+			"CH": "Défi",
+			"VI": "Visionnement",
+			"PF": "Pdf",
+			"AS": "Énoncé de travail",
+			"TH": "Théorie",
+			"WO": "Word",
+			"QZ": "Questionnaire"
+		},
+		"subjects": {
+			"IOT": "Internet des Objets",
+			"AI": "Intelligence Artificielle",
+			"CODE": "Programmation",
+			"ELECTRONICS": "Électronique",
+			"DB": "Base de données",
+			"OTHER": "Autre",
+			"ALL": "Tout"
+		},
+		"day": "Jour",
+		"week": "Semaine",
+		"month": "Mois",
+		"year": "An",
+		"date": "Date",
+		"time": {
+			"today": "Aujourd'hui",
+			"last_updated": "Dernière modification",
+			"created_at": "Créé le",
+			"format": "{{dayName}}, {{day}} {{monthName}} {{year}} - {{hour}}:{{minute}}",
+			"format_no_time": "{{dayName}}, {{day}} {{monthName}} {{year}}",
+			"format_no_day": "{{day}} {{monthName}} {{year}} - {{hour}}:{{minute}}",
+			"format_no_time_and_day": "{{day}} {{monthName}} {{year}}",
+			"format_numeric": "{{day}}/{{month}}/{{year}} {{hour}}:{{minute}}",
+			"format_numeric_no_time": "{{day}}/{{month}}/{{year}}",
+			"day": {
+				"0": "Dimanche",
+				"1": "Lundi",
+				"2": "Mardi",
+				"3": "Mercredi",
+				"4": "Jeudi",
+				"5": "Vendredi",
+				"6": "Samedi"
+			},
+			"month": {
+				"0": "Janvier",
+				"1": "Février",
+				"2": "Mars",
+				"3": "Avril",
+				"4": "Mai",
+				"5": "Juin",
+				"6": "Juillet",
+				"7": "Août",
+				"8": "Septembre",
+				"9": "Octobre",
+				"10": "Novembre",
+				"11": "Décembre"
+			}
+		},
+		"desc": {
+			"empty": "Aucune description disponible"
+		},
+		"auth": {
+			"signin": "Se connecter",
+			"signin_success": "Connexion réussie",
+			"signup": "S'inscrire",
+			"signin_instruction": "Veuillez vous connecter à votre compte",
+			"signup_instruction": "Veuillez vous créer un compte",
+			"signup_success": "Vous êtes connecté avec votre nouveau compte",
+			"signup_professor": "Compte professeur",
+			"signup_student": "Compte étudiant",
+			"signout": "Se déconnecter",
+			"signout_success": "Vous avez été déconnecté avec succès",
+			"signin_different_account": "Se connecter avec un autre compte",
+			"already_registered": "Vous avez déjà un compte?",
+			"not_registered": "Vous n'avez pas de compte?",
+			"forgot_password": "Mot de passe oublié?",
+			"account_required": "Il te faut un compte pour faire ça",
+			"name_migration": {
+				"title": "Changement de la façon dont les étudiants sont identifiés",
+				"desc": "Chaque étudiant doit maintenant posséder un prénom ainsi qu'un nom de famille afin d'être plus facilement identifié. De plus, votre nom n'est plus unique.",
+				"please": "Veuillez s'il vous plait prendre le temps de choisir un nouveau nom.",
+				"submit": "Confirmer votre nouveau nom"
+			}
+		},
+		"nav": {
+			"alive": "ALIVE Play",
+			"dashboard": "Tableau de bord",
+			"culture": "Culture",
+			"ai": "Intelligence artificielle",
+			"iot": "Internet des Objets",
+			"code": "Code",
+			"volt": "Électronique",
+			"hackathon": "Hackathon",
+			"amc": "Contrôle par la pensée",
+			"about": "À propos",
+			"avp": "Perception de véhicule augmentée",
+			"lrima": "Laboratoire de recherche LRIMA",
+			"profile": "Mon profil"
+		},
+		"maintenance": {
+			"more_info": "Plus d'informations",
+			"no_desc": "Pas de description disponible.",
+			"ongoing": "Une maintenance est présentement en cours du {{startDate}} au {{finishDate}}. Vous ne pouvez pas utiliser votre compte ou voir les défis des utilisateurs durant cette période. Désolé pour cet inconvénient.",
+			"upcoming": "Une maintenance est prévue du {{startDate}} au {{finishDate}}. Vous ne pourrez pas utiliser votre compte ou voir les défis des utilisateurs durant cette période. Désolé pour cet inconvénient.",
+			"status": {
+				"ongoing": "En cours",
+				"finished": "Terminée",
+				"upcoming": "Prochainement"
+			}
+		}
+	},
+	"versions": {
+		"see_news": "Voir ce qu'il y a de nouveau !",
+		"history": "Historique des versions",
+		"NEW": "NOUVEAU!",
+		"FIX": "FIXED!",
+		"MOD": "MOD!",
+		"BETA": "BETA!"
+	},
+	"dashboard": {
+		"recents": {
+			"title": "Mon activité récente",
+			"empty": {
+				"student": "Vous n'avez pas d'activité récente. Rejoinez un cours publique ou privée pour commencer à apprendre",
+				"professor": "Vous n'avez pas d'activité récente. Créez un cours pour commencer"
+			},
+			"to_studio": "Accéder à mon Studio de Création",
+			"courses": "Mes cours consultés récemment",
+			"public": "Explorez des cours qui vous correspondent",
+			"modules": "Mes modules consultés récemment"
+		},
+		"resources": {
+			"title": "Mes Ressources"
+		},
+		"iot": {
+			"title": "Tableau de bord IoT",
+			"showcase_projects": "Projets mis en vedette",
+			"projects": {
+				"title": "Projets IoT",
+				"create": "Créer un nouveau Projet IoT",
+				"empty": "Vous ne possédez aucun Projet IoT.",
+				"btn": {
+					"copy_id": "Copie l'ID de votre Projet IoT",
+					"delete": "Supprime votre projet IoT"
+				}
+			},
+			"objects": {
+				"title": "Objets IoT",
+				"create": "Créer un nouveau Objet IoT",
+				"empty": "Vous ne possédez aucun Objet IoT",
+				"conn_guide": {
+					"title": "Guide de connexion"
+				},
+				"btn": {
+					"conn_guide": "Ouvre un guide de connexion",
+					"copy_id": "Copie l'identifiant de l'objet IoT.",
+					"copy_auth_token": "Copie la clé d'authentification de l'objet IoT. (La clé d'identification est similaire à un mot de passe).",
+					"logs": "Voir les 100 derniers journaux générés par l'objet IoT.",
+					"edit": "Modifie le nom de l'objet IoT.",
+					"delete": "Supprime l'objet IoT"
+				}
+			}
+		},
+		"culture": {
+			"projects": {
+				"modify_collab": "Modifier les collaborateurs",
+				"create": "Commencer une nouvelle serre",
+				"empty": "Vous ne possédez aucune serre",
+				"create_empty": "Commencez par en créer une!",
+				"contact_admin": "Contactez un administrateur pour obtenir de l'aide"
+			},
+			"title": "Vos serres",
+			"name": "Tableau de bord Serre"
+		},
+		"ai": {
+			"title": "Tableau de bord IA",
+			"showcase_projects": "Projets mis en vedette"
+		},
+		"datasets": {
+			"title": "Ensembles de données",
+			"mine": "Mes ensembles de données",
+			"courses": "Les ensembles de données utilisés dans les différents cours",
+			"empty": "Vous ne possédez aucun ensemble de données",
+			"create": "Créer un nouvel ensemble de données"
+		},
+		"owned_courses": {
+			"title": "Mes cours",
+			"no_modules": "Aucun module",
+			"empty": "Vous ne possédez aucun cours",
+			"add": "Créer un cours"
+		},
+		"followed_courses": {
+			"title": "Cours suivis",
+			"empty": "Vous ne suivez aucun cours",
+			"add": "Rejoindre un cours avec un code",
+			"browse_public": "Explorer les cours publics"
+		},
+		"modules": {
+			"title": "Mes modules",
+			"add": "Créer un module",
+			"empty": "Vous ne possédez aucun module"
+		},
+		"studio": {
+			"title": "Studio de création",
+			"sort_by": "Trier par",
+			"subject": "Sujet",
+			"limit": "Display",
+			"LAST_MODIFIED": "Dernière modification",
+			"NEWEST": "Les nouveaux",
+			"OLDEST": "Les plus anciens",
+			"BEST_RATED": "Les mieux notés",
+			"WORST_RATED": "Les moins bien notés",
+			"ALL": "Tous",
+			"toggle_header": "Voir",
+			"courses": {
+				"create": "Créer un nouveau cours",
+				"search": "Nom du cours"
+			},
+			"modules": {
+				"create": "Créer un nouveau module",
+				"search": "Nom du module"
+			}
+		}
+	},
+	"resources": {
+		"menu": {
+			"title": "Ressources",
+			"search": "Rechercher",
+			"bundles": "Obtenir des ressources"
+		},
+		"VI": {
+			"name": "Vidéo",
+			"form": {
+				"url": "URL vers la vidéo",
+				"invalid_url": "URL de la vidéo youtube invalide",
+				"file": "Glissez ou sélectionnez un fichier"
+			}
+		},
+		"FI": {
+			"name": "Fichier",
+			"form": {
+				"file": "Glissez ou sélectionnez un fichier"
+			}
+		},
+		"CH": {
+			"name": "Défi",
+			"form": {
+				"select": "Sélectionnez un défi pour la liaison"
+			}
+		},
+		"TH": {
+			"name": "Théorie"
+		},
+		"QZ": {
+			"name": "Quiz"
+		},
+		"files": {
+			"pdf": "Pdf",
+			"word": "Word",
+			"img": "Image"
+		},
+		"form": {
+			"create": "Créer une ressource",
+			"update": "Modifier la ressource",
+			"delete": "Supprimer la ressource",
+			"delete_confirm": "Êtes-vous sûr de vouloir supprimer cette ressource? Si vous l'avez utilisée dans un module, celle-ci sera perdue à jamais.",
+			"subject": "Matière de la ressource",
+			"type": "Type de ressource",
+			"name": "Nom de la ressource"
+		}
+	},
+	"course": {
+		"join_coming_soon": "🚧 Le cours sera bientôt disponible, revenez bientôt! 🚧",
+		"add_members": "Invitez des étudiants",
+		"to_settings": "Accéder aux paramètres du cours",
+		"delete": "Supprimer le cours",
+		"leave": "Quitter le cours",
+		"leave_success": "Vous avez quitté le cours avec succès",
+		"already_in": "Déjà dans le cours",
+		"import_module": "Ajouter un de vos modules dans votre cours",
+		"payment": {
+			"info": {
+				"not_found": "Aucun cours trouvé pour le code:",
+				"join": "Rejoindre le cours:",
+				"public": "Accéder gratuitement au cours public",
+				"already_member": "Aucune licence n'est requise pour vous puisque vous êtes déjà inscrit à ce cours.",
+				"already_creator": "Aucune licence n'est requise pour vous puisque vous êtes le créateur de ce cours. Pour les étudiants, le bouton ci-dessous leur permettra d'en acheter une et d'accéder au cours.",
+				"free": "Ce cours est gratuit, vous pouvez y accéder sans licence.",
+				"access_course": "Accéder au cours",
+				"no_account": "Je n'ai pas de compte.",
+				"create_account": "Créer un compte",
+				"have_account": "J'ai déjà un compte.",
+				"signin": "Me connecter",
+				"student_license": "Licence étudiante",
+				"to_checkout": "Aller au paiement",
+				"contact_prof": "Contacter le professeur",
+				"contact_support": "Contacter le support"
+			},
+			"success": {
+				"title": "Paiement accepté",
+				"desc": "Vous avez acheté la licence pour le cours:",
+				"confirmationEmail": "Nous avons envoyé un email de confirmation à l'adresse utilisée pour le paiement.",
+				"viewCourse": "Cliquez ici pour voir le cours",
+				"problem": "Problème ? Contactez-nous à"
+			},
+			"error": {
+				"title": "Le paiement a échoué",
+				"desc": "Une erreur est survenue lors de l'achat de la licence pour le cours:",
+				"solution": "Réessayez ou vérifiez votre boîte courriel pour plus d'informations.",
+				"retry": "Réessayer?",
+				"problem": "Problème? Contactez-nous à"
+			}
+		},
+		"create_form": {
+			"success": "Cours créé avec succès."
+		},
+		"creator": {
+			"name": {
+				"label": "Choisissez un titre représentatif de votre cours.",
+				"help": "Ce titre aidera vous et vos étudiants à identifier votre cours.",
+				"placeholder": "Par exemple: Apprendre l'Internet des Objets à partir de zéro"
+			},
+			"subject": {
+				"label": "Choisissez la matière qui correspond le mieux au contenu de votre cours.",
+				"help": "Elle vous permettra de mieux trier votre cours."
+			},
+			"subTitle": {
+				"label": "Résumez le contenu de votre cours en quelques phrases.",
+				"help": "$t(course.manager.display.subTitle.help)",
+				"placeholder": "$t(course.manager.display.subTitle.placeholder)"
+			},
+			"create": "Créer le cours"
+		},
+		"modules": {
+			"title": "Contenu du cours",
+			"empty": "Ce cours ne possède aucun module."
+		},
+		"members": {
+			"title": "Membres du cours",
+			"user": "Utilisateur",
+			"role": "Rôle",
+			"joinedAt": "Date d'enrôlement",
+			"lastAccess": "Dernier accès au cours",
+			"roles": {
+				"PROFESSOR": "Professeur",
+				"TA": "Auxiliaire d'enseignement",
+				"STUDENT": "Étudiant"
+			}
+		},
+		"manager": {
+			"title": "Gestionnaire de cours",
+			"save": "Sauvegarder les changements",
+			"saved": "Sauvegardé ✔",
+			"display": {
+				"title": "Affichage",
+				"name": {
+					"label": "Nom du cours",
+					"placeholder": "Par exemple: Apprendre l'IoT à partir de zéro"
+				},
+				"subject": {
+					"label": "Sujet du cours"
+				},
+				"subTitle": {
+					"label": "Sous-titre du cours",
+					"help": "Texte de 2-3 phrases servant à expliquer un peu mieux le contenu du cours. Ce sous-titre sera affiché sur la page d'accueil du site.",
+					"placeholder": "Par exemple: Apprends à créer une solution IoT sans prérequis. Découvre les bases de données, les protocoles de communication et bien plus à l'aide d'une dizaine de modules spécialisés en IoT."
+				},
+				"desc": {
+					"label": "Description du cours",
+					"placeholder": "Par exemple: "
+				},
+				"nbHours": {
+					"label": "Nombre d'heures pour compléter le cours"
+				},
+				"image": {
+					"label": "Image du cours",
+					"help": "Pour un affichage optimal, essayez d'utiliser une image aux dimensions 16:9."
+				},
+				"level": {
+					"label": "Niveau requis des étudiants pour suivre le cours"
+				},
+				"req": {
+					"label": "Prérequis du cours"
+				}
+			},
+			"content": {
+				"title": "Contenu",
+				"clone": {
+					"label": "Importer du contenu depuis un autre cours",
+					"help": "Cette section vous aide à importer* certains modules depuis un autre cours sans supprimer le contenu  déjà dans votre cours. Ceci est pratique si vous voulez créer un nouveau module avec un contenu identique ou similaire à un autre cours.",
+					"select": "Sélectionnez jusqu'à 1 cours à partir duquel importer du contenu.",
+					"ps": "Seulement les modules sélectionnés seront importés. Les statistiques, étudiants et autres données ne seront pas importées.",
+					"start": "Commencer l'importation",
+					"confirm": "Importer les modules sélectionnés",
+					"success": "Les modules ont été importés avec succès ✓",
+					"select_modules": "Sélectionnez les modules que vous voulez importer dans votre cours.",
+					"select_modules_error": "Vous devez sélectionnez au moins un module à importer.",
+					"params": {
+						"title": "Paramètres d'importation",
+						"content": "Clôner la structure et le contenu des modules",
+						"content_help": "En sélectionnant cette option, vous aurez le contrôle complet des modules sans affecter ceux d'origine. Le contenu des modules clônés ne sera pas mis à jour, cependant vous pourrez toujours les réinitialiser.",
+						"structure": "Clôner uniquement la structure et garder le contenu synchronisé",
+						"structure_help": "En sélectionnant cette option, vous clônerez uniquement la structure des modules. Vous pourrez donc retirer/cacher certaines sections et activités tout en ayant le contenu synchronisé avec le module d'origine. Vous ne pourrez pas modifier le contenu existant."
+					},
+					"modal": {
+						"title": "Oups, vous n'avez pas accès à ce cours.",
+						"text": "Vous n'avez présentement pas le droit d'accéder à ce cours et de le cloner. Si vous souhaitez importer son contenu et savoir plus à propos de ce qu'il a à offrir, contactez-nous à"
+					}
+				}
+			},
+			"structure": {
+				"title": "Structure",
+				"label": "Gérez les modules de votre cours",
+				"help": "Cette section vous aider à gérer les modules disponibles dans votre cours. Vous pouvez ajouter, enlever et réordonner les modules comme bon vous semble.",
+				"remove": {
+					"title": "Retrait du module",
+					"confirm": "Êtes-vous sûr de vouloir retirer ce module de votre cours? Le module ne sera pas supprimé et vous pourrez toujours le réajouter plus tard.",
+					"forbidden": "Permissions insuffisantes. Êtes-vous sûr d'être le créateur de ce cours?",
+					"not_found": "Le module n'a pas été trouvé dans votre cours. Il a probablement déjà été retiré, essayez de rafraîchir la page.",
+					"success": "Module retiré avec succès ✓"
+				},
+				"add_module": {
+					"title": "Ajouter un module",
+					"existing": "Module existant",
+					"new": "Nouveau module",
+					"fetch_limit": "Affichage du maximum de ",
+					"already_inside": "Ce module est déjà dans votre cours.",
+					"forbidden": "Permissions insuffisantes. Êtes-vous sûr d'être le créateur de ce module?",
+					"success": "Module ajouté avec succès ✓"
+				},
+				"visibility": {
+					"success": "Visibilité modifiée ✓",
+					"forbidden": "Permissions insuffisantes. Êtes-vous sûr d'être le créateur de ce cours?",
+					"not_found": "Le module n'a pas été trouvé dans votre cours. Il a probablement été retiré, essayez de rafraîchir la page."
+				},
+				"preview": "Apperçu de la structure de votre cours"
+			},
+			"visibility": {
+				"title": "Visibilité"
+			},
+			"danger": {
+				"title": "Zone Danger",
+				"delete": {
+					"label": "Suppression du cours",
+					"help": "Cette section vous permet de supprimer votre cours. Attention, cette action est irréversible et supprimera toutes les statistiques, étudiants et autres données de votre cours. Vos modules ne seront plus liés au cours, mais ils seront tout de même préservés. Si vous cherchez à supprimer un module, allez dans les paramètres du module à supprimer.",
+					"check": "Écrivez le nom du cours pour confirmer sa suppression.",
+					"button": "Je comprends les conséquences, supprimer le cours",
+					"403": "Tu ne peux pas supprimer ce cours, car tu n'en es pas le créateur.",
+					"success": "Le cours a été supprimé avec succès ✓"
+				}
+			},
+			"back": "Retour au cours"
+		},
+		"navigation": {
+			"title": "Navigation du cours"
+		},
+		"details": {
+			"title": "Détails du cours",
+			"subTitle": "Sous-titre",
+			"desc": "Description",
+			"subject": "Matière",
+			"level": "Niveau",
+			"nbHours": "Nombre d'heures",
+			"hour": "heure",
+			"creator": "Créateur"
+		},
+		"levels": {
+			"BE": "Débutant",
+			"IN": "Intermédiaire",
+			"EX": "Expert",
+			"ALL": "Tous les niveaux"
+		},
+		"code": {
+			"title": "Code du cours",
+			"desc": "Donnez ce code aux étudiants afin qu'ils puissent rejoindre le cours depuis le tableau de bord!",
+			"error": "Impossible d'obtenir le code du cours. Êtes-vous un professeur dans ce cours?"
+		}
+	},
+	"module": {
+		"title": "Module",
+		"desc": "Module de {{professor}}",
+		"subject": "Matière du module",
+		"access": {
+			"PU": "Public (Tout le monde peut y accéder)",
+			"UN": "Non répertorié (Seulement les personnes avec le lien peuvent y accéder)",
+			"RE": "Limité (Seulement les personnes dans le cours peuvent y accéder)",
+			"PR": "Privé (Seulement vous pouvez y accéder)"
+		},
+		"empty": "Ce module est vide.",
+		"student_view": "Vue étudiante",
+		"content": "Contenu du module",
+		"delete": "Supprimer le module. (Il sera retiré de toutes les cours où il est présent)",
+		"deletion_test": "Écrivez le nom du module pour confirmer sa suppression",
+		"validate_activity": "Confirmer les changements",
+		"start_writing": "Commencez à écrire ici...",
+		"back": "Retour au cours",
+		"rate": {
+			"title": "Félicitations!",
+			"title_incomplete": "Merci de vouloir noter ce module!",
+			"desc": "Vous avez complété le module <moduleTitle>{{name}}</moduleTitle>",
+			"rate_me": "Noter ce module",
+			"at_least_50": "Vous devez compléter au moins 50% du module pour pouvoir le noter",
+			"rate": "Votre note donnée au module :",
+			"rating_0": "Très mauvais",
+			"rating_10": "Excellent",
+			"comment": "Avez-vous des commentaires à faire parvenir au créateur de ce module ?",
+			"comment_placeholder": "La chose que j'ai le plus aimée... La chose que j'ai le moins aimée... Quelque chose qui pourrait être amélioré... Une erreur que j'ai vue",
+			"anonymous": "Envoyer le retour de façon anonyme ?",
+			"send": "Envoyer votre appréciation",
+			"no_send": "Ne pas envoyer votre appréciation",
+			"sent": "Merci! Votre retour contribue grandement à l'amélioration de ce module",
+			"error": {
+				"creator": "Vous ne pouvez pas noté un module que vous avez créé",
+				"not_finished": "Vous devez compléter au moins 50% du module pour pouvoir le noter"
+			}
+		},
+		"view": {
+			"title": "Vue étudiante"
+		},
+		"layout": {
+			"title": "Vue professeur"
+		},
+		"settings": {
+			"title": "Paramètres du module",
+			"stats": {
+				"title": "Statistiques",
+				"opens": "fois, le module a été ouvert",
+				"opensUnique": "différentes personnes ont ouvert le module",
+				"starts": "différentes personnes ont commencées le module",
+				"completions": "fois, le module a été complété",
+				"completionsUnique": "différentes personnes ont ouvert le module",
+				"activities": "activités sont présentes dans le module",
+				"sections": "sections sont présentes dans le module",
+				"nbOpens": "Nombre de fois que le module a été ouvert",
+				"nbOpensUnique": "Nombre de personnes qui ont ouvert le module pour la première fois",
+				"nbCompletions": "Nombre de complétions du module",
+				"nbActivitiesCompletions": "Nombre de complétions d'activités",
+				"tq": {
+					"sort_by": "Trier par",
+					"day": "Jour",
+					"week": "Semaine",
+					"month": "Mois",
+					"year": "Année"
+				},
+				"to": {
+					"day": "{{date}}",
+					"week": "Semaine du {{date}}",
+					"month": "{{month}}, {{year}}",
+					"year": "{{year}}"
+				}
+			},
+			"params": {
+				"title": "Paramètres",
+				"name": {
+					"label": "Nom du module"
+				},
+				"desc": {
+					"label": "Brève description du module"
+				},
+				"subject": {
+					"label": "Subjet du module"
+				},
+				"access": {
+					"label": "Accès au module"
+				},
+				"bg": {
+					"label": "Image de fond pour l'affichage du module",
+					"help": "Choisissez l'image de fond que vous préférez pour votre module."
+				},
+				"save": "Sauvegarder les changements",
+				"success": "Paramètres sauvegardés ✔"
+			},
+			"students": {
+				"title": "Élèves",
+				"firstOpenedTime": "Première ouverture",
+				"lastOpenedTime": "Dernière ouverture",
+				"firstCompletedTime": "Première complétion",
+				"lastCompletedTime": "Dernière complétion",
+				"nbActivitiesCompleted": "Nombre d'activités complétées",
+				"nbCompletions": "Nombre de complétions"
+			},
+			"logs": {
+				"title": "Journaux",
+				"event": "Évènement",
+				"description": "Description",
+				"affectedUser": "Utilisateur concerné",
+				"activity": "Activité concernée",
+				"device": "Appareil",
+				"ip": "Adresse IP",
+				"desc": {
+					"CRC": "<userLink>{{user}}</userLink> a créé le module.",
+					"CRCFC": "<userLink>{{user}}</userLink> a clôné le module depuis le module {{cloned}}.",
+					"CLC": "<userLink>{{user}}</userLink> a clôné le module.",
+					"FAC": "<userLink>{{user}}</userLink> a accédé au module pour la première fois.",
+					"AC": "<userLink>{{user}}</userLink> a accédé au module.",
+					"FCC": "<userLink>{{user}}</userLink> a complété le module pour la première fois.",
+					"CC": "<userLink>{{user}}</userLink> a complété le module.",
+					"UC": "<userLink>{{user}}</userLink> a modifié les paramètres du module.",
+					"AA": "<userLink>{{user}}</userLink> a accédé à l'activité <actLink>{{activity}}</actLink>.",
+					"FCA": "<userLink>{{user}}</userLink> a complété l'activité <actLink>{{activity}}</actLink> pour la première fois.",
+					"CA": "<userLink>{{user}}</userLink> a complété l'activité <actLink>{{activity}}</actLink>.",
+					"CRA": "<userLink>{{user}}</userLink> a créé l'activité <actLink>{{activity}}</actLink>.",
+					"DA": "<userLink>{{user}}</userLink> a supprimé l'activité <actLink>{{activity}}</actLink>."
+				},
+				"ev": {
+					"AC": "Accès au module"
+				}
+			}
+		},
+		"cursed": {
+			"msg1": "Une erreur inattendue s'est produite lors de votre dernière interaction.",
+			"msg2": "Voudriez-vous nous partager un rapport d'erreur ainsi que des informations à propos du contenu de votre module? Cela nous aiderait beaucoup à corriger cette erreur. Si cette erreur persiste, veuillez s'il vous plaît nous contacter à l'adresse suivante: alivecode.developers@gmail.com",
+			"send_report": "Oui, signaler l'erreur.",
+			"no": "Non, rafraîchir la page.",
+			"thanks": "Merci d'avoir signalé cette erreur! Nous allons essayer de corriger celle-ci au plus vite! La page va maintenant être rafraîchie..."
+		},
+		"section": {
+			"empty": "Cette section ne possède aucune activité",
+			"new": "Ajouter une section",
+			"delete": "Êtes-vous sûr de vouloir supprimer cette section? Tout le contenu à l'intérieur de celle-ci sera supprimé.",
+			"new_name": "Section #{{num}}"
+		},
+		"template": {
+			"add": "Utiliser un modèle",
+			"remove": "Enlever le modèle"
+		},
+		"activity": {
+			"open": "Ouvrir",
+			"close": "Fermer",
+			"open_in_student_view": "Ouvrir dans la vue étudiante",
+			"edit_in_layout_view": "Modifier dans la vue professeur",
+			"empty": "Cette activité est vide.",
+			"no_activity": "Ouvrez une activité pour commencer",
+			"new": "Ajouter une activité",
+			"new_name": "Activité #{{num}}",
+			"header": "Texte en entête",
+			"footer": "Texte en bas de page",
+			"remove_header": "Retirer le texte en entête.",
+			"remove_footer": "Retirer le texte en bas de page.",
+			"remove_header_confirm": "Êtes-vous certain de vouloir retirer le texte en entête de cette activité?",
+			"remove_footer_confirm": "Êtes-vous certain de vouloir retirer le texte en bas de page de cette activité?",
+			"add_header": "Ajouter du texte en entête à cette activité",
+			"add_footer": "Ajouter du texte en bas de page à cette activité",
+			"download_file": "Télécharger le fichier",
+			"no_download": "Il n'y a aucun fichier à télécharger ici.",
+			"import_resource": {
+				"generic": "Ajouter une ressource existante",
+				"PF": "Ajouter un pdf existant",
+				"TH": "Ajouter un document de théorie existant",
+				"VI": "Ajouter une vidéo existante",
+				"AS": "Ajouter un fichier existant",
+				"CH": "Ajouter un défi existant",
+				"WO": "Ajouter un document Word existant",
+				"QZ": "Ajouter un quiz existant"
+			},
+			"create_resource": {
+				"generic": "Créer une nouvelle ressource",
+				"PF": "Téléverser un pdf depuis cet appareil",
+				"TH": "Créer un nouveau document de théorie",
+				"VI": {
+					"upload": "Téléverser une vidéo depuis cet appareil",
+					"url": "Ajouter une vidéo depuis un URL"
+				},
+				"AS": "Téléverser un fichier depuis cet appareil",
+				"CH": "Créer un nouveau défi",
+				"WO": "Téléverser un document Word depuis cet appareil",
+				"QZ": "Créer un nouveau questionnaire"
+			},
+			"edit_resource": "Modifier la ressource",
+			"remove_resource": "Retirer la ressource",
+			"declare_complete": "J'ai complété cette activité",
+			"next": "Activité suivante",
+			"previous": "Activité précédente",
+			"delete": "Êtes-vous sûr de vouloir supprimer cette activité? Les ressources comprises à l'intérieur de celle-ci ne seront pas supprimées.",
+			"average_time": "Temps moyen des étudiants",
+			"nb_completions": "Nombre de fois que l'activité a été complétée",
+			"nb_completions_unique": "Nombre de personnes qui ont complété l'activité",
+			"PF": {
+				"download_file": "Télécharger le PDF",
+				"page_of": "sur",
+				"start_page": "Commencer à la page",
+				"start_page_info": "Choisi le premier numéro de page que les étudiants verront en ouvrant l'activité.",
+				"finish_page": "Bloquer à la page",
+				"finish_page_info": "Choisi le dernier numéro de page que les étudiants pourront voir."
+			},
+			"WO": {
+				"download_file": "Télécharger le Word"
+			}
+		},
+		"form": {
+			"create": "Créer un module",
+			"update": "Modifier le module",
+			"name": "Nom du module",
+			"description": "Description du module",
+			"subject": "Matière du module",
+			"success": "module créé avec succès."
+		},
+		"navigation": {
+			"minimize": "Réduire",
+			"maximize": "Agrandir"
+		}
+	},
+	"text_editor": {
+		"heading": "Titre",
+		"fontSize": {
+			"fontSize": "Taille de la police",
+			"text": "Texte"
+		},
+		"backgroundColor": "Couleur de fond",
+		"color": "Couleur du texte",
+		"table": {
+			"table": "Tableau",
+			"insert_above": "Ajouter une ligne au-dessus",
+			"insert_below": "Ajouter une ligne en-dessous",
+			"insert_left": "Ajouter une colonne à gauche",
+			"insert_right": "Ajouter une colonne à droite",
+			"delete_row": "Supprimer la ligne",
+			"delete_col": "Supprimer la colonne",
+			"delete_table": "Supprimer le tableau"
+		},
+		"code_editor": {
+			"execEnabled": "Exécution activée",
+			"execDisabled": "Exécution désactivée",
+			"gutterEnabled": "Numérotation activée",
+			"gutterDisabled": "Numérotation désactivée"
+		},
+		"graph_editor": {
+			"help": "Parcourir la documentation de mermaid",
+			"preview": "Graph",
+			"edit": "Édition",
+			"both": "Les deux"
+		}
+	},
+	"bundle": {
+		"moduleTemplate": {
+			"name": "Modèle de module",
+			"content": "Contient"
+		},
+		"browse": {
+			"title": "Trousses pédagogiques offertes par ALIVEcode"
+		}
+	},
+	"menu": {
+		"signup": {
+			"professor": "Compte professeur",
+			"student": "Compte étudiant",
+			"complicated": "Gérant de serre",
+			"simple": "Agriculteur"
+		}
+	},
+	"home": {
+		"msg1": "code",
+		"msg2": "ai",
+		"msg3": "iot",
+		"icons_credits": "Icônes pris de",
+		"navbar": {
+			"section": {
+				"dashboard": "$t(msg.nav.dashboard)",
+				"amc": "$t(msg.nav.amc)",
+				"ai": "$t(msg.nav.ai)",
+				"iot": "$t(msg.nav.iot)",
+				"code": "$t(msg.nav.code)",
+				"volt": "$t(msg.nav.volt)",
+				"hackathon": "$t(msg.nav.hackathon)",
+				"about": "$t(msg.nav.about)"
+			},
+			"msg": {
+				"auth": "Salut, {{name}}",
+				"non_auth": {
+					"label": "Vous n'êtes pas connecté, ",
+					"link": "$t(msg.auth.signin) ?"
+				}
+			}
+		},
+		"navbar_home": {
+			"about": "À propos",
+			"signin": "Se connecter",
+			"signup": "S'inscrire",
+			"hi": "Salut, {{first}} {{last}}"
+		},
+		"header": {
+			"msg": "Bienvenue sur <accent>ALIVEculture</accent>",
+			"msg2": "La gestion en ligne de vos serres connectées",
+			"learnmore": "Savoir plus",
+			"what": "Qu'est ce qu'<accent>ALIVEculture</accent>",
+			"online_managing": "La gestion en ligne de vos serres connectées.",
+			"distance": "Surveillance à distance",
+			"ressource": "Optimisation des ressources",
+			"simple": "Simplicité d'utilisation",
+			"disease": "Détection de maladies"
+		},
+		"collab": {
+			"title": "Collaborations",
+			"1": "L'institut supérieur des Études Technologiques de Sidi Bouzid",
+			"2": "Cuisine communautaire d'Hochelaga Maisonneuve",
+			"3": "Détection de maladies"
+		},
+		"realtime": {
+			"title": "Surveillance agricole en temps réel",
+			"text": "Avec ALIVEculture, vous pouvez surveiller vos serres en temps réel. Vous restez informé sur l'évolution de vos plantations sans avoir à vous déplacer constamment.",
+			"title1": "Accessible d'où que vous soyez",
+			"text1": "Restez connecté peu importe où vous êtes dans le monde. Contrôler votre serre n'aura jamais été aussi facile."
+		},
+		"security": {
+			"title": "Sécurité des cultures",
+			"text": "Avec les alertes d'ALIVEculture, vous pouvez être assuré que vos serres ont les meilleures conditions de croissance.",
+			"title1": "Alertes de climat",
+			"text1": "ALIVEculture vous laisse configurer des alertes pour surveiller plusieurs paramètres de croissance, incluant la température et l'humidité."
+		},
+		"graph": {
+			"title": "Analyse approfondie",
+			"text": "Recueillez des données sur l'évolution de vos plantations. Ces données sont ensuite transformées en graphique pour mener des analyses poussées.",
+			"title1": "Graphique interactifs",
+			"text1": "Nos graphiques vous permettent de zoomer, de faire défiler et de sélectionner des plages de données spécifiques."
+		},
+		"footer": {
+			"msg": "<accent>ALIVEculture</accent> - Transformez votre expérience agricole dès maintenant !",
+			"learnmore": "Savoir plus",
+			"home": "Accueil",
+			"collab": "Collaboration",
+			"contact": "Contact",
+			"politic": "Politique de confidentialité"
+		},
+		"hero": {
+			"title": "<accent>Réduire</accent> la charge de travail des enseignants en TI.",
+			"desc": "Utilisez des outils puissants pour préparer vos cours et gérer vos classes afin de réduire votre charge de travail et prendre des décisions plus éclairées.",
+			"get_started": "Demander une démo",
+			"learn_more": "Découvrir ALIVEcode"
+		},
+		"newsletter": {
+			"title": "S'inscrire à notre infolettre",
+			"desc": "Chaque année, nous créons de nouveaux cours, participons à de nouveaux ateliers et proposons de nouveaux outils. Restez à jour en vous abonnant à notre infolettre pour ne pas manquer les nouvelles offres que nous pourrions avoir pour vous.",
+			"already_subscribed": "Vous êtes déjà inscrit.e à notre infolettre.",
+			"invalid_email": "S'il vous plaît, entrez une adresse courriel valide.",
+			"submit": "S'inscrire",
+			"placeholder": "Votre adresse courriel",
+			"success": "Vous avez été inscrit.e à notre infolettre. Nous sommes heureux de savoir que notre travail vous intéresse!",
+			"follow_us": "Suivez-nous sur les réseaux sociaux"
+		},
+		"tools": {
+			"title": "Dynamisez vos cours avec des outils spécialisées dans chaque domaine",
+			"AI": {
+				"title": "La porte d'entrée la <accent>plus simple</accent> à l'Intelligence Artificielle.",
+				"desc": "Accédez à toute la puissance de l’IA  à l’aide d’outils compréhensibles et fait pour des niveaux débutants à avancés.",
+				"cta": "En savoir plus",
+				"1": {
+					"title": "Importation de données",
+					"desc": "Importer vos propres données recueillies pour l'entraînement de vos modèles d'IA"
+				},
+				"2": {
+					"title": "Traîtement de données",
+					"desc": "Analyser, traiter et nettoyer vos données avant d'entraîner vos modèles"
+				},
+				"3": {
+					"title": "Création de modèles d'IA",
+					"desc": "Créer votre modèle avec des commandes simples dans un langage français ou en Python"
+				},
+				"4": {
+					"title": "Entraînement et tests",
+					"desc": "Entraîner, tester et évaluer votre modèle sur vos donneées d'entrées afin de valider son efficacité"
+				}
+			},
+			"IOT": {
+				"title": "Une introduction à l'Internet des Objets <accent>sans friction</accent>.",
+				"desc": "Accédez à toute la puissance de l’IoT à l’aide d’outils intuitifs et simples à utiliser. Créez des objets connectés et des systèmes complexes en quelques minutes.",
+				"cta": "En savoir plus",
+				"1": {
+					"title": "Connexion d'objets IoT",
+					"desc": "Connecter et contrôler des objets connectés à ALIVEcode à l'aide de Python et C/C++."
+				},
+				"2": {
+					"title": "Création d'écosystèmes",
+					"desc": "Créer et gérer des écosystèmes connectés dans lesquels les objets peuvent communiquer entre eux."
+				},
+				"3": {
+					"title": "Visualisation de données",
+					"desc": "Visualiser les données de votre écosystème à l'aide d'une interface graphique personnalisable."
+				},
+				"4": {
+					"title": "Contrôle et automatisation",
+					"desc": "Créer des règles d'automatisations dans votre écosystème afin de prévenir des situations dangereuses."
+				}
+			},
+			"CO": {
+				"title": "Des outils qui aident à déveloper son <accent>sens logique</accent>.",
+				"desc": "Apprenez les bases de la programmation et développez votre sens logique à l'aide d'outils interactifs et stimulants.",
+				"cta": "En savoir plus",
+				"1": {
+					"title": "Programmation en français",
+					"desc": "Débuter avec le langage de programmation en français AliveScript, similaire au pseudocode."
+				},
+				"2": {
+					"title": "Contrôle d'une voiture",
+					"desc": "Offrir un apprentissage stimulant en contrôlant une voiture autonome à l'aide d'algorithmes."
+				},
+				"3": {
+					"title": "Programmation en Python",
+					"desc": "Exécuter du code Python directement dans le navigateur, sans installation nécessaire."
+				},
+				"4": {
+					"title": "Librairies Python",
+					"desc": "Utiliser des librairies Python populaires (matplotlib, numpy, pandas, torch, etc.)"
+				}
+			},
+			"EL": {
+				"title": "L'apprentissage de l'électronique, <accent>simplifiée</accent>.",
+				"desc": "Favorisez un apprentissage graduel de l'électronique à l'aide de démonstrations visuelles et d'outils simples d'utilisation.",
+				"cta": "En savoir plus",
+				"1": {
+					"title": "Simulateur électronique",
+					"desc": "Simuler des circuits électroniques de base à l'aide d'un simulateur intégré à la plateforme."
+				},
+				"2": {
+					"title": "Simulation d'Arduino",
+					"desc": "Simuler les entrées et sorties d'un Arduino avant de passer au monde réel."
+				},
+				"3": {
+					"title": "Arduino avec Python",
+					"desc": "Programmer un Arduino avec Python à l'aide de notre librairie de communication alimata."
+				},
+				"4": {
+					"title": "Démonstrations et lab",
+					"desc": "Stimuler les étudiants grâce à plusieurs démonstrations et laboratoires disponibles sur le site."
+				}
+			}
+		},
+		"professors": {
+			"title": "Fait pour les enseignants en informatique.",
+			"desc": "En tant que plateforme d’apprentissage, nous connaissons l’importance des  enseignants dans les salles de classe. C’est pourquoi nous offrons de puissants outils, permettant de s’adapter à tous les styles d’enseignement.",
+			"cta": "Nous contacter",
+			"cards": {
+				"content": {
+					"title": "Choisissez parmi une variété de cours créés selon vos besoins",
+					"desc": "Notre équipe a conçu des cours séparés en modules couvrant les notions de base dans chaque domaine pour vous permettre d'utiliser ALIVEcode plus rapidement."
+				},
+				"stimulate": {
+					"title": "Utilisez des supports de cours dynamiques et stimulants",
+					"desc": "Augmentez la motivation de vos étudiants en leur offrant un environnement combinant la théorie à la pratique."
+				},
+				"editor": {
+					"title": "Créez vos propres modules grâce à un éditeur intégré à ALIVEcode",
+					"desc": "La plateforme inclut un éditeur vous permettant d'adapter un cours existant à votre manière et même d'en créer un de toute pièce."
+				}
+			}
+		},
+		"solution": {
+			"desc": "Économisez du temps précieux lors de la préparation de vos cours à l’aide de systèmes de création et modification en temps réel de contenu numérique. Tout en offrant un apprentissage dynamique à vos étudiants à même la plateforme dans 4 domaines des TI: La <code>programmation</code> , <ai>l’Intelligence Artificielle</ai>, <iot>l’Internet des Objets</iot> et <volt>l’électronique</volt>."
+		},
+		"video": {
+			"title": "Découvrez la plateforme ALIVEcode"
+		},
+		"student_feedback": {
+			"title": "Offrez un meilleur apprentissage à vos étudiants.",
+			"see_original": "Voir le commentaire original",
+			"anonymous": "Étudiant.e anonyme"
+		},
+		"feedbacks": {
+			"title": "Ce que nos utilisateurs disent de nous",
+			"desc": "Nous sommes fiers d'avoir aidé de nombreux étudiants et enseignants dans leur apprentissage et leur enseignement de l'informatique. Voici quelques-uns de leurs témoignages.",
+			"cta": "Voir plus de témoignages"
+		},
+		"courses": {
+			"title": "Profitez d’un large répertoire de cours"
+		},
+		"ask_admin": {
+			"title": "Rejoignez en tant qu'administrateur pour plus de <accent>fonctionnalités</accent>!",
+			"desc": "Devenez administrateur sur ALIVEculture et prenez le contrôle : modifiez les données,  les graphiques, créez des actionneurs et bien plus encore. Rejoignez-nous dès aujourd'hui !",
+			"contact_us": "Nous contacter",
+			"name": {
+				"label": "Votre nom",
+				"placeholder": "John Doe",
+				"required": "Votre nom est requis"
+			},
+			"reason": {
+				"label": "Raison du contact",
+				"admin": "Je souhaite devenir administrateur d'une ou plusieurs serre(s)",
+				"learn_more": "Je souhaite en apprendre plus sur ALIVEculture",
+				"other": "Autre raison"
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "J'aimerais obtenir accès... Je suis curieux... Je voudrais en savoir plus...",
+				"required": "Écrivez un peu plus de détails sur votre demande"
+			},
+			"not_working_1": "Ça ne fonctionne pas?",
+			"not_working_2": "Contactez-nous à l'adresse suivante:",
+			"success": "Message envoyé! Nous vous contacterons sous peu, et en attendant passez une agréable journée! 🙂",
+			"back": "Retour à la page d'accueil",
+			"submit": "Envoyer"
+		},
+		"ask_demo": {
+			"title": "Accédez dès maintenant à tous vos <accent>avantages</accent>",
+			"desc": "Contactez-nous pour bénéficier d'un accès complet et gratuit à la plateforme ALIVEcode, ainsi qu'à l'ensemble des ressources pédagogiques en <code>programmation</code>, <ai>Intelligence Artificielle</ai>, <iot>Internet des Objets</iot> et <volt>électronique</volt>.",
+			"contact_us": "Nous contacter",
+			"name": {
+				"label": "Votre nom",
+				"placeholder": "John Doe",
+				"required": "Votre nom est requis"
+			},
+			"reason": {
+				"label": "Raison du contact",
+				"course": "Je souhaite donner un cours avec la plateforme",
+				"workshop": "Je souhaite donner un atelier avec la plateforme",
+				"training": "Je recherche des formations en TI",
+				"learn_more": "Je souhaite en apprendre plus sur ALIVEcode",
+				"other": "Autre raison"
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "J'aimerais obtenir accès... Je suis curieux... Je voudrais en savoir plus...",
+				"required": "Écrivez un peu plus de détails sur votre demande"
+			},
+			"not_working_1": "Ça ne fonctionne pas?",
+			"not_working_2": "Contactez-nous à l'adresse suivante:",
+			"success": "Message envoyé! Nous vous contacterons sous peu, et en attendant passez une agréable journée! 🙂",
+			"back": "Retour à la page d'accueil",
+			"submit": "Envoyer"
+		},
+		"see_modules": "Voir les modules",
+		"about": "À propos",
+		"modules": "Modules",
+		"news": "Nouvelles",
+		"iot": {
+			"desc": "L'IoT n'a jamais été aussi facile",
+			"start_teaching": "Commencer à enseigner!",
+			"to_home_page": "Aller à la page d'accueil d'ALIVEiot",
+			"to_more_projects": "Voir plus de projets mis en vedette",
+			"to_dashboard": "Accéder au Tableau de Bord",
+			"to_modules": "Accéder aux Modules",
+			"summary": "ALIVEiot est la branche d’ALIVEcode servant à l’apprentissage de l’Internet des Objets, un domaine de l’informatique possédant très peu de ressources au niveau collégial. La branche ALIVEiot utilise des outils novateurs et conçus dans le but de simplifier l’apprentissage et la recherche scientifique. Ces outils permettent notamment:",
+			"features_list": [
+				"La visualisation de données en temps réel",
+				"Le partage de données entre objets connectés",
+				"Le contrôle d’objets connectés à l’aide du langage AliveScript"
+			],
+			"section": {
+				"featured_projects": {
+					"title": "Projets mis en vedette"
+				},
+				"learn": {
+					"title": "Commencez à enseigner",
+					"desc": "$t(home.section.modules_iot.desc)",
+					"by_alivecode": "Cours offerts par ALIVEcode"
+				},
+				"steps": {
+					"title": "Les étapes à suivre",
+					"elements": [
+						{
+							"title": "Conception des objets connectés*",
+							"desc": "Construis tes propres objets connectés avec tes connaissances en électronique. Fabrique les de la manière qui te correspond et qui est en accord avec tes objectifs. Ajoute des capteurs, des actionneurs, et beaucoup plus de composants électroniques à ton objet connecté.",
+							"optional": "Optionnel — ALIVEcode peut fournir certains objets connectés"
+						},
+						{
+							"title": "Connexion et visualisation",
+							"desc": "Enregistre et connecte ton objet connecté à ALIVEcode. Crée des protocoles qui sont préprogrammés pour exécuter une liste d'actions. Crée une interface graphique personnalisée qui se modifie en temps réel à l'aide des données de ton objet connecté."
+						},
+						{
+							"title": "Contrôle ton écosystème",
+							"desc": "Écris des scripts afin de contrôler ou automatiser les systèmes de ton écosystème connecté. Fait communiquer tes objets connectés entre eux. Programme divers scénarios à exécuter afin d'avoir plusieurs démonstrations."
+						}
+					]
+				},
+				"more_projects": {
+					"title": "Plus de projets",
+					"all": "Tous les projets"
+				},
+				"develop": {
+					"title": "Commence à Développer",
+					"desc": "Pratique tes notions d'internet des objets en développant des projets IoT. Enregistre plusieurs objets connectés, crée un réseau d'objets connectés, établis des communications entre eux, collecte et partage des données entre les objets et affiche en temps réel les données dans une interface graphique."
+				}
+			}
+		},
+		"code": {
+			"desc": "Développer son sens logique",
+			"start_teaching": "Commencer à enseigner!",
+			"summary": "La branche ALIVEcode est l'idée de base de la plateforme. Celle-ci vise à introduire la programmation aux étudiants à l'aide de ce qu'ils connaissent déjà bien : le français tout en les stimulant avec des outils tels que :",
+			"features_list": [
+				"Programmation en AliveScript, langage de programmation pseudo-code français",
+				"Contrôle d'une voiture autonome dans un simulateur",
+				"Programmation en Python depuis le site"
+			],
+			"section": {
+				"learn": {
+					"title": "Commencez à enseigner",
+					"desc": "",
+					"by_alivecode": "Cours offerts par ALIVEcode"
+				},
+				"steps": {
+					"title": "Exemple d'utilisation",
+					"elements": [
+						{
+							"title": "Commencez en français",
+							"desc": "Facilitez les premiers pas en programmation de vos étudiants en utilisant un langage de programmation français nommé AliveScript, très similaire au pseudo-code."
+						},
+						{
+							"title": "Contrôlez une voiture",
+							"desc": "Offrez un apprentissage stimulant à vos étudiants en contrôlant une voiture autonome à l'aide d'algorithmes en AliveScript ou Python."
+						},
+						{
+							"title": "Passez à Python",
+							"desc": "Avantagez vos étudiants en utilisant l'exécution en ligne de Python directement depuis le site, facilitant la transition à un langage de programmation utilisé dans l'industrie."
+						}
+					]
+				}
+			}
+		},
+		"volt": {
+			"desc": "L'électronique simplifiée.",
+			"continue_reading": "Lire la suite",
+			"summary": "ALIVEvolt est une nouvelle branche d'ALIVEcode étendue depuis la branche IoT créée pour l'apprentissage de l'électronique. La branche ALIVEvolt utilise des outils innovants et est conçue de manière à simplifier l'apprentissage. Ces outils permettent, entre autres :",
+			"features_list": [
+				"Simuler des circuits électroniques",
+				"Simuler un Arduino et le programmer en utilisant Python",
+				"Contrôler un véritable Arduino en utilisant Python"
+			],
+			"video": "Présentation du simulateur ALIVEvolt",
+			"section": {
+				"steps": {
+					"title": "Exemple d'utilisation",
+					"elements": [
+						{
+							"title": "Simuler des circuits électroniques en toute simplicité",
+							"desc": "Découvrez la simplicité de la simulation de circuits électroniques, idéale pour les débutants. Concevez et visualisez des circuits sans effort à l'aide de notre simulateur électronique convivial."
+						},
+						{
+							"title": "Programmer un Arduino simulé depuis le web",
+							"desc": "Créez des circuits avec un Arduino simulé dans notre simulateur et programmez-le en utilisant Python. Utilisez notre bibliothèque alimata pour communiquer avec l'Arduino et contrôler les entrées et sorties de celui-ci."
+						},
+						{
+							"title": "Donnez vie à vos circuits",
+							"desc": "Branchez un véritable Arduino sur votre ordinateur, installez alimata et copiez-collez le code du simulateur dans l'éditeur de code de votre choix pour voir vos circuits prendre vie."
+						}
+					]
+				}
+			}
+		},
+		"hackathon": {
+			"start_learning": "Commencer à pratiquer!",
+			"while_waiting": "Pendant que vous attendez",
+			"go_to_challenges": "Accéder aux défis",
+			"challenges_coming_soon": "Les défis seront accessibles lors de l'évènement...",
+			"section": {
+				"learn": {
+					"title": "Commencez à apprendre",
+					"desc": "Commencez à découvrir le monde de l'Intelligence Artificielle.",
+					"by_alivecode": "Modules d'Intelligence Artificelle offerts par ALIVEcode"
+				},
+				"sponsors": {
+					"title": "Les partenaires d'ALIVE Hackathon",
+					"tba": "À être annoncés sous peu..."
+				}
+			}
+		},
+		"section": {
+			"mission": {
+				"title": "Notre mission",
+				"desc_1": "Faciliter l'accès, le partage et les discussions autour des nouvelles technologies.",
+				"desc_2": "Donner la chance à n'importe qui d'accomplir n'importe quoi."
+			},
+			"us": {
+				"title": "Qui sommes-nous ?",
+				"desc": "Nous sommes des chercheurs du Laboratoire de Recherche Informatique du collège Maisonneuve LRIMa. Chaque année nous avons comme but d'innover dans l'industrie informatique en menant des recherches et en publiant/partageant les résultats de nos recherches durant des conférences à travers le monde. Visitez le site du LRIMa pour plus de détails et la section à propos."
+			},
+			"story": {
+				"title": "Notre histoire",
+				"desc": "Les origines d'ALIVEcode remontent à loin dans le temps. Il y a trois ans, nous avons eu l'idée de créer des véhicules miniatures autonomes dans le but de recherches scientifiques. Un an plus tard, nous avons eu l'idée d'utiliser ces robots afin d'apprendre la programmation à de jeunes étudiants. L'année suivante, nous avons décidé de créer ALIVEcode afin de rendre l'apprentissage de la programmation accessible à tous. Cela fait maintenant plus d'un an qu'ALIVEcode existe et continue de grandir."
+			},
+			"modules_ai": {
+				"title": "Modules d'Intelligence Artificielle",
+				"desc": "Apprends la théorie et la pratique de l'IoT. Suis un ou plusieurs modules complets offerts par ALIVEcode qui t'apprendront tout ce qu'il y a à savoir sur l'IA. Tels que: les régressions linéaires, la classification, les arbres décisionnels, les réseaux de neurones, etc."
+			},
+			"modules_iot": {
+				"title": "Modules d'Internet des Objets",
+				"desc": "Apprends la théorie et la pratique de l'IoT. Suis un ou plusieurs modules complets offerts par ALIVEcode qui t'apprendront tout ce qui t'est requis afin de commencer à développer tes propres projets IoT. L'électronique, les protocoles de communication, les bases de données, l'IA, l'interfaçage, etc."
+			},
+			"modules_code": {
+				"title": "Initiation à la Programmation",
+				"desc": "Apprends les bases de la programmation. Suis un ou plusieurs modules complets offerts par ALIVEcode qui te transformeront en programmeur aguerri. Apprends la programmation en contrôlant un véhicule motorisé, en résolvant des défis et en publiant tes propres défis/projets à la communauté."
+			}
+		},
+		"ContactForm": {
+			"header": {
+				"msg": "Avez-vous des questions? Contactez nous!"
+			},
+			"method": {
+				"success": "Votre message a été envoyé avec succès!",
+				"error": "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
+				"send": "Envoyer"
+			},
+			"label": {
+				"FirstName": "Prénom",
+				"LastName": "Nom",
+				"Subject": "Object",
+				"Message": "Message",
+				"Email": "Courriel"
+			},
+			"placeholder": {
+				"FirstName": "Jean",
+				"LastName": "Dupont",
+				"Email": "jean.dupont@example.com",
+				"Subject": "Demande d'information",
+				"Message": "Bonjour, j'aimerais avoir plus de détails sur vos services. Merci !"
+			}
+		}
+	},
+	"contact": {
+		"header": {
+			"msg": "Avez-vous des questions? Contactez nous!"
+		},
+		"method": {
+			"email": "Contactez nous par email",
+			"phone": "Contactez nous par téléphone",
+			"in_person": "Visitez nous en personne",
+			"online": "Visitez nous en ligne"
+		}
+	},
+	"input": {
+		"defaultValue": "Écrivez ici..."
+	},
+	"ai": {
+		"header": {
+			"title": "Le monde de l'intelligence artificielle avec ALIVEscript.",
+			"description": "L’intelligence artificielle est un domaine en constante évolution qui permet d’accomplir des tâches énormes en un temps record. L’efficacité des techniques qui en font partie est telle qu’on cherche maintenant à s’en servir dans toutes les sphères de la société, de l’agriculture à la robotique, en passant par le transport, les sciences, l’économie et bien plus! À l’aide de notre langage de programmation AliveScript, on te propose de découvrir les possibilités de l’intelligence artificielle d’un façon simple et captivante. Choisis un des modules disponibles et pars à la rencontre de cet univers fascinant!"
+		},
+		"section": {
+			"artificial-intelligence": {
+				"title": "Présentation de ALIVEai",
+				"paragraph1": "L’intelligence artificielle prend une place de plus en plus importante dans notre quotidien. En fait, nous pouvons déjà nous en apercevoir aujourd'hui : des assistants intelligents sont présents dans nos téléphones, nos ordinateurs ainsi que dans des haut-parleurs; de plus en plus d’essais avec des technologies d’IA sont effectués dans le domaine des transports, de l’agriculture, de la médecine et bien plus; les moteurs de recherche sur Internet ainsi que plusieurs sites utilisent l’IA pour des raison commerciales; et il existe bien d’autres exemples!",
+				"paragraph2": "Au fil des modules sur les différentes facettes de l’intelligence artificielle, vous apprendrez comment on peut s’en servir pour résoudre des problèmes variés :",
+				"point1": "Comment prédire la consommation d’une voiture si on fait varier son moteur, son poids et plusieurs autres caractéristiques.",
+				"point2": "Comment développer une formule qui saura prédire la grandeur maximale d’une personne.",
+				"point3": "Comment trouver la configuration optimale à un robot pour qu’il accomplisse une tâche précise.",
+				"point4": "Et plus encore!",
+				"paragraph3": "Les possibilités sont infinies, si bien qu’il en reste encore énormément à découvrir!  Choisis un module et commence à apprendre."
+			},
+			"steps": {
+				"0": {
+					"title": "Manipulation des données",
+					"description": "Prenez connaissance de vos données et réalisez que les données sont quelques fois problématiques. Pour les rendre compatibles avec les modèles d’intelligences artificielles, il faut parfois utiliser la méthode oneHot, déterminer des corrélations et normaliser les valeurs."
+				},
+				"1": {
+					"title": "Choix et création d’un modèle IA",
+					"description": "En apprentissage supervisé, le programmeur doit choisir lui-même le bon modèle mathématique. Réseau de neurones, perceptron et régression, pour choisir le bon modèle, assistez au module d’ALIVEai pour découvrir les caractéristiques des modèles AI et choisir le bon."
+				},
+				"2": {
+					"title": "Évaluation et optimisation des modèles",
+					"description": "Entrainez votre modèle avec les hyperparamètres que vous avez choisi et déterminez le taux d’erreur de votre modèle avec la fonction coût."
+				}
+			},
+			"machine-learning": {
+				"title": "L'apprentissage machine et sa place en IA",
+				"paragraph1": "Si vous n'êtes pas familier avec le domaine de l’intelligence artificielle, la première chose à savoir est qu’il existe plusieurs grandes branches qui se concentrent sur un sujet plus particulier de l’IA. Par exemple, la branche de la vision par ordinateur se spécialise dans la reconnaissance d’images, tandis que la branche de la reconnaissance vocale cherche plutôt à reconnaitre ou à générer des paroles humaines. L’apprentissage machine est justement une de ces catégories, mais elle contient plusieurs sous-branches, dont les fameux réseaux de neurones.",
+				"paragraph2": "L’apprentissage machine se spécialise surtout dans la prédiction de valeurs en se basant sur des données qui concernent la situation qu’on analyse. Elle permet de prédire des résultats à dans des situations qui demanderaient des calculs extrêmement complexes pour arriver au même résultat. Pour arriver à cela, l’algorithme s’entraîne sur des valeurs venant d’expériences précédentes et essaie de prédire leurs résultats avec un modèle aléatoire. Ensuite, on compare la prédiction avec la valeur réelle et on adapte le modèle en fonction de l’erreur dans le but de l’améliorer. Finalement, ce processus est répété jusqu’à atteindre un résultat satisfaisant. C’est ce processus qui est utilisé dans tous les algorithmes d’apprentissage machine, qu’il s’agisse de régressions ou même de réseaux de neurones."
+			},
+			"deep-learning": {
+				"title": "Les réseaux de neurones en IA",
+				"paragraph1": "On pourrait penser qu’il est très étrange d’associer des concepts liés au cerveau à l’informatique. Pourtant, l’idée d’associer les deux a complètement révolutionné le monde de l’intelligence artificielle! Les algorithmes les plus puissants au monde utilisent ce genre de processus pour accomplir des tâches qui auraient pris de nombreuses années à être accomplies par les humaines.",
+				"paragraph2": "Les réseaux de neurones dans ce domaine sont en fait une nouvelle façon de concevoir une formule pour modéliser les situations les plus complexes. Basés sur les réseaux de neurones existants dans notre cerveau, ces algorithmes sont constitués de plusieurs neurones réparties sur un certain nombre de couches. Chaque neurone de chaque couche est reliée à chaque neurone de la couche suivante et ces liaisons ont une valeur attribuée qu’on appelle un « poids ». Chaque neurone se voit également attribuer une valeur que nous appelons « biais ». Ces poids et ces biais constituent les paramètres du réseau, ceux qui vont déterminer le résultat sortant selon une certaine entrée.",
+				"paragraph3": "Cependant, la partie « intelligente » du réseau de neurones se situe dans l’ajustement de ces paramètres :",
+				"point1": "Le réseau commence par essayer de prédire la sortie d’un grand nombre d’entrée et compare son résultat avec le résultat qu’il aurait dû avoir.",
+				"point2": "Ensuite, il adapte l’ensemble de ses paramètres selon la grandeur de l’erreur, c’est-à-dire l’écart entre les deux valeurs grâce à des algorithmes complexes dont le plus populaire est la descente de gradient.",
+				"point3": "Finalement, il recommence tout le processus jusqu’à obtenir des résultats qui minimisent le plus possible l’erreur afin de pouvoir produire les meilleures prédictions possibles!",
+				"paragraph4": "Évidemment, les réseaux de neurones sont bien plus complexes que cela, et c’est pourquoi un module à ce sujet sera bientôt disponible. Reste à l’affût!"
+			}
+		}
+	},
+	"culture": {
+		"sensor": {
+			"sensor": "Capteur",
+			"sleepTime": "Temps de sommeil",
+			"air": "Air",
+			"ground": "Sol",
+			"temperature": "Température",
+			"humidity": "Humidité",
+			"luminosity": "Luminosité",
+			"battery": "Batterie",
+			"name": "Capteur {{number}}",
+			"number": "Numéro",
+			"delete": "Suppression du capteur {{number}}",
+			"update": {
+				"update": "Modifier",
+				"title": "Modification du capteur {{number}}",
+				"category": "Catégorie",
+				"delete": "Supprimer",
+				"alert": "Changements effectués"
+			},
+			"create": {
+				"title": "Création d'un nouveau capteur",
+				"create": "Créer le capteur",
+				"name": "Nom du capteur",
+				"optional": "Optionnel",
+				"openModalMessageAddCapteur": {
+					"title": "Vous ne pouvez pas créer un capteur.",
+					"message": "Vous ne pouvez pas créer un capteur puisqu'il n'y a pas de données de capteurs dans la section des données brutes. Voici un exemple des données requises pour la création d'un capteur : ",
+					"message2": "Vous ne pouvez plus créer de capteur puisque vous avez déjà créé tous les capteurs disponibles. Pour ajouter un nouveau capteur, vous devrez d'abord ajouter les données pour ce capteur dans la section des données brutes. Voici un exemple des données requises pour la création d'un capteur : ",
+					"message3": "Pour toutes questions concernant l'ajout d'un capteur, vous pouvez nous contacter à l'adresse courriel suivante : ",
+					"email": "info@alivecode.ca"
+				}
+			},
+			"types": {
+				"carrot": "Carotte",
+				"potato": "Patate",
+				"tomato": "Tomate",
+				"lettuce": "Laitue",
+				"strawberry": "Fraise",
+				"apple": "Pomme"
+			},
+			"timesince": "Dernières données reçues il y a"
+		},
+		"document": {
+			"invalid": "Document invalide"
+		},
+		"project": {
+			"delete_success": "Serre supprimé",
+			"name": "Serre",
+			"settings": {
+				"update_success": "Les paramètres de la serre ont été modifiés avec succès",
+				"project_name": "Nom de la serre",
+				"project_desc": "Description de la serre",
+				"project_access": "Accès à la serre",
+				"project_connection_rights": "Droits de connexion",
+				"add_collab_already_error": "L'utilisateur est déjà un collaborateur",
+				"add_collab_error": "Erreur lors de l'ajout du collaborateur",
+				"add_collab_success": "Collaborateur ajouté avec succès",
+				"list_collab": "Liste des collaborateurs",
+				"text_add_collab": "Ajouter un collaborateur à la serre",
+				"user": "Courriel de l'utilisateur",
+				"user_placeholder": "example@domaine.ca",
+				"no_collab": "Aucun collaborateur",
+				"collab_create": "Créer",
+				"collab_delete_success": "Collaborateur supprimé avec succès",
+				"email": "Courriel"
+			},
+			"interface": {
+				"vent": {
+					"name": "Ventilation"
+				},
+				"irrigation": {
+					"name": "Irrigation"
+				},
+				"heating": {
+					"name": "Chauffage"
+				}
+			},
+			"sleepTime": {
+				"title": "Modifier le temps de sommeil",
+				"explanation": "Le temps de sommeil correspond à l'intervalle de temps pendant lequel les capteurs sont en veille avant de collecter de nouvelles données.",
+				"modify": "Modifier",
+				"newTime": "Nouveau temps de sommeil sera de",
+				"minutes": "minute(s)",
+				"seconds": "seconde(s)",
+				"error": "Le temps de sommeil doit être d'au moins 5 secondes."
+			},
+			"objects": {
+				"add_title": "Ajouter un object IoT au projet"
+			},
+			"create_success": "Serre crée avec succès!"
+		},
+		"form": {
+			"create": "serre",
+			"realtime": "les paramètres"
+		},
+		"dataset": {
+			"temperature": "Température",
+			"humidity": "Humidité",
+			"luminosity": "Luminosité",
+			"battery": "Batterie",
+			"gndTemperature": "Température du sol",
+			"gndHumidity": "Humidité du sol"
+		},
+		"triggers": {
+			"category": {
+				"empty": "Catégorie pour filtrer",
+				"temperature": "Température de l'air",
+				"humidity": "Humidité de l'air",
+				"gnd_temperature": "Température du sol",
+				"gnd_humidity": "Humidité du sol",
+				"battery": "Batterie",
+				"luminosity": "Luminosité"
+			}
+		},
+		"error": "Quelque chose ne va pas... Veuillez réessayer plus tard.",
+		"send_action_success": "Action envoyée avec succès"
+	},
+	"iot": {
+		"project": {
+			"name": "Projet IoT",
+			"routes": "Routage",
+			"create_success": "Projet IoT créé avec succès",
+			"cloned_from": "Cloné depuis",
+			"delete": "Supprimer la serre",
+			"delete_test": "Êtes-vous sûr de vouloir supprimer la serre",
+			"delete_success": "Serre supprimée avec succès!",
+			"socket": {
+				"status": {
+					"CONNECTED": {
+						"title": "Connecté!",
+						"help": "Tu es connecté en temps réel! Ce qui veut dire que tu peux utiliser tous les puissants outils d'aliot!"
+					},
+					"DISCONNECTED": {
+						"title": "Déconnecté",
+						"help": "Quelque chose ne va pas... Tu as été déconnecté, attends un peu ou rafraîchis la page."
+					},
+					"OPENED": {
+						"title": "Accès à la passerelle IoT...",
+						"help": "Tu y es presque! Nous vérifions les derniers détails de la connexion."
+					},
+					"CLOSED": {
+						"title": "Connexion...",
+						"help": "Tiens bon! Nous essayons d'atteindre les serveurs d'ALIVEcode."
+					},
+					"RECONNECTING": {
+						"title": "Reconnexion...",
+						"help": "Tiens bon! Nous essayons de régler le problème!"
+					}
+				}
+			},
+			"interface": {
+				"name": "Capteurs",
+				"add_component": "Ajouter un composant",
+				"add_actuators": "Ajouter un sytème",
+				"add_component_success": "Composant créé avec succès.",
+				"delete_component": "Supprimer le composant",
+				"delete_component_confirm": "Êtes-vous sûr de vouloir supprimer le composant",
+				"delete_capteur_confirm": "Êtes-vous sûr de vouloir supprimer le capteur",
+				"delete_capteur_success": "Capteur supprimé avec succès",
+				"delete_component_success": "Composant supprimé avec succès.",
+				"edit_component": "Modifier le composant",
+				"copy_project_id": "Copier l'ID du projet",
+				"better_layout": {
+					"label": "Meilleure mise en page",
+					"help": "La meilleure mise en page offre plus de personnalisation pour l'interface d'un Projet IoT en utilisant une grille modifiable. Pour l'instant, puisqu'il s'agit d'une fonctionnalité bêta, il faut positionner les composants manuellement depuis leur menu de paramétrage."
+				},
+				"errors": {
+					"ref": "ERREUR",
+					"no_id": "Le composant n'a pas d'ID"
+				},
+				"components": {
+					"progress_bar": {
+						"name": "Jauge de progression"
+					},
+					"button": {
+						"name": "Bouton"
+					},
+					"logs": {
+						"name": "Journaux",
+						"clear": "Supprimer toutes les entrées",
+						"add": "Ajouter une entrée",
+						"empty": "Aucune entrée"
+					},
+					"led": {
+						"name": "LED"
+					},
+					"label": {
+						"name": "Étiquette"
+					},
+					"buzzer": {
+						"name": "Avertisseur sonore",
+						"sine": "Sinus",
+						"sawtooth": "Dents de scie",
+						"square": "Carré",
+						"triangle": "Triangle",
+						"start": "Activer l'avertisseur",
+						"stop": "Arrêter l'avertisseur"
+					},
+					"traffic_light": {
+						"name": "Feu de circulation",
+						"red": "rouge",
+						"yellow": "jaune",
+						"green": "vert",
+						"off": "éteint"
+					},
+					"custom": {
+						"name": "Composant personnalisé"
+					},
+					"matrix": {
+						"name": "Matrice de LEDs"
+					},
+					"slider": {
+						"name": "Curseur"
+					},
+					"parking": {
+						"name": "Stationnement",
+						"reserved": "Réservé"
+					},
+					"status": {
+						"name": "Statut d'un objet IoT",
+						"no_object": "Ce composant n'est pas relié à un objet IoT",
+						"forbidden": "Permissions insuffisantes"
+					},
+					"prompt": {
+						"name": "Invite d'un Objet IoT",
+						"send": "Envoyer",
+						"response": "Réponse"
+					},
+					"switch": {
+						"name": "Interrupteur"
+					},
+					"graph": {
+						"name": "Graphique"
+					}
+				},
+				"components_form": {
+					"name": {
+						"label": "Nom du composant",
+						"placeholder": "Nom"
+					},
+					"id": {
+						"label": "Identifiant du composant",
+						"placeholder": "ID"
+					},
+					"ref": {
+						"label": "Référence à une entrée du document",
+						"static": "Valeur statique",
+						"invalid": "VALEUR INVALIDE",
+						"non-existant": "RÉFÉRENCE N'EXISTE PAS",
+						"new": "Créer un nouveau champs",
+						"path": "Chemin du champs",
+						"value": "Valeur du champs",
+						"add": "Ajouter le champs",
+						"behavior": "Comportement du composant",
+						"controlled": "Contrôlé",
+						"uncontrolled": "Non-contrôlé"
+					},
+					"position": {
+						"label": "Position dans la grille",
+						"gcs": "Début de la colonne",
+						"gce": "Fin de la colonne",
+						"grs": "Début de la rangée",
+						"gre": "Fin de la rangée",
+						"help": {
+							"gcs": "À partir de quelle colonne le composant devrait commencer. Avec 1, le composant commencera à la première colonne et avec 6 à la dernière.",
+							"gce": "À quelle colonne le composant devrait finir. Avec 2, le composant finira avant la 2e colonne.",
+							"grs": "À partir de quelle rangée le composant devrait commencer. Avec 1, le composant commencera à la première rangée.",
+							"gre": "À quelle rangée le composant devrait finir. Avec 2, le composant finira avant la deuxième rangée."
+						},
+						"reset": "Reset the position of this component"
+					},
+					"progress_bar": {
+						"value": {
+							"label": "Progression de la jauge"
+						},
+						"min": {
+							"label": "Minimum",
+							"placeholder": "0"
+						},
+						"max": {
+							"label": "Maximum",
+							"placeholder": "100"
+						},
+						"is_percentage": {
+							"label": "Est sous forme de pourcentage?"
+						},
+						"suffix": {
+							"label": "Suffixe à afficher après la valeur"
+						},
+						"color": {
+							"label": "Couleur de la jauge"
+						}
+					},
+					"button": {
+						"on_change": "Lors du clic du bouton",
+						"value": {
+							"label": "Affichage du bouton",
+							"placeholder": "Clic-moi"
+						},
+						"target": {
+							"label": "Objet IoT qui subira l'action lors du clic du bouton",
+							"placeholder": "Objet visé"
+						},
+						"action_id": {
+							"label": "Identifiant de l'action à faire subir",
+							"placeholder": "avancer"
+						},
+						"action_data": {
+							"label": "Données concernant l'action",
+							"placeholder": "{}"
+						}
+					},
+					"logs": {
+						"value": {
+							"label": "Journaux"
+						}
+					},
+					"led": {
+						"value": {
+							"label": "État éteint/allumé du LED"
+						}
+					},
+					"label": {
+						"value": {
+							"label": "Texte d'affichage",
+							"placeholder": "Bonjour Monde!"
+						},
+						"font_size": {
+							"label": "Taille de la police"
+						}
+					},
+					"buzzer": {
+						"value": {
+							"label": "Fréquence à jouer",
+							"placeholder": "500"
+						},
+						"duration": {
+							"label": "Durée du son à jouer (secondes)"
+						},
+						"frequency_type": {
+							"label": "Type de fréquence",
+							"placeholder": "Sinus"
+						}
+					},
+					"traffic_light": {
+						"value": {
+							"label": "État du feu de circulation",
+							"placeholder": "Éteint"
+						}
+					},
+					"custom": {
+						"value": {
+							"label": "Code HTML à afficher pour votre composant",
+							"placeholder": "<div style='background-color: #2E75FF; padding: 10px; border-radius: 5px;'>\n\t<i>Vous pouvez utilisez des références <strong>de la sorte: </strong></i>\n\t<div>\\{/document/ref\\}</div>\n</div>"
+						}
+					},
+					"parking": {
+						"value": {
+							"label": "Parking occupancy"
+						}
+					},
+					"vent": {
+						"value": {
+							"label": "État de l'interrupteur"
+						}
+					},
+					"heating": {
+						"value": {
+							"label": "État de l'interrupteur"
+						}
+					},
+					"irrigation": {
+						"value": {
+							"label": "État de l'interrupteur"
+						}
+					},
+					"slider": {
+						"value": {
+							"label": "Valeur du curseur"
+						},
+						"min": {
+							"label": "Valeur minimale du curseur",
+							"placeholder": "0"
+						},
+						"max": {
+							"label": "Valeur maximale du curseur",
+							"placeholder": "100"
+						},
+						"step": {
+							"label": "Pas entre chaque valeur du curseur"
+						},
+						"show_value": {
+							"label": "Afficher la valeur du curseur au-dessus de celui-ci?"
+						},
+						"show_restrictions": {
+							"label": "Afficher le min et le max sur les bords du curseur?"
+						},
+						"on_change": "Lors du changement du curseur",
+						"target": {
+							"label": "Objet IoT qui subira l'action lors du changement du curseur",
+							"placeholder": "Objet visé"
+						},
+						"action_id": {
+							"label": "Identifiant de l'action à faire subir",
+							"placeholder": "changer_luminosité"
+						},
+						"action_data": {
+							"label": "Données concernant l'action",
+							"placeholder": "{}"
+						}
+					},
+					"status": {
+						"value": {
+							"label": "Objet IoT à afficher",
+							"placeholder": "Aucun"
+						}
+					},
+					"prompt": {
+						"value": {
+							"label": "Response of the IoTObject"
+						},
+						"defaultPrompt": {
+							"label": "Valeur inscrite par défaut dans l'invite",
+							"placeholder": "ping"
+						}
+					},
+					"switch": {
+						"on_change": "Lors du changement d'état de l'interrupteur",
+						"value": {
+							"label": "État de l'interrupteur"
+						},
+						"target": {
+							"label": "Objet IoT qui subira l'action lors du changement d'état",
+							"placeholder": "Objet visé"
+						},
+						"action_id": {
+							"label": "Identifiant de l'action à faire subir",
+							"placeholder": "interrupteurChauffage"
+						},
+						"action_data": {
+							"label": "Données concernant l'action",
+							"placeholder": "true"
+						}
+					},
+					"graph": {
+						"value": {
+							"label": "Graphique à afficher"
+						},
+						"dataset": {
+							"label": "Le dataset dans lequel le graphique est défini",
+							"placeholder": "Aucun"
+						},
+						"graph": {
+							"label": "Le graphique dans le dataset",
+							"placeholder": "Aucun"
+						}
+					}
+				},
+				"sort": {
+					"number": "Numéro",
+					"category": "Catégorie",
+					"last_insert": "Dernière insertion",
+					"not_found": "Aucun capteur trouvé",
+					"button": "Voir filtres"
+				}
+			},
+			"summary": {
+				"name": "Vue d'ensemble",
+				"time": {
+					"today": "Aujourd'hui",
+					"second": "{{time}} seconde{{plural}}",
+					"minute": "{{time}} minute{{plural}}",
+					"hour": "{{time}} heure{{plural}}",
+					"day": "{{time}} jour{{plural}}",
+					"week": "{{time}} semaine{{plural}}",
+					"month": "{{time}} mois",
+					"year": "{{time}} an{{plural}}"
+				},
+				"graph": {
+					"name": "Graphique synthèse"
+				},
+				"data": {
+					"name": "État de la serre"
+				},
+				"actuators": {
+					"name": "Liste des actionneurs"
+				},
+				"connectivity": {
+					"name": "Connectivité",
+					"sensor": "Capteur",
+					"sensors": "Capteurs",
+					"objects": "Appareils connectés",
+					"state": {
+						"true": "Connecté depuis {{time}}",
+						"false": "Déconnecté depuis {{time}}"
+					}
+				},
+				"logs": {
+					"name": "Logs",
+					"sensor_data": "Données Capteur",
+					"state": {
+						"ON": "activé",
+						"OFF": "désactivé",
+						"CONNECTED": "connecté",
+						"DISCONNECTED": "déconnecté",
+						"CHANGE": ""
+					},
+					"end": "Fin des logs",
+					"more": "Voir plus"
+				}
+			},
+			"documents": {
+				"name": "Données brutes",
+				"update_mode": "Mode de modification",
+				"live": "EN DIRECT",
+				"error": "Impossible de sauvegarder, il y a une erreur dans le document",
+				"on_update_insert": "Lors de l'update du document, insérer les données dans le dataset",
+				"change_target_dataset_success": "Dataset ciblé modifié avec succès"
+			},
+			"datasets": {
+				"name": "Graphiques",
+				"header": "Ensembles de données",
+				"empty": "Ce projet n'a aucun dataset IoT.",
+				"filters": {
+					"show": "Montrer Filtres",
+					"hide": "Cacher Filtres"
+				}
+			},
+			"objects": {
+				"name": "Appareils connectés",
+				"remove_success": "Objet IoT retiré du projet avec succès.",
+				"no_object": "Vous n'avez aucun Objet IoT dans le projet.",
+				"object_gone": "Cet objet Iot n’existe plus",
+				"no_object_to_add": "Vous n'avez aucun Objet IoT à ajouter dans le projet",
+				"add": "Ajouter un Objet IoT dans le projet.",
+				"add_success": "Objet IoT ajouté au projet avec succès.",
+				"add_script": "Lier à un script",
+				"change_script": "Changer le script",
+				"has_script": "Lié au script",
+				"has_no_script": "Lié à aucun script",
+				"object_of": "Objet de",
+				"connect": "Associer l'objet IoT au projet",
+				"connected": "Associé au projet",
+				"not_connected": "Pas connecté au projet",
+				"connect_external_title": "Demander la permission pour connecter cet Objet IoT au projet?",
+				"connect_external_info": "Cet Objet IoT n'est pas le vôtre. Ainsi, pour connecter l'Objet IoT au projet, le détenteur de l'objet doit approuver la requête de connexion. En cliquant confirmer, une requête va être envoyée au détenteur s'il est présentement connecté sur le site.",
+				"connect_external_confirm": "Demander la permission",
+				"connect_external_success": "Objet IoT \"{{name}}\" connecté! Le détenteur a accepté la requête de connexion.",
+				"connect_external_refuse": "Objet IoT \"{{name}}\" connexion refusée! Le détenteur a refusé la requête de connexion.",
+				"connect_external_fail": "Objet IoT \"{{name}}\" connexion échouée! Le détenteur n'est pas présentement connecté.",
+				"connect_external_recv_title": "Requête de connexion de votre Objet IoT à un projet externe.",
+				"connect_external_recv_info": "L'utilisateur \"{{projectOwner}}\" souhaite connecter votre Objet IoT \"{{name}}\" à son projet \"{{projectName}}\". Vous posséderez toujours tous vos droits sur votre Objet IoT.",
+				"connect_external_recv_confirm": "Connecter votre Objet IoT au projet",
+				"connect_external_recv_refuse": "Refuser la tentative de connexion",
+				"connect_external_recv_confirm_sent": "La requête de connexion a été acceptée.",
+				"connect_external_recv_refuse_sent": "La requête de connexion a été refusée.",
+				"connect_external_expired": "La requête de connexion a expirée.",
+				"see_project": "Voir le projet \"{{projectName}}\"",
+				"disconnect": "Dissocier l'objet IoT du projet",
+				"link": "Relier le script",
+				"unlink": "Délier le script"
+			},
+			"actuators": {
+				"name": "Gestion des équipements"
+			},
+			"scripts": {
+				"name": "Scripts",
+				"running_scripts": "Scripts en cours d'exécution",
+				"no_running_scripts": "Aucun script en cours d'exécution.",
+				"script_gone": "Ce script n’existe plus.",
+				"delete_confirm": "Êtes-vous sûr de vouloir supprimer ce script?",
+				"delete_success": "Script supprimé avec succès.",
+				"no_script": "Vous n'avez aucun script.",
+				"create": "Créer un nouveau script.",
+				"create_success": "Script créé avec succès.",
+				"link_to_object": "Relier le script à un Objet IoT",
+				"link": "Relier le script avec l'Objet IoT \"{{name}}\"",
+				"unlink": "Délier le script"
+			},
+			"procedures": {
+				"name": "Procédures",
+				"procedure_gone": "Cette procédure n’existe plus.",
+				"delete_confirm": "Êtes-vous sûr de vouloir supprimer cette procédure?",
+				"delete_success": "Procédure supprimée avec succès.",
+				"no_procedure": "Vous n'avez aucune procédure.",
+				"create": "Créer une nouvelle procédure.",
+				"default_name": "Nouvelle procédure",
+				"create_success": "Procédure créée avec succès."
+			},
+			"triggers": {
+				"name": "Alertes automatiques",
+				"no_trigger": "Vous n'avez aucunes alertes.",
+				"add": "Ajouter une alerte.",
+				"when": "Quand",
+				"then": "Alors appeler",
+				"select_procedure": "Sélectionner une procédure",
+				"saved": "Alerte sauvegardée.",
+				"CONNSTATE": {
+					"name": "Changement d'état de connexion",
+					"desc": "Déclenchée lorsqu'un objet IoT change d'état de connexion.",
+					"select_object": "Sélectionner un objet IoT",
+					"switches": "change à",
+					"CONNECTED": "Connecté",
+					"DISCONNECTED": "Déconnecté"
+				},
+				"DOC": {
+					"name": "Changement de document",
+					"desc": "Déclenchée lorsqu'un champs du document change.",
+					"select_field": "Sélectionner un champs du document"
+				},
+				"TIME": {
+					"name": "Temps",
+					"desc": "Déclenchée à un moment précis dans le temps."
+				},
+				"INTERVAL": {
+					"name": "Intervalle de temps",
+					"desc": "Déclenché à intervalle de temps régulier."
+				}
+			},
+			"settings": {
+				"name": "Paramètres",
+				"project_name": "Nom du Projet IoT",
+				"project_desc": "Description du Projet IoT",
+				"project_access": "Accès/Visibilité du Project IoT",
+				"project_connection_rights": "Droits de connexion au Projet IoT",
+				"update_success": "Les paramètres du projet ont été modifiés avec succès",
+				"delete": "Supprimer le projet IoT",
+				"delete_confirm": "Êtes-vous sûr de vouloir supprimer le Projet IoT {{name}}?",
+				"delete_confirm_info": "Celui-ci sera retiré de tous les endroits où il a été utilisé, incluant dans les projets.",
+				"delete_test": "Écrivez le nom de votre projet IoT pour confirmer sa suppresion.",
+				"delete_success": "Projet IoT supprimé"
+			},
+			"sandbox": {
+				"name": "Bac à sable",
+				"saved": "L'état du bac à sable a été sauvegardé avec succès",
+				"error": "L'état du bac à sable n'a pas été sauvegardé",
+				"edit": "Modifier bac à sable",
+				"help": "Aide",
+				"fullscreen": "Plein écran",
+				"save": "Sauvegarder",
+				"quit": "Quitter",
+				"reset": "Réinitialiser",
+				"categories": {
+					"tiles": "Tuiles",
+					"sensor": "Capteurs",
+					"actuator": "Équipements",
+					"object": "Objets"
+				},
+				"tiles": {
+					"eraser": "efface",
+					"wall": "murs",
+					"wall_normal": "mur",
+					"wall_door": "porte",
+					"path": "chemins",
+					"crop": "cultures",
+					"crop_empty": "cultures vides",
+					"crop_carrot": "carottes",
+					"crop_tomato": "tomates",
+					"crop_lettuce": "laitues",
+					"crop_strawberry": "fraises",
+					"crop_potato": "patates"
+				},
+				"keybinds": {
+					"move": "Déplace la caméra {{direction}}",
+					"zoom": "Zoom la caméra {{direction}}",
+					"undo": "Annuler l'action",
+					"redo": "Rétablir l'action",
+					"erase": "Efface des tuiles",
+					"place": "Place des {{tile}}",
+					"save": "Sauvegarde les modifications"
+				},
+				"directions": {
+					"up": "vers le haut",
+					"down": "vers le bas",
+					"left": "vers la gauche",
+					"right": "vers la droite",
+					"in": "vers l'avant",
+					"out": "vers l'arrière"
+				},
+				"helpModal": {
+					"title": "Comment utiliser le bac à sable",
+					"keybinds": "Raccourcis clavier",
+					"state": "Modifications de l'état du bac à sable",
+					"movements": "Mouvements de la caméra",
+					"movements_other": "Vous pouvez également vous déplacer en faisant glisser la souris",
+					"tile": "Placement des tuiles",
+					"component": "Placement des composants",
+					"component_placement": "Pour placer un composant, vous devez d'abord le prendre, puis le faire glisser à l'endroit souhaité sur la grille",
+					"component_invalid": "Certains composants ne peuvent être placés que sur certaines tuiles, comme le capteur, qui ne peut être placé que sur les tuiles de culture",
+					"variants_info": "Si une tuile a des variantes, réappuyez sur la touche de la tuile pour changer de variante."
+				},
+				"quitModal": {
+					"title": "Quitter mode éditeur",
+					"save": "Sauvegarder et quitter",
+					"quit": "Quitter sans sauvegarder"
+				},
+				"resetModal": {
+					"title": "Réinitialiser le bac à sable",
+					"description": "Êtes-vous sûr de vouloir réinitialiser le bac à sable? Cette action est irréversible.",
+					"confirm": "Réinitialiser",
+					"cancel": "Annuler"
+				},
+				"presetModal": {
+					"title": "Charger un préréglage",
+					"empty": "Serre vide",
+					"small": "Petite serre"
+				}
+			},
+			"camera": {
+				"name": "Caméra",
+				"tab2": "Stockage",
+				"lastImg": "Dernière image",
+				"no_camera": "Aucune caméra n'est connectée à ce projet.",
+				"connect": "Connecter une caméra",
+				"connect_success": "Caméra connectée avec succès.",
+				"disconnect": "Déconnecter la caméra",
+				"disconnect_success": "Caméra déconnectée avec succès.",
+				"errorLoading": "Erreur lors du chargement de l'image",
+				"canvasFail": "Impossible de charger le canvas",
+				"noDetection": "Aucune détection",
+				"APIerror": "Erreur de l'API",
+				"prediction": "Prédiction",
+				"datasetError": "Erreur lors de la récupération des données",
+				"uploadError": "Erreur lors de l'envoi de l'image",
+				"uploadSuccess": "Image envoyée avec succès",
+				"fileRequired": "Veuillez sélectionner un fichier",
+				"deleteError": "Erreur lors de la suppression de l'image",
+				"deleteSuccess": "Image supprimée avec succès",
+				"downloadError": "Erreur lors du téléchargement de l'image",
+				"downloadSuccess": "Image téléchargée avec succès",
+				"upload": "Téléverser",
+				"delete": "Supprimer",
+				"download": "Télécharger",
+				"takePictureInstruction": "Prenez une photo pour commencer la détection",
+				"takePicture": "Prendre une photo"
+			}			
+		},
+		"object": {
+			"name": "Objet IoT",
+			"copy_id": "Copier l'ID de l'Objet IoT",
+			"delete": "Êtes-vous sûr de vouloir supprimer votre Objet IoT?",
+			"delete_test": "Écrivez le nom de votre Objet IoT pour confirmer sa suppresion.",
+			"delete_success": "Objet IoT supprimé",
+			"create_success": "Objet IoT créé avec succès",
+			"logs_title": "Journaux de l'Objet IoT \"{{name}}\"",
+			"connected_since": "Connecté depuis",
+			"disconnected_since": "Déconnecté depuis",
+			"now_connected": "Votre Objet IoT \"{{name}}\" s'est connecté à ALIVEiot.",
+			"now_disconnected": "Votre Objet IoT \"{{name}}\" s'est déconnecté d'ALIVEiot.",
+			"no_device": "Unspecified device",
+			"overview": {
+				"name": "Vue d'ensemble",
+				"last_logs": "Dernier logs"
+			},
+			"settings": {
+				"name": "Paramètres",
+				"object_name": "Nom de l'Objet IoT",
+				"object_desc": "Description de l'Objet IoT",
+				"object_device": "The device used by this object",
+				"object_ping": "Ping interval (15s par défaut)",
+				"delete": "Supprimer l'Objet IoT",
+				"delete_confirm": "Êtes-vous sûr de vouloir supprimer cet Objet IoT?",
+				"delete_confirm_info": "Celui-ci sera retiré de tous les endroits où il a été utilisé, incluant dans les projets.",
+				"success": "Paramètres sauvegardés.",
+				"save": "Sauvegarder les changements",
+				"true": "Oui",
+				"false": "Non",
+				"object_central_pi": "Est ce que l'objet est le Raspberry Pi centrale?",
+				"project_select": "Sélectionner la serre à laquelle la centrale est associé"
+			},
+			"auth_tokens": {
+				"name": "Clés d'authentification",
+				"main_token": "Clé d'authentification principale",
+				"other_tokens": "Autres Clés d'authentification",
+				"no_main_token": "Vous n'avez aucune clé d'authentification principale associée à cet Object IoT.",
+				"no_other_token": "Vous n'avez aucune autre clé d'authentification.",
+				"empty": "Vous n'avez aucune clé d'authentification",
+				"create": "Créer une clé d'authentification",
+				"expires_at": "Expire le",
+				"expired": "Expiré",
+				"set_main": "Définir comme clé principale",
+				"remove_main": "Retirer comme clé principale",
+				"token_name": "Nom de la clé d'authentification",
+				"token_desc": "Description de la clé d'authentification",
+				"token_expiresIn": "Quand est-ce que la clé devrait expirer ?",
+				"token_isMain": "Définir en tant que clé d'authentification principale de l'Object IoT ?",
+				"token_copied": "Clé d'identification copiée avec succès",
+				"create_confirm": "Confirmer et créer la clé d'authentification",
+				"never": "Jamais"
+			},
+			"logs": {
+				"name": "Journaux",
+				"no_logs": "Aucun journal disponible."
+			},
+			"projects": {
+				"name": "Projets IoT",
+				"current_project": "Projet Courant"
+			}
+		},
+		"procedure": {
+			"name_label": "Nom de la procédure",
+			"description_label": "Description",
+			"sub_procs_label": "Sous-procédures à exécuter",
+			"create_sub_proc_title": "Nouvelle sous-procédure"
+		},
+		"sub_proc": {
+			"remove_confirm_text": "Supprimer",
+			"EXEC": {
+				"name": "Exécution d’un script",
+				"short_desc": "Exécute un script de ce projet",
+				"script_label": "Script à exécuter"
+			},
+			"SEND_ACTION": {
+				"name": "Envoi d’une action IoT",
+				"short_desc": "Envoie une action à un objet IoT",
+				"object_label": "Objet IoT",
+				"action_id_label": "Identifiant de l’action à envoyer à l’objet"
+			},
+			"EMAIL": {
+				"name": "Envoi de courriel",
+				"short_desc": "Vous envoie un courriel",
+				"addr_label": "Envoyer le courriel à",
+				"subject_label": "Objet",
+				"body_label": "Corps",
+				"recipient_label": "Destinataire"
+			},
+			"SMS": {
+				"name": "Envoi de sms",
+				"short_desc": "Vous envoie un sms",
+				"phone_number_label": "Numéro de téléphone",
+				"body_label": "message sms"
+			}
+		}
+	},
+	"datasets": {
+		"doesntHaveGraph": "Aucun graphique disponible",
+		"view": {
+			"grid": "Grille",
+			"list": "Liste"
+		},
+		"row": "Rangée",
+		"add": {
+			"title": "Ajouter un ensemble de données",
+			"create": "Créer un nouvel ensemble de données",
+			"import": "Importer un ensemble de données existant",
+			"success": "L'ensemble de données a été ajouté avec succès ✓"
+		},
+		"remove": {
+			"title": "Retirer l'ensemble de données",
+			"success": "L'ensemble de données été retiré avec succès ✓"
+		},
+		"error": {
+			"rows": {
+				"404": "Vous n'avez pas les permissions suffisantes pour voir le contenu de l'ensemble de données.",
+				"500": "$t(error.unknown)"
+			},
+			"ai": {
+				"404": "L'ensemble de données ou défi IA n'a pas pu être trouvé.",
+				"403": "Vous n'avez pas les permissions suffisantes. Êtes-vous le propriétaire de l'ensemble de données et défi IA?"
+			},
+			"iot": {
+				"404": "L'ensemble de données ou projet IoT n'a pas pu être trouvé.",
+				"403": "Vous n'avez pas les permissions suffisantes. Êtes-vous le propriétaire de l'ensemble de données et projet IoT?"
+			},
+			"404": "L'ensemble de données n'a pas pu être trouvé.",
+			"403": "Vous n'avez pas les permissions suffisantes. Êtes-vous le propriétaire de l'ensemble de données?",
+			"500": "$t(error.unknown)"
+		},
+		"creator": {
+			"title": "Création d'un nouvel ensemble de données",
+			"name": {
+				"label": "Nom de l'ensemble de données",
+				"placeholder": "Évolution de la température en mars 2023"
+			},
+			"description": {
+				"label": "Description de l'ensemble de données",
+				"placeholder": "Cet ensemble de données est utilisé pour stocker 24 mesures de température chaque jour pendant le moi de mars 2023."
+			},
+			"public": {
+				"label": "Est-ce que l'ensemble de données devrait être à usage public ?"
+			},
+			"create": "Créer l'ensemble de données",
+			"success": "Ensemble de données créé avec succès ✓"
+		},
+		"editor": {
+			"title": "Modifier l'ensemble de données",
+			"none": "Aucun",
+			"cols": {
+				"title": "Définition des colonnes",
+				"type": "Type",
+				"ref": "Association au champs du document",
+				"min": "Valeur minimale",
+				"max": "Valeur maximale",
+				"invalid": "Colonne non-valide",
+				"add": "Ajouter une nouvelle colonne",
+				"add_success": "Column added successfully ✓",
+				"update_success": "Colonne modifiée avec succès ✓",
+				"delete": {
+					"title": "Êtes-vous sûr de vouloir supprimer la colonne \"{{colName}}\" ?",
+					"confirm": "Toutes les données de cette colonne seront perdues à jamais.",
+					"success": "Colonne supprimée avec succès ✓"
+				},
+				"error": {
+					"name": "Le nom de la colonne ne peut pas être vide.",
+					"400": "Définition de colonne non-valide. Veuillez vérifier les informations fournies.",
+					"409": "Cette colonne existe déjà. Veuillez choisir un autre nom.",
+					"404": "La colonne n'a pas pu être trouvée. Peut-être a-t-elle déjà été supprimée? Veuillez rafraîchir la page."
+				}
+			},
+			"graphs": {
+				"editButton": "Modifier le graphique",
+				"modalEdit": {
+					"selectGraphStyle": "Sélectionnez le style du graphique:",
+					"filled": "Zone remplie",
+					"notFilled": "Ligne",
+					"nameOfGraph": "Nom du graphique:",
+					"modifyButton": "Modifier"
+				},
+				"title": "Représentations graphiques",
+				"create": "Ajouter une représentation graphique",
+				"create_success": "Représentation graphique ajoutée avec succès ✓",
+				"delete_success": "Représentation graphique supprimée avec succès ✓",
+				"update_success": "Représentation graphique modifiée avec succès ✓",
+				"error": {
+					"400": "Représentation graphique non-valide. Veuillez vérifier les informations fournies et si les colonnes sélectionnées existent."
+				},
+				"cols": {
+					"title": "Colonnes utilisées pour la représentation graphique",
+					"col": "Colonne affichée",
+					"color": "Couleur",
+					"tension": "Tension de la courbe",
+					"width": "Épaisseur de la courbe",
+					"fill": "Remplir?",
+					"add": "Ajout d'une nouvelle courbe",
+					"select": "Sélectionnez une colonne",
+					"all": "Toutes les colonnes de l'ensemble de données ont été sélectionnées. Vous ne pouvez pas ajouter de nouvelles courbes."
+				}
+			},
+			"danger": {
+				"title": "Zone Danger"
+			},
+			"delete": {
+				"label": "Supprimer l'ensemble de données \"{{name}}\"",
+				"help": "Cette action est irréversible. Toutes les données de cet ensemble de données seront perdues à jamais. Êtes-vous sûr de vouloir continuer? Il est recommandé d'exporter les données avant de supprimer l'ensemble de données pour préserver une sauvegarde locale.",
+				"check": "Écrivez le nom de l'ensemble de données pour confirmer la suppression.",
+				"button": "Je comprends les conséquences, supprimer l'ensemble de données",
+				"success": "Ensemble de données supprimé avec succès ✓"
+			}
+		},
+		"import": {
+			"json": "Importer des données",
+			"title": "Importation de données",
+			"submit": "Importer ces données",
+			"success": "Données importées avec succès !"
+		},
+		"export": {
+			"title": "Sélectionnez le format d'exportation",
+			"csv": "Exporter en CSV",
+			"json": "Exporter en JSON"
+		},
+		"viewer": {
+			"date": "Date"
+		},
+		"noData": "Aucune données"
+	},
+	"profile": {
+		"title": "Profil",
+		"edit": "Modifier mon profil",
+		"edit_success": "Nouveau profil sauvegardé avec succès.",
+		"firstName": "First Name",
+		"lastName": "Last Name",
+		"bio": "Biographie",
+		"joined": "Rejoins le",
+		"avatar": {
+			"upload_title": "Changer son avatar",
+			"upload_preview": "Ceci sera ton nouvel avatar. Veuillez confirmer que vous voulez le changer.",
+			"upload_confirm": "Confirm",
+			"upload_cancel": "$t(msg.cancel)",
+			"upload_sucess": "Avatar changé avec succès."
+		},
+		"recent": {
+			"title": "Recent activity",
+			"student": {
+				"modules": "Modules suivis",
+				"courses": "Cours suivis"
+			},
+			"professor": {
+				"modules": "Modules créés",
+				"courses": "Cours créés"
+			},
+			"iot_projects": "Projets IoT créés"
+		}
+	},
+	"about": {
+		"members": {
+			"title": "Membres de l'équipe",
+			"jihene": {
+				"name": "Jihene Rezgui",
+				"titles": "Co-Fondatrice ALIVEcode - Fondatrice et Directrice du LRIMa",
+				"desc": "Depuis que Jihene Rezgui est directrice du LRIMa, elle a orienté ses recherches vers les algorithmes novateurs en IA appliqués au transport intelligent. Au fil des années, elle s'est intéressée à d’autres domaines d’application du Machine Learning tels que la conservation des aliments, l’usinage du métal, l’orthophonie, la robotique, les véhicules autonomes, etc. ALIVEcode est l'opportunité de publier les connaissances acquises au LRIMa et les algorithmes qui y sont développés. Les projets de recherches menés avec des partenaires externes produisent des résultats importants et font particulièrement référence à notre expertise en Machine Learning. Elle espère que le LRIMa va continuer à progresser au fil des années à l'aide des solutions d'ALIVEcode, car les expériences que vivent ses étudiants sont uniques et très formatrices pour leur avenir."
+			},
+			"enric": {
+				"name": "Enric Soldevila",
+				"titles": "Co-Fondateur - Développeur en chef - Développeur en chef d’ALIVEiot",
+				"desc": "Enric Soldevila est étudiant de l'Université de Montréal, membre du LRIMa depuis 2020 où il a découvert son intérêt pour l'informatique appliqué à la pédagogie. Passionné par l'informatique, il a passé plus de deux ans à créer et développer la plateforme ALIVEcode, visant à rendre accessibles les domaines les plus importants de l'informatique. Principal développeur de la plateforme ALIVEcode, celui-ci a contribué aux nombreux projets découlant de celle-ci tels que la Ville Intelligente en développant ALIVEiot avec ses algorithmes novateurs, ALIVEmind, et le système d'apprentissage de la plateforme."
+			},
+			"mathis": {
+				"name": "Mathis Laroche",
+				"titles": "Co-Fondateur - Développeur en chef d’AliveScript",
+				"desc": "Mathis Laroche est étudiant de l’Université de Montréal, membre du LRIMA, cofondateur et développeur du projet ALIVEcode. Ce projet vient rejoindre son amour pour l’enseignement et la programmation, ce qui explique le grand nombre d’heures qu’il lui a consacré. Ces heures l’ont amené à toucher à la plupart des systèmes d’ALIVEcode comme aliot-py, le système de modules, la simulation de la voiture et bien plus. Malgré tout, sa plus grande contribution reste AliveScript, le langage de programmation accessible à tous dont il est le créateur et principal développeur."
+			},
+			"felix": {
+				"name": "Félix Jobin",
+				"titles": "Co-Fondateur - Développeur en chef d’ALIVEai",
+				"desc": "Félix Jobin est étudiant en génie de la production automatisée à l’École de technologie supérieure (ÉTS). Diplômé du Collège de Maisonneuve en 2021, il s’implique au LRIMa depuis 2020. Passionné par l’intelligence artificielle et l’éducation, Félix a commencé son implication dans ALIVEcode lors de la conception d’un premier prototype en Java. Depuis qu’ALIVEcode est disponible sur le web, il dirige le développement de ALIVEai et conçoit les modules en IA accessibles à tous."
+			},
+			"younes": {
+				"name": "Younes Kechout",
+				"titles": "Développeur ALIVEmind"
+			},
+			"michelle": {
+				"name": "Michelle Nguyen",
+				"titles": "Développeuse ALIVEai"
+			},
+			"victor": {
+				"name": "Victor Dénommée",
+				"titles": "Développeur ALIVEai"
+			},
+			"william": {
+				"name": "William Stapinsky",
+				"titles": "Développeur ALIVEai"
+			},
+			"adel": {
+				"name": "Adel Makhloufi",
+				"titles": "Développeur ALIVEai et ALIVEiot"
+			},
+			"samuel": {
+				"name": "Samuel Lajoie",
+				"titles": "Développeur ALIVEiot"
+			},
+			"maxime": {
+				"name": "Maxime Gazzé",
+				"titles": "Développeur ALIVEiot"
+			}
+		},
+		"contributors": {
+			"title": "Personnes qui ont contribuées au projet"
+		},
+		"financing": {
+			"title": "Remerciements pour les contributions financières du projet"
+		}
+	},
+	"showcase": {
+		"project": {
+			"no_description": "Aucune description disponible.",
+			"no_name": "Erreur d'affichage du nom."
+		}
+	},
+	"user": {
+		"quiz": "Quiz : ",
+		"status": "Statut : ",
+		"posts": "Posts : ",
+		"reward": "Récompenses : ",
+		"rank": "Rank : ",
+		"rewardTitle": "Récompenses"
+	},
+	"simulation": {
+		"modal": {
+			"retry": "Réessayer?",
+			"continue": "Continuer",
+			"lose": "Meilleure chance la prochaine fois!",
+			"win": "La victoire t'appartient! 🎉",
+			"water": "La voiture est tombée dans l'eau",
+			"lava": "La voiture est tombée dans la lave",
+			"hole": "La voiture est tombée dans un trou",
+			"wall": "La voiture a foncée dans un mur",
+			"connect_car": {
+				"title": "Connecter un vrai ALIVEcar",
+				"label": "Identifiant du ALIVEcar",
+				"id": "123",
+				"button": "Se connecter avec le vrai ALIVEcar"
+			}
+		}
+	},
+	"cmd": {
+		"name": "Console",
+		"clear": "Effacer les lignes"
+	},
+	"plt": {
+		"name": "Graphiques",
+		"clear": "Effacer les graphiques",
+		"items": {
+			"heatmap": {
+				"correlation": {
+					"title": "Matrice de corrélation"
+				}
+			}
+		}
+	},
+	"action": {
+		"irreversible": "Cette action est irréversible"
+	},
+	"as_script": {
+		"readOnly": "Mode lecture seule"
+	},
+	"optimizer": {
+		"gradient_descent": {
+			"definitions": {
+				"nb_data": "Nombre de données d’entraînement",
+				"inputs": "Entrées du modèle",
+				"weights": "Poids de la couche numéro ",
+				"weights2": "",
+				"biases": "Biais de la couche numéro ",
+				"biases2": "",
+				"outputs": "Sorties brutes de la couche numéro ",
+				"outputs2": "",
+				"outputs3": " pour ",
+				"activation_function": "Fonction d’activation de la couche numéro ",
+				"activation_function2": "",
+				"activations": "Sorties de la couche numéro ",
+				"activations2": "",
+				"predictions": "Sorties du modèle (prédictions)",
+				"last_layer": "derniere couche",
+				"actual": "Valeurs réelles",
+				"cost_function": "Fonction de coût",
+				"learning_rate": "Taux d’apprentissage",
+				"hadamard_product": "Produit matriciel de Hadamard : multiplier les éléments à la même position dans les deux matrices"
+			},
+			"buttons": {
+				"next_layer1": "Couche ",
+				"next_layer2": "suivante",
+				"previous_layer1": "Couche ",
+				"previous_layer2": "précédente",
+				"toggle_math_mode": "Passer en mode\nmathématique",
+				"toggle_text_mode": "Passer en mode\nexplication",
+				"animation": "Animation",
+				"show_shapes": "Forme des\nmatrices",
+				"hide_shapes": "Masquer les\nformes"
+			},
+			"layer_names": {
+				"inputs": "Coucheé\ndes entrées",
+				"intermediate": "Couche\nintermédiaire",
+				"outputs": "Couche\ndes sorties"
+			},
+			"steps": {
+				"beginning": "DÉBUT",
+				"dz": "Évaluer la dérivée de la fonction de coût par rapport aux sorties brutes de la couche ",
+				"dw": "Évaluer la dérivée de la fonction de coût par rapport aux poids de la couche ",
+				"w1": "Ajuster les poids de la couche ",
+				"w2": " de manière à faire baisser le coût",
+				"db": "Évaluer la dérivée de la fonction de coût par rapport aux biais de la couche ",
+				"b1": "Ajuster les biais de la couche ",
+				"b2": " de manière à faire baisser le coût",
+				"end": "FIN DE L'EPOCH"
+			},
+			"info": {
+				"nb_inputs": "Nombre d'entrées",
+				"nb_neurons": "Nombre de neurones de la couche ",
+				"average": "On fait la moyenne des dérivées pour toutes les données",
+				"col_average": "moyenne des colonnes de",
+				"d_pred1": "Pour ",
+				"d_pred2": " qui est l'",
+				"d_pred3": " ",
+				"dg1": "Pour ",
+				"dg2": " qui est la fonction ",
+				"dg3": " "
+			},
+			"animation": {
+				"cost": "Coût",
+				"raw_outputs": "Sorties brutes",
+				"weights": "Poids",
+				"biases": "Biais"
+			}
+		}
+	},
+	"help": {
+		"start_tutorial": "Tutoriel de la page",
+		"click_for_more": "Cliquez pour plus d'informations",
+		"slides": {
+			"next": "Suivant",
+			"previous": "Précédent",
+			"skip": "Ignorer"
+		},
+		"culture": {
+			"project": "Les serres sont des écosystèmes connectés dans lesquels sont connectés des Objets IoT et où ils peuvent communiquer entre eux. On peux voir les différentes informations de la serre en temps réelle."
+		},
+		"iot": {
+			"project": "Les projets IoT sont des écosystèmes connectés dans lesquels sont connectés des Objets IoT et où ils peuvent communiquer entre eux.",
+			"object": "Les objets IoT sont les objets connectés qui sont enregistrés sur ALIVEcode. Ils possèdent tous un identifiant unique et vous pouvez les connecter à un projet IoT pour les utiliser."
+		},
+		"datasets": {
+			"what": "Les ensembles de données, aussi appelés \"Datasets\" sont utilisés pour enregistrer de larges quantités de données structurées. Il est possible de spécifier la structure des données ainsi que d'ajouter des restrictions sur les données. Les ensembles de données que vous créez peuvent être alimentés par vos objets IoT dans un projet IoT ou alors manuellement."
+		},
+		"activity": {
+			"TH": "Activité permettant l'affichage de matière théorique sous format d'un fichier texte stylisé.",
+			"PF": "Activité de visionnement d'un document pdf.",
+			"VI": "Activité de visionnement d'une vidéo YouTube ou d'une vidéo de votre ordinateur.",
+			"CH": "Activité défi permettant de mettre en pratique la matière apprise dans le module.",
+			"AS": "Activité permettant à un étudiant de télécharger un certain fichier nécessaire à son apprentissage.",
+			"WO": "Activité de visionnement d'un document Word.",
+			"QZ": "Questionnaire permettant de tester les connaissances de l'étudiant sur la matière apprise dans le module."
+		},
+		"resource": {
+			"help": "Une ressource est une pièce de contenu qui sert dans les modules, par exemple, un PowerPoint, une vidéo, un document Word, etc. Vos ressources se font automatiquement créées lors de la création d'un de vos modules afin de permettre un recyclage de contenu facile à travers ceux-ci.",
+			"TH": "Un document text stylisé qui peut être réutilisé.",
+			"VI": "Une vidéo YouTube ou une vidéo de votre ordinateur qui peut être réutilisée.",
+			"CH": "Un défi qui peut être réutilisé dans un module.",
+			"FI": "Tout type de fichier qui peut être réutilisé."
+		},
+		"dashboard": {
+			"title": "Les bases d'ALIVEcode",
+			"welcome": "Bienvenue sur ALIVEcode!\n\nVous êtes présentement dans votre tableau de bord. C'est à partir de celui-ci que vous aurez accès à tout votre contenu sur le site. Vous aurez accès à vos modules suivis, vos cours, vos défis créés, et bien plus! Appuyez sur 'Suivant' pour continuer.",
+			"end": "C'est donc la fin du tutoriel sur les bases de la plateforme. Si vous souhaitez regarder à nouveau le tutoriel, il suffit de cliquer sur l'icône '?' en haut à droite de votre écran en étant sur cette page. Cela va de même pour tous les tutoriels que vous croiserez.\n\nBienvenue sur ALIVEcode, il est maintenant temps d'apprendre!",
+			"tabs": {
+				"recents": "Vous êtes maitenant dans l'onglet 'Modules Récents'. C'est à partir de cet onglet que vous aurez accès à vos modules précédemment ouverts. De plus, c'est à partir de celui-ci que vous avez des modules mis en vedette sélectionnés par ALIVEcode qui valent le détour. Programmation, intelligence artificielle (IA), internet des objets (IoT), électronique; ALIVEcode offre tout ce dont vous avez besoin pour apprendre ces domaines.",
+				"challenges": "Vous êtes maintenant dans l'onglet 'Défis'. À partir de cet onglet, vous aurez accès à vos défis de programmation, d'IA et d'IoT. De plus, c'est à partir d'ici que vous crérez vos propres défis et explorerez ceux de la communauté.",
+				"resources": "Puisque vous êtes enseignant, vous avez accès à l'onglet 'Mes Ressources'. À partir de cet onglet, vous aurez accès à toutes les ressources utilisées dans vos modules que vous avez montés. $t(help.resource.help)",
+				"iot": "Vous êtes maintenant dans l'onglet 'Tableau de bord IoT'. Si vous apprenez l'IoT, vous utiliserez cet onglet que ce soit pour la connexion d'un objet au site, la création d'un écosystème connecté ou la découverte de projets réalisés à l'aide des outils d'ALIVEcode. De plus, à partir de cet onglet, vous aurez accès à des modules sur l'IoT 'de zéro à héros'.",
+				"ai": "Vous êtes maintenant dans l'onglet 'Tableau de bord IA'. Si vous apprenez l'IA, vous utiliserez cet onglet afin de découvrir des projets réalisés à l'aide des outils d'ALIVEcode, ainsi que des modules sur l'IA 'de zéro à héros'.",
+				"courses": "Voici la section 'Cours'. À partir de cette section, vous aurez accès aux cours de vos professeurs que vous avez rejoint. Dans ces cours, vous aurez accès a du contenu mis de l'avant par vos professeurs afin de poursuivre vos apprentissages.",
+				"courses_prof": "Voici la section 'Cours'. À partir de cette section, vous aurez accès à vos cours créés. Dans un cours, vous pouvez regrouper vos étudiants afin de suivre leur progression à travers les modules que vous décidez de leur afficher.",
+				"modules": "Voici la section 'Modules'. À partir de cette section, vous pourrez créer un tout nouveau module afin d'enseigner à vos étudiants, ou alors à tout les utilisateurs de la plateforme de nouveaux concepts. Avec un éditeur de modules, vous pourrez personnaliser des modules adaptés à vos besoins."
+			},
+			"views": {
+				"recents": "Cette vue vous permet de reprendre rapidement là où vous vous êtes arrêté en classant vos modules du plus récemment ouvert au moins récemment ouvert.",
+				"studio": "Cette vue vous permet de facilement rechercher et de gérer vos cours et vos modules.",
+				"challenges": "Cette vue représente votre bibliothèque de défis. En plus d'y retrouvez tous les défis que vous avez, c'est ici que vous pourrez en créer de nouveaux, éditer ceux qui existent déjà et supprimer ceux que vous ne voulez plus.",
+				"iot": "Cette vue est l'endroit où tous vos objets IoT et tous vos projets IoT sont centralisés. $t(help.iot.project)",
+				"ai": "Cette vue est l'endroit où tous les modules d'IA ainsi que projet d'IA sont mis en vedette.",
+				"datasets": "Cette vue est l'endroit où tous tes ensembles de données peuvent être consultés et gérés. $t(help.datasets.what)"
+			}
+		},
+		"module_layout": {
+			"welcome": "Bienvenue dans votre éditeur de modules. Ici vous pourrez modifier votre module à votre guise. C'est-à-dire, créer des sections ou activités, modifier leur contenu, les supprimer, les cacher, les déplacer, etc.",
+			"edit_title": "Vous pouvez modifier le titre de votre module en cliquant sur celui-ci.",
+			"see_student_view": "Vous pouvez basculer en vue élève à tout moment afin de visualiser le module comme un élève le verrait en cliquant sur ce bouton.",
+			"see_professor_view": "Vous pouvez retourner en vue élève en cliquant sur ce bouton."
+		},
+		"module": {
+			"header": {
+				"help": "Un texte en entête est unique à chaque activité. Il permet d'introduire le contenu de l'activité que l'étudiant aura a réaliser."
+			},
+			"footer": {
+				"help": "Un texte en bas de page est unique à chaque activité. Il permet d'introduire la prochaine activité que l'étudiant aura a réaliser, ou alors de conclure l'activité."
+			},
+			"title": "Apprendre à naviguer un module",
+			"start": "Bienvenue dans votre premier module!\n\nDans ce tutoriel, vous allez rapidement apprendre à naviguer au travers le contenu d'un module.",
+			"navigating": "Un module est séparé en sections et sous-sections. Dans chacune de celles-ci se trouvent des activités que vous aurez à compléter. Complétez-les tous les unes à la suite de l'autre afin de réussir le module. Vous pouvez à tout moment accéder à celles-ci depuis ce menu de navigation.",
+			"minimize": "Si vous souhaitez voir les activités en pleine largeur, vous pouvez cliquer sur ce bouton afin de réduire la barre de navigation.",
+			"maximize": "Si vous souhaitez revoir la barre de navigation au complet, vous pouvez cliquer à nouveau sur le bouton.",
+			"professor_view": "Puisque vous êtes le créateur de ce module, vous pouvez aller modifier votre module en cliquant sur ce bouton.",
+			"end": "C'est donc la fin du tutoriel sur la naviguation d'un module. Si vous souhaitez regarder à nouveau le tutoriel, il suffit de cliquer sur l'icône '?' en haut à droite de votre écran en étant sur cette page.\n\nBon apprentissage!"
+		},
+		"resource_menu": {
+			"resources": "Toutes vos ressources créées ou acquéries en tant que professeur seront affichées et modifiables ici",
+			"create_resource": "Si vous souhaitez créer une ressource, vous pouvez le faire depuis ce menu en cliquant sur le bouton \"$t(resources.form.create)\"",
+			"acquire_resource": "Vous pouvez aussi vous procurer des ressources préfaites en cliquant sur le bouton \"$t(resources.menu.bundles)\"",
+			"filters": "Vous pouvez trier vos ressources selon le type de celles-ci...",
+			"sections": "...ainsi que selon leur catégorie...",
+			"search": "...et leur nom",
+			"help": "Les ressources sont le contenu utilisé dans une activité. Elles sont du contenu partagé qui peuvent être réutilisées partout sur tout le site dans plusieurs modules. Si la ressource change, le changement affectera tous les modules l'utilisant."
+		},
+		"module_template": {
+			"help": "En utilisant un $t(msg.moduleTemplate) vous pourrez avoir une fondation sur laquelle vous fier afin de construire votre propre module. Il n'est pas obligatoire d'en utiliser pour créer un module."
+		}
+	},
+	"quiz": {
+		"empty": "Ce quiz est présentement vide. Vous pouvez y ajouter des questions en cliquant sur le bouton \"$t(quiz.sidebar.button.addQuestion)\" à gauche.",
+		"create_success": "Le quiz a été créé avec succès!",
+		"sidebar": {
+			"button": {
+				"addQuestion": "Ajouter une question",
+				"deleteQuestion": "Supprimer la question",
+				"submit": "Soumettre le quiz"
+			}
+		},
+		"menu": {
+			"title": "Choisissez le type de question",
+			"EQ": {
+				"id": "QV",
+				"title": "Question vide",
+				"help": "Il n'y a pas de question de type vide. Vous pouvez ajouter une question en cliquant sur le bouton \"t(quiz.sidebar.button.addQuestion)\" à gauche."
+			},
+			"MCQ": {
+				"id": "QCM",
+				"title": "Choix multiples",
+				"help": "Les questions à choix multiples permettent à l'étudiant de choisir une ou plusieurs réponses parmi une liste de choix."
+			},
+			"TFQ": {
+				"id": "QVF",
+				"title": "Vrai ou faux",
+				"help": "Les questions à choix vrai ou faux permettent à l'étudiant de choisir entre deux réponses possibles."
+			},
+			"FITBQ": {
+				"id": "QRLT",
+				"title": "Mots troués",
+				"help": "Les questions à mots troués permettent à l'étudiant de remplir des trous dans un texte avec des mots ou des phrases."
+			}
+		},
+		"questionForm": {
+			"title": "Entrez les informations de la question",
+			"weight": {
+				"label": "Pondération"
+			},
+			"button": {
+				"addQuestion": "Ajouter la question",
+				"cancel": "Annuler"
+			}
+		},
+		"questionAnswerForm": {
+			"title": "Entrez les informations de la réponse",
+			"validate": "Est-ce la bonne réponse?",
+			"button": {
+				"addQuestion": "Ajouter la réponse",
+				"cancel": "Annuler"
+			}
+		},
+		"questions": {
+			"empty": "Aucune question",
+			"title": "Q",
+			"save": "Sauvegarder la question",
+			"ponderation": {
+				"title": "pts"
+			},
+			"MCQ": {
+				"name": "Commencez à saisir votre question",
+				"content": "Commencez à saisir votre question",
+				"ponderation": "Ajouter la pondération de la question",
+				"answerInput": "Commencez à saisir votre réponse",
+				"button": {
+					"addMoreAnswers": "Ajouter une réponse",
+					"deleteAnswer": "Supprimer la dernière réponse",
+					"hasReachedMaxAnswers": "Vous avez atteint le nombre maximal de réponses. Supprimez une réponse pour en ajouter une nouvelle."
+				},
+				"explanationInput": "Ajoutez l'explication à votre question..."
+			},
+			"TFQ": {
+				"questionInput": "Commencez à saisir votre question...",
+				"answerInput": "Ajouter la réponse",
+				"answers": {
+					"true": "Vrai",
+					"false": "Faux"
+				},
+				"explanation": "Ajoutez l'explication à votre solution"
+			},
+			"FITBQ": {
+				"wordInput": "Ajouter un mot",
+				"sentenceInput": "Ajouter la phrase à compléter",
+				"dropdownPlaceholder": "Choisissez la bonne réponse",
+				"button": {
+					"addMoreAnswers": "Ajouter une nouvelle phrase"
+				}
+			}
+		},
+		"modal": {
+			"title": "Supprimer la question",
+			"description": "Êtes-vous sûr de vouloir supprimer cette question ? Cette action est irréversible.",
+			"button": {
+				"cancel": "Annuler",
+				"confirm": "Confirmer la suppression"
+			}
+		}
+	},
+	"graphLabel": {
+		"StartDate": "Date de début",
+		"EndDate": "Date de fin",
+		"PreviousWeek": "Semaine passé",
+		"NextWeek": "Semaine prochaine"
+	}
+}

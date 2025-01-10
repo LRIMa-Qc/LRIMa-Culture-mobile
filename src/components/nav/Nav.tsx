@@ -9,10 +9,13 @@ import { TbArrowNarrowRight as SerreIcon } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { useIoTProject } from "@alivecode/core/iot";
 import { useSerreStore } from "../../stores/serreStore";
+import { useTranslation } from "react-i18next";
 
 export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elements: NavItemType[] }) {
     const { logout } = useUserApi();
     const { user } = useContext(UserContext);
+
+    const {t, i18n} = useTranslation();
 
     function handleButtonClick() {
         logout();
@@ -36,16 +39,25 @@ export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elem
                 {/* TODO: Change for Serre Name */}
                 <div className="">
                     <Link to="/serres" className="flex items-center justify-between p-5 bg-emerald-300 rounded-t-xl">
-                        <p>Serre</p>
+                        <p>{t('msg.change_serre')}</p>
                         <SerreIcon/>
                     </Link>
                     <div className="flex items-center justify-between p-5 bg-emerald-200 rounded-b-xl line-clamp-1">
                         <p>{project ? project.name : serreId}</p>
                     </div>
                 </div>
+                <div className="">
+                    <Link to="/languages" className="flex items-center justify-between p-5 bg-emerald-300 rounded-t-xl">
+                        <p>{t('msg.change_langauge')}</p>
+                        <SerreIcon/>
+                    </Link>
+                    <div className="flex items-center justify-between p-5 bg-emerald-200 rounded-b-xl line-clamp-1">
+                        <p>{i18n.language}</p>
+                    </div>
+                </div>
                 {user &&
                     <button onClick={handleButtonClick} className="bg-emerald-100 text-emerald-500 rounded-xl p-3 hover:underline w-full">
-                        Se déconnecter
+                        {t('msg.auth.signout')}
                     </button>
                 }
             </div>
