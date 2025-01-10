@@ -1,17 +1,15 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { AppBar } from "../../components/appbar/AppBar";
-import { UserContext } from "@alivecode/core";
 
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { Widget } from "../../components/dashboard/widget/Widget";
 import { useTranslation } from "react-i18next";
 
-import { Annotorious, ImageAnnotator } from '@annotorious/react';
+import { Annotorious } from '@annotorious/react';
 import '@annotorious/react/annotorious-react.css';
 import { DetectionImage } from "./DetectionImage";
 
 export default function Detection() {
-    const { user } = useContext(UserContext);
     const {t} = useTranslation();
 
     const [imageSrc, setImageSrc] = useState("");

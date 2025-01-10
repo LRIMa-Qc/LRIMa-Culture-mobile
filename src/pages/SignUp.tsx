@@ -45,7 +45,7 @@ export default function SignUp() {
                 toast.success(t('msg.auth.signup_success'))
                 navigate("/");
             },
-            (err) => {
+            () => {
                 // toast.error(err.error.message);
                 resetForm();
             }

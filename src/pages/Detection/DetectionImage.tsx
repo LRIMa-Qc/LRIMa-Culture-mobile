@@ -26,7 +26,7 @@ export function DetectionImage({src}: IDetectionImage) {
                 <img className="rounded-xl ring-1 ring-zinc-400" src={src} alt="hmmm, not showing..."/>
             </ImageAnnotator>
             <ImageAnnotationPopup
-                popup={(props: PopupProps) => (
+                popup={(_: PopupProps) => (
                     <div className="grid rounded-xl overflow-hidden">
                         <p className="p-3 text-white bg-emerald-400">
                             Indiquez la bonne maladie

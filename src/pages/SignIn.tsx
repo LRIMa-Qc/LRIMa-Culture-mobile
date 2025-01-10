@@ -38,7 +38,7 @@ export default function SignIn() {
                 toast.success(t('msg.auth.signin_success'))
                 navigate("/");
             },
-            (err) => {
+            () => {
                 setError(true);
                 toast.error(t('error.signin'));
                 // toast.error(err.error.message);
