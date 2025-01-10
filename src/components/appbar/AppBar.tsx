@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { Nav } from "../nav/Nav";
 
-import { TbAlignLeft as MenuIcon } from "react-icons/tb";
+import { TbAlignLeft as MenuIconLtr } from "react-icons/tb";
+import { TbAlignRight as MenuIconRtl } from "react-icons/tb";
 import { UserContext } from "@alivecode/core";
 
 import { TbHome as HomeIcon } from "react-icons/tb";
@@ -27,7 +28,7 @@ export function AppBar({ label }: { label: string }) {
 
     const AUTH_NAV_ELEMENTS = [
         {
-            label: t('iot.project.summary.name'),
+            label: t('iot.object.overview.name'),
             href: "/overview",
             Icon: HomeIcon
         },
@@ -59,12 +60,13 @@ export function AppBar({ label }: { label: string }) {
     ] satisfies NavItemType[]
 
     return (
-        <header className="p-5">
-            <div className={`${isOpen ? 'translate-x-0' : '-translate-x-full'} absolute w-full h-full top-0 left-0 transition-transform`}>
+        <header className="p-5 relative">
+            <div className={`${isOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full'} fixed w-full h-full top-0 ltr:left-0 rtl:right-0 transition-transform z-50`}>
                 <Nav elements={user ? AUTH_NAV_ELEMENTS : NON_AUTH_NAV_ELEMENTS} onCloseClick={toggleMenu} />
             </div>
             <div className="flex gap-2 font-medium text-stone-900">
-                <MenuIcon onClick={toggleMenu} className="text-2xl" />
+                <MenuIconLtr onClick={toggleMenu} className="text-2xl rtl:hidden" />    
+                <MenuIconRtl onClick={toggleMenu} className="text-2xl ltr:hidden" />
                 <p>{label}</p>
             </div>
         </header>

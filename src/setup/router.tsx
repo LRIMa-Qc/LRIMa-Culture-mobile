@@ -13,7 +13,7 @@ import Languages from '../pages/Languages';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Overview = React.lazy(() => import('../pages/Overview'));
-const Detection = React.lazy(() => import('../pages/Detection'));
+const Detection = React.lazy(() => import('../pages/Detection/Detection'));
 
 const NotFound = React.lazy(() => import('../pages/NotFound'));
 

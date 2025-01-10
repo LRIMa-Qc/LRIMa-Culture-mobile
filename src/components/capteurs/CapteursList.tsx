@@ -3,6 +3,7 @@ import { IndicatorType } from "../indicator/Indicator";
 import { CultureCapteur } from "../../pages/Capteurs/Capteurs";
 import { Link } from "react-router-dom";
 import { CULTURE_TYPE, IconFromCateogry } from "../capteur/IconFromCategory";
+import {TbArrowNarrowRight as RightArrow} from 'react-icons/tb';
 
 export interface CapteursType {
     capteurs: CultureCapteur[]
@@ -19,7 +20,7 @@ export default function CapteursList({ capteurs }: CapteursType) {
                     color: 'sky',
                     Icon: IconFromCateogry(capteur.category as CULTURE_TYPE),
                     // TODO: State
-                    children: <Link to={capteur.no}>Voir</Link>,
+                    children: <Link to={capteur.no}><RightArrow className="ltr:scale-100 rtl:-scale-100"/></Link>,
                     label: capteur.name
                 } satisfies IndicatorType
 

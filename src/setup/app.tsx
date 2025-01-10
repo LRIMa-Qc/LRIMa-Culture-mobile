@@ -34,6 +34,32 @@ const Root = createALIVEcoreApp({
     decorators: [
         i18nextDecorator(
             i18next.use(HttpAPI).use(LanguageDetector).use(initReactI18next),
+            {
+                i18nextInitConfig: {
+                    supportedLngs: ['fr', 'en', 'ar'],
+                    fallbackLng: 'fr',
+                    detection: {
+                      order: [
+                        'querystring',
+                        'path',
+                        'cookie',
+                        // 'localStorage',
+                        // 'sessionStorage',
+                        // 'navigator',
+                        // 'htmlTag',
+                        // 'subdomain',
+                      ],
+                      caches: ['cookie'],
+                    },
+                    interpolation: {
+                      escapeValue: false,
+                    },
+                    backend: {
+                      loadPath: `/assets/locales/{{lng}}/{{ns}}.json`,
+                    },
+                    defaultNS: 'translation',
+                  }
+            }
         ),
         reactToastDecorator(ToastContainer),
         appDecorator,

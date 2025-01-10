@@ -78,7 +78,7 @@ export default function Overview() {
 
     return (
         <div className="space-y-5">
-            <AppBar label={t('iot.project.summary.name')} />
+            <AppBar label={t('iot.object.overview.name')} />
             <div className="mx-5 space-y-10">
                 <Widget label={t('module.settings.stats.title')}>
                     <ChangeIndicatorList

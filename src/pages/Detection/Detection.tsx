@@ -1,10 +1,14 @@
 import { useContext, useState } from "react";
-import { AppBar } from "../components/appbar/AppBar";
+import { AppBar } from "../../components/appbar/AppBar";
 import { UserContext } from "@alivecode/core";
 
 import { Camera, CameraResultType } from '@capacitor/camera';
-import { Widget } from "../components/dashboard/widget/Widget";
+import { Widget } from "../../components/dashboard/widget/Widget";
 import { useTranslation } from "react-i18next";
+
+import { Annotorious, ImageAnnotator } from '@annotorious/react';
+import '@annotorious/react/annotorious-react.css';
+import { DetectionImage } from "./DetectionImage";
 
 export default function Detection() {
     const { user } = useContext(UserContext);
@@ -46,7 +50,11 @@ export default function Detection() {
                 <Widget label={t('iot.project.camera.name')}>
                     <div className="w-full flex justify-center flex-col gap-5 py-2">
                         {imageSrc ? 
-                        <img className="rounded-xl ring-1 ring-zinc-400" src={imageSrc} alt="hmmm, not showing..."/> :
+                        (
+                        <Annotorious>
+                            <DetectionImage src={imageSrc}/>
+                          </Annotorious>
+                        ) :
                         <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>    
                         } 
                         <button

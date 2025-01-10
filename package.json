@@ -14,6 +14,7 @@
   "dependencies": {
     "@alivecode/core": "^1.0.12",
     "@alivecode/ui": "^1.0.2",
+    "@annotorious/react": "^3.0.20",
     "@capacitor/android": "^6.2.0",
     "@capacitor/camera": "^6.1.2",
     "@capacitor/cli": "^6.2.0",
