@@ -3,7 +3,7 @@ import { ChangeIndicatorList } from "../components/indicator-list/ChangeInidicat
 import { Widget } from "../components/dashboard/widget/Widget";
 import { LogsList } from "../components/loggings/LogsList";
 import { CultureCapteur } from "./Capteurs/Capteurs";
-import { useIoTProject } from "@alivecode/core/iot";
+import { IoTComponent, useIoTProject } from "@alivecode/core/iot";
 import { CAPTEUR_BATTERY_VOLTAGE, CapteurInfo } from "./Capteurs/Capteur";
 
 
@@ -13,15 +13,23 @@ import { TbBulb as Luminosity } from "react-icons/tb";
 import { TbBolt as Battery } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
 
+import { useSerreStore } from "../stores/serreStore";
+import { useProject } from "../setup/AppDecorator/getProject";
+
 export default function Overview() {
-    const { project } = useIoTProject();
+    // const { project } = useIoTProject();
+
+    const {serreId} = useSerreStore();
+    const {project} = useProject(serreId);
+
+    console.log(project);
 
     const {t} = useTranslation();
 
-    const capteurs = (project.layout as unknown as {capteurs: CultureCapteur[]}).capteurs;
-    const capteursInfo = capteurs.map(capteur => project.document[capteur.no]);
+    const capteurs = (project?.layout as unknown as {capteurs: CultureCapteur[]})?.capteurs;
+    const capteursInfo = capteurs?.map(capteur => project?.document[capteur.no]);
 
-    const average = (capteursInfo.length !== 0 ? capteursInfo.reduce((prev: any, curr: any) => ({
+    const average = (capteursInfo?.length !== 0 ? capteursInfo?.reduce((prev: any, curr: any) => ({
         temperature: prev.temperature || 0 + curr.temperature / capteursInfo.length,
         batterie: prev.batterie || 0 + curr.batterie / capteursInfo.length,
         gnd_humidity: prev.gnd_humidity || 0 + curr.gnd_humidity / capteursInfo.length,

@@ -41,7 +41,7 @@ const router = {
       detection: {
         path: '/detection',
         exact: true,
-        component: <IoTProjectDecorator><Detection /></IoTProjectDecorator>,
+        component: <Detection />,
       },
       serres: {
         path: 'serres',
@@ -51,17 +51,17 @@ const router = {
       capteurs: {
         path: '/capteurs',
         exact: true,
-        component: <IoTProjectDecorator><Capteurs /></IoTProjectDecorator>,
+        component: <Capteurs />,
       },
       capteur: {
         path: '/capteurs/:capteurId',
         exact: true,
-        component: <IoTProjectDecorator><Capteur /></IoTProjectDecorator>,
+        component: <Capteur />,
       },
       overview: {
         path: '/overview',
         exact: true,
-        component: <IoTProjectDecorator><Overview /></IoTProjectDecorator>,
+        component: <Overview />,
       },
     },
     non_auth: {
@@ -85,10 +85,10 @@ const router = {
     },
   },
   redirects: {
-    authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
-    nonAuthRouteWhenAuth: <Navigate to="/serres" replace/>,
-    // authRouteWhenNonAuth: <></>,
-    // nonAuthRouteWhenAuth: <></>
+    // authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
+    // nonAuthRouteWhenAuth: <Navigate to="/serres" replace/>,
+    authRouteWhenNonAuth: <></>,
+    nonAuthRouteWhenAuth: <></>
   },
 } satisfies RouterInterface;
 

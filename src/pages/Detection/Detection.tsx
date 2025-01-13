@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AppBar } from "../../components/appbar/AppBar";
 
 import { Camera, CameraResultType } from '@capacitor/camera';

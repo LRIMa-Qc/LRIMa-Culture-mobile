@@ -1,8 +1,8 @@
 import { ChangeIndicatorList } from "../../components/indicator-list/ChangeInidicatorList";
 import { Widget } from "../../components/dashboard/widget/Widget";
 import { AppBar } from "../../components/appbar/AppBar";
-import { Navigate, useParams } from "react-router-dom";
-import { useIoTProject } from "@alivecode/core/iot";
+import { useNavigate, useParams } from "react-router-dom";
+import { IoTComponent, useIoTProject } from "@alivecode/core/iot";
 
 import { TbTemperature as Temperature } from "react-icons/tb";
 import { TbDroplet as Humidity } from "react-icons/tb";
@@ -17,6 +17,7 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import _ from "lodash";
 import { LineSeriesType } from "@mui/x-charts";
 import { useTranslation } from "react-i18next";
+import { useSerreStore } from "../../stores/serreStore";
 
 const NUMBER_OF_ELEMENTS = 15;
 
@@ -36,29 +37,39 @@ export default function Capteur() {
     const {t} = useTranslation();
 
     const {capteurId} = useParams();
+    const {serreId} = useSerreStore();
 
-    const {project} = useIoTProject();
+    const navigate = useNavigate();
 
-    const capteurInfo = project.document[capteurId!];
-
-    if (!capteurInfo) {
-        return <Navigate to="/404" replace/>
-    }
-
-    const capteur = (project.layout as unknown as {capteurs: CultureCapteur[]}).capteurs.find(cap => cap.no === capteurId);
-
-    const {batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature} = capteurInfo as unknown as CapteurInfo;
 
     // TODO: Use AliveCore Abstraction.
     const {axios} = useContext(ApiContext);
 
     const [series, setSeries] = useState<LineSeriesType[]>([]);
+    const [capteurInfo, setCapteurInfo] = useState<CapteurInfo>()
+    const [capteur, setCapteur] = useState<CultureCapteur>();
 
     useEffect(() => {
-        axios.get(`/iot/projects/${project.id}/datasets`)
+        axios.get(
+            `iot/projects/${serreId}`,
+        ).then(
+            (data) => {
+                const project = data.data;
+                const capteur = (project.layout as unknown as {capteurs: CultureCapteur[]}).capteurs.find(cap => cap.no === capteurId);
+                const capteurInfo = project.document[capteurId!];
+                setCapteurInfo(capteurInfo);
+                setCapteur(capteur);
+
+                axios.get(`/iot/projects/${serreId}/datasets`)
             .then(({data}) => {
+                console.log("data", data);
+
                 const capteurs = data as unknown as any[];
                 const c = capteurs.find(c => c.noCapteur === capteurId);
+
+                if (!c) {
+                    return navigate("/404");
+                }
 
                 axios.get(`datasets/${c.id}/rows/all`).then(data => {
                     const rows = data.data as any[];
@@ -101,7 +112,15 @@ export default function Capteur() {
                     setSeries(series);
                 })
             })
-    }, [])
+            }
+        )
+    }, [capteurId, serreId, axios, t, navigate])
+
+    if (!capteurInfo) {
+        return "Wait..."
+    }
+
+    const {batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature} = capteurInfo;
 
     return (
         <div className="space-y-5">

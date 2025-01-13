@@ -11,17 +11,16 @@ export interface CapteursType {
 
 export default function CapteursList({ capteurs }: CapteursType) {
 
+    console.log(capteurs);
+
     return (
         <IndicatorList
             indicators={capteurs.map(capteur => {
-
                 return {
-                    // TODO: State
                     color: 'sky',
                     Icon: IconFromCateogry(capteur.category as CULTURE_TYPE),
-                    // TODO: State
                     children: <Link to={capteur.no}><RightArrow className="ltr:scale-100 rtl:-scale-100"/></Link>,
-                    label: capteur.name
+                    label: capteur.name || capteur.no
                 } satisfies IndicatorType
 
             })}
