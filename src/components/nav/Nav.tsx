@@ -25,7 +25,7 @@ export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elem
     const { serreId } = useSerreStore();
 
     return (
-        <nav className={"h-screen fixed top-0 ltr:left-0 rtl:right-0 w-full max-w-xs border ltr:border-l-0 rtl:border-r-0 ltr:rounded-r-xl rtl:rounded-l-xl border-slate-200 p-5 bg-white/80 backdrop-blur flex flex-col justify-between z-50"}>
+        <nav className={"h-svh fixed top-0 ltr:left-0 rtl:right-0 w-full max-w-xs border ltr:border-l-0 rtl:border-r-0 ltr:rounded-r-xl rtl:rounded-l-xl border-slate-200 p-5 bg-white/80 backdrop-blur flex flex-col justify-between z-50"}>
             <div className="space-y-10 z-10">
                 <div className="flex items-center justify-between text-xl text-slate-900">
                     <AliveCultureLogo />
