@@ -2,7 +2,6 @@ import { ChangeIndicatorList } from "../../components/indicator-list/ChangeInidi
 import { Widget } from "../../components/dashboard/widget/Widget";
 import { AppBar } from "../../components/appbar/AppBar";
 import { useNavigate, useParams } from "react-router-dom";
-import { IoTComponent, useIoTProject } from "@alivecode/core/iot";
 
 import { TbTemperature as Temperature } from "react-icons/tb";
 import { TbDroplet as Humidity } from "react-icons/tb";
@@ -20,7 +19,6 @@ import { useTranslation } from "react-i18next";
 import { useSerreStore } from "../../stores/serreStore";
 
 const NUMBER_OF_ELEMENTS = 15;
-
 
 export const CAPTEUR_BATTERY_VOLTAGE = 3.3;
 
@@ -124,7 +122,7 @@ export default function Capteur() {
 
     return (
         <div className="space-y-5">
-            <AppBar label={`${t('iot.project.interface.name')}: ` + capteur!.name || capteur!.no} />
+            <AppBar label={`${t('iot.project.interface.name')}: ${capteur!.name || capteur!.no}`} />
             <div className="mx-5 space-y-10">
                 <Widget label={t('module.settings.stats.title')}>
                 <ChangeIndicatorList

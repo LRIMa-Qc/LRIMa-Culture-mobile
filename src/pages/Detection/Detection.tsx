@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { AppBar } from "../../components/appbar/AppBar";
 
 import { Camera, CameraResultType } from '@capacitor/camera';
@@ -26,7 +26,7 @@ export default function Detection() {
         // You can access the original file using image.path, which can be
         // passed to the Filesystem API to read the raw data of the image,
         // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-        var imageUrl = "data:image/png;base64," + image.base64String;
+        const imageUrl = "data:image/png;base64," + image.base64String;
 
         fetch(imageUrl)
             .then(res => res.blob())

@@ -3,7 +3,6 @@ import { ChangeIndicatorList } from "../components/indicator-list/ChangeInidicat
 import { Widget } from "../components/dashboard/widget/Widget";
 import { LogsList } from "../components/loggings/LogsList";
 import { CultureCapteur } from "./Capteurs/Capteurs";
-import { IoTComponent, useIoTProject } from "@alivecode/core/iot";
 import { CAPTEUR_BATTERY_VOLTAGE, CapteurInfo } from "./Capteurs/Capteur";
 
 

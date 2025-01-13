@@ -11,7 +11,7 @@ export interface ISignPage {
 export function SignPage({ form, decoration, footer, instruction }: ISignPage) {
     const {t} = useTranslation();
     return (
-        <div className="flex flex-col justify-between h-screen">
+        <div className="flex flex-col justify-between h-svh">
             <div className="space-y-8">
                 <div className="w-full flex items-center justify-center">
                     {decoration}

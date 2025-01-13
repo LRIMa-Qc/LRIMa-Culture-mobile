@@ -5,7 +5,6 @@ import SignUp from '../pages/SignUp';
 // import { Navigate } from 'react-router-dom';
 import Capteurs from '../pages/Capteurs/Capteurs';
 import Serres from '../pages/Serres';
-import { IoTProjectDecorator } from './AppDecorator/IoTProjectDecorator';
 import Capteur from '../pages/Capteurs/Capteur';
 import { Navigate } from 'react-router-dom';
 import Languages from '../pages/Languages';
