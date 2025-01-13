@@ -47,7 +47,7 @@ export default function Serres() {
                             color: 'sky',
                             Icon,
                             children: (
-                                <button onClick={() => {serre.updateSerreId(project.id); navigate('/')}}>
+                                <button onClick={() => {serre.updateSerreId(project.id); navigate('/overview')}}>
                                     <RightArrow/>
                                 </button>
                             )

@@ -12,7 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@alivecode/core": "^1.0.12",
+    "@alivecode/core": "^1.0.13",
     "@alivecode/ui": "^1.0.2",
     "@annotorious/react": "^3.0.20",
     "@capacitor/android": "^6.2.0",

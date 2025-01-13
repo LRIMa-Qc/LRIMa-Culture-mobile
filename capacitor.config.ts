@@ -11,7 +11,7 @@ const config: CapacitorConfig = {
   },
   server: {
     cleartext: true,
-    hostname: "192.168.2.60",
+    hostname: "alivecode.ca",
     androidScheme: "https",
   }
 };

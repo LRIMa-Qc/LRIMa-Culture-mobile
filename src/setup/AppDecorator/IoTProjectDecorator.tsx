@@ -1,6 +1,7 @@
 import { IoTProject } from "@alivecode/core/iot"
 import { useSerreStore } from "../../stores/serreStore"
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
 
 export interface IoTProjectDecoratorProps {
     children: React.ReactNode
@@ -8,15 +9,14 @@ export interface IoTProjectDecoratorProps {
 
 export function IoTProjectDecorator({children}: IoTProjectDecoratorProps) {
     const {serreId} = useSerreStore();
-    const navigate = useNavigate();
     return (
-        <IoTProject
-            projectId={serreId}
-            onLoadError={() => {
-                navigate('/serres')
-            }}
-        >
-            {children}
-        </IoTProject>
+        <ErrorBoundary fallback={<div>Something went wrong</div>}>
+            <IoTProject
+                projectId={serreId}
+                onLoadError={<Navigate to="/serres"/>}
+            >
+                {children}
+            </IoTProject>
+        </ErrorBoundary>
     )
 }

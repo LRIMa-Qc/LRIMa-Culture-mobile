@@ -176,8 +176,8 @@
 	},
 	"msg": {
 		"adress": "عنوان",
-		"change_serre": "TODO: À FAIRE PLZ",
-		"change_langauge": "TODO: À FAIRE PLZ",
+		"change_serre": "تغيير البيت الزراعي",
+		"change_langauge": "تغيير اللغة",
 		"language": "لغة",
 		"save": "للحفاظ على",
 		"cancel": "يلغي",
@@ -290,8 +290,8 @@
 			"signin": "يتصل",
 			"signin_success": "اتصال ناجح",
 			"signup": "يسجل",
-			"signin_instruction": "TODO: PLZZZ",
-			"signup_instruction": "TODO: PLZZZ",
+			"signin_instruction": "الرجاء تسجيل الدخول إلى حسابك",
+			"signup_instruction": "الرجاء إنشاء حساب",
 			"signup_success": "لقد قمت بتسجيل الدخول بحسابك الجديد",
 			"signup_professor": "حساب المعلم",
 			"signup_student": "حساب الطالب",
@@ -1953,8 +1953,8 @@
 				"upload": "تحميل",
 				"delete": "حذف",
 				"download": "تنزيل",
-				"takePictureInstruction": "TODO: FAIRE PLZZ",
-				"takePicture": "TODO: FAIRE PLZZ"
+				"takePictureInstruction": "التقط صورة لبدء الكشف",
+				"takePicture": "التقاط صورة"
 			}
 		},
 		"object": {

@@ -86,7 +86,7 @@ const router = {
   },
   redirects: {
     authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
-    nonAuthRouteWhenAuth: <Navigate to="/overview" replace/>,
+    nonAuthRouteWhenAuth: <Navigate to="/serres" replace/>,
     // authRouteWhenNonAuth: <></>,
     // nonAuthRouteWhenAuth: <></>
   },
