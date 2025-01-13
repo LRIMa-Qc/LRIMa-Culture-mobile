@@ -124,7 +124,7 @@ export default function Capteur() {
 
     return (
         <div className="space-y-5">
-            <AppBar label={`${t('iot.project.interface.name')}: ` + capteur!.name} />
+            <AppBar label={`${t('iot.project.interface.name')}: ` + capteur!.name || capteur!.no} />
             <div className="mx-5 space-y-10">
                 <Widget label={t('module.settings.stats.title')}>
                 <ChangeIndicatorList

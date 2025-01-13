@@ -85,10 +85,10 @@ const router = {
     },
   },
   redirects: {
-    // authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
-    // nonAuthRouteWhenAuth: <Navigate to="/serres" replace/>,
-    authRouteWhenNonAuth: <></>,
-    nonAuthRouteWhenAuth: <></>
+    authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
+    nonAuthRouteWhenAuth: <Navigate to="/serres" replace/>,
+    // authRouteWhenNonAuth: <></>,
+    // nonAuthRouteWhenAuth: <></>
   },
 } satisfies RouterInterface;
 

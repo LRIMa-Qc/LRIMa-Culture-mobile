@@ -95,31 +95,31 @@ export default function Overview() {
                                 Icon: Temperature,
                                 color: 'sky',
                                 label: `${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`,
-                                value: temperature + '°C'
+                                value: Number(temperature).toFixed(2) + '°C'
                             },
                             {
                                 Icon: Temperature,
                                 color: 'sky',
                                 label: `${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`,
-                                value: gnd_temperature + '°C'
+                                value: Number(gnd_temperature).toFixed(2) + '°C'
                             },
                             {
                                 Icon: Luminosity,
                                 color: 'emerald',
                                 label: t('culture.sensor.luminosity'),
-                                value: luminosite + '%'
+                                value: Number(luminosite).toFixed(2) + '%'
                             },
                             {
                                 Icon: Humidity,
                                 color: 'indigo',
                                 label: `${t('culture.sensor.humidity')} (${t('culture.sensor.air')})`,
-                                value: humidity + '%',
+                                value: Number(humidity).toFixed(2) + '%',
                             },
                             {
                                 Icon: Humidity,
                                 color: 'indigo',
                                 label: `${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`,
-                                value: gnd_humidity + '%'
+                                value: Number(gnd_humidity).toFixed(2) + '%'
                             },
                             {
                                 Icon: Battery,
