@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AppBar } from "../../components/appbar/AppBar";
 
 import { Camera, CameraResultType } from '@capacitor/camera';
@@ -8,11 +8,14 @@ import { useTranslation } from "react-i18next";
 import { Annotorious } from '@annotorious/react';
 import '@annotorious/react/annotorious-react.css';
 import { DetectionImage } from "./DetectionImage";
+import { ApiContext } from "@alivecode/core/api";
 
 export default function Detection() {
     const {t} = useTranslation();
 
     const [imageSrc, setImageSrc] = useState("");
+
+    const {axios} = useContext(ApiContext);
 
     // TODO: Added required Info.plist elements for iPhones (see docs)
     const takePicture = async () => {
@@ -30,8 +33,18 @@ export default function Detection() {
 
         fetch(imageUrl)
             .then(res => res.blob())
-            .then(blob => {
+            .then(async (blob) => {
                 const file = new File([blob], "my-image");
+
+                const formData = new FormData();
+                formData.append('image', file);
+
+                const data = await axios.post(
+                    'diseases/prediction',
+                    formData
+                );
+
+                console.log(data);
                 // TODO: SEND FOR BACKEND PROCESSING
                 console.log(file.text);
             })
