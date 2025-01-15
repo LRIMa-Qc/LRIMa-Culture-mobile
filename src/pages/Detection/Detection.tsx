@@ -21,7 +21,7 @@ export default function Detection() {
     const takePicture = async () => {
         const image = await Camera.getPhoto({
           quality: 90,
-          allowEditing: true,
+          allowEditing: false,
           resultType: CameraResultType.Base64
         });
       
