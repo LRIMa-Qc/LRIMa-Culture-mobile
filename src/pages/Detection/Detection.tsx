@@ -14,6 +14,7 @@ export default function Detection() {
     const {t} = useTranslation();
 
     const [imageSrc, setImageSrc] = useState("");
+    const [pred, setPred] = useState(null);
 
     const {axios} = useContext(ApiContext);
 
@@ -30,23 +31,37 @@ export default function Detection() {
         // passed to the Filesystem API to read the raw data of the image,
         // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
         const imageUrl = "data:image/png;base64," + image.base64String;
+	console.log(imageUrl);
 
         fetch(imageUrl)
             .then(res => res.blob())
             .then(async (blob) => {
-                const file = new File([blob], "my-image");
+                const file = new File([blob], "my-image", { type: 'image/png' });
+
+		console.log(blob);
 
                 const formData = new FormData();
                 formData.append('image', file);
 
+		console.log("formData", formData.get("image"));
+
                 const data = await axios.post(
-                    'diseases/prediction',
-                    formData
+                    'diseases/prediction', 
+		    formData, {
+  			headers: {
+    				"Content-Type": "multipart/form-data",
+  			},
+  			data: formData, // Use the data option to specify the request body
+		    }	
+		    
                 );
 
-                console.log(data);
-                // TODO: SEND FOR BACKEND PROCESSING
-                console.log(file.text);
+		console.log("data:", data);
+
+		const pred = (await data.data)[0];
+
+		console.log("Setting Pred...")
+		setPred(pred);
             })
       
         // Can be set to the src of an image now
@@ -63,7 +78,7 @@ export default function Detection() {
                         {imageSrc ? 
                         (
                         <Annotorious>
-                            <DetectionImage src={imageSrc}/>
+                            <DetectionImage src={imageSrc} pred={pred} />
                           </Annotorious>
                         ) :
                         <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>    
@@ -77,8 +92,6 @@ export default function Detection() {
                     </div>
                 </Widget>
             </div>
-
-
         </div>
     );
 }

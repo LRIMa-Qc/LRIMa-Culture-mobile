@@ -3,9 +3,10 @@ import { useEffect } from "react";
 
 export interface IDetectionImage {
     src: string;
+    pred: any;
 }
 
-export function DetectionImage({src}: IDetectionImage) {
+export function DetectionImage({src, pred}: IDetectionImage) {
     const anno = useAnnotator();
 
     useEffect(() => {
@@ -15,7 +16,29 @@ export function DetectionImage({src}: IDetectionImage) {
             anno?.setAnnotations([annotation], true);
             // console.log('User created annotation: ', (annotation as Annotation).target.selector.geometry);
           });
-    }, [anno]); 
+	  const annot = {
+  id: '7fb76422-3a8c-4c87-bbad-7c8bb68399a0',
+  target: {
+    selector: {
+      type: 'RECTANGLE',
+      geometry: {
+        bounds: {
+            minX: pred?.box[0],
+            minY: pred?.box[1],
+            maxX: pred?.box[2],
+            maxY: pred?.box[3]
+        },
+        x: pred?.box[0],
+        y: pred?.box[1],
+        w: pred?.box[2],
+        h: pred?.box[3],
+      }
+    }
+  }
+}
+console.log(annot)
+	  anno?.setAnnotations([annot], true);
+    }, [pred]); 
 
     return (
         <div className="">
@@ -39,7 +62,10 @@ export function DetectionImage({src}: IDetectionImage) {
                     </div>
                 )}
             />
-        </div>
+	    {
+		    pred ? <div>Maladie: {pred?.label}</div> : <></>
 
+	    }
+	    	    </div>
     )
 }
