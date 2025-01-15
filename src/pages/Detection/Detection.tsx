@@ -12,6 +12,7 @@ import { ApiContext } from "@alivecode/core/api";
 import { useSerreStore } from "../../stores/serreStore";
 
 import Compressor from 'compressorjs';
+import { toast } from "react-toastify";
 
 export default function Detection() {
     const {t} = useTranslation();
@@ -146,12 +147,11 @@ export default function Detection() {
                             
             
                     console.log("data:", data);
-            
 
                     const pred = (await data.data)[0];
 
 		    if (!pred) {
-			    alert("no prediction")
+			    toast.success(t('iot.project.camera.noDetection'))
 			    return;
 		    }
             
@@ -204,7 +204,6 @@ export default function Detection() {
                     <div className="w-full flex justify-center flex-col gap-5 py-2">
                         {imageSrc ?
                         (
-				{
 					pred ? (
 	
                         <Annotorious>
@@ -213,7 +212,6 @@ export default function Detection() {
 
 				
 					) : <p>Loading</p>
-				}
                         ) :
                         <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>    
                         } 
