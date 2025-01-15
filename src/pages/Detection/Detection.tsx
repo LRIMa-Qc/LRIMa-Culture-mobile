@@ -122,13 +122,13 @@ export default function Detection() {
                 let file = new File([blob], "my-image", { type: 'image/png' });
 
                 new Compressor(file, {
-                    quality: 0.3,
+                    quality: 0.8,
                 
                     // The compression process is asynchronous,
                     // which means you have to access the `result` in the `success` hook function.
                     async success(result) {
                         file = result as File;
-                            console.log(blob);
+                            console.log(file);
 
                             const formData = new FormData();
                             formData.append('image', file);
@@ -147,7 +147,13 @@ export default function Detection() {
             
                     console.log("data:", data);
             
+
                     const pred = (await data.data)[0];
+
+		    if (!pred) {
+			    alert("no prediction")
+			    return;
+		    }
             
                     const imageFusion = await generateCombinedImageFile(
                         file,
@@ -185,7 +191,8 @@ export default function Detection() {
         })
       
         // Can be set to the src of an image now
-        setImageSrc(imageUrl || "");
+
+        		setImageSrc(imageUrl || "");
       };
 
 
@@ -195,11 +202,18 @@ export default function Detection() {
             <div className="mx-5">
                 <Widget label={t('iot.project.camera.name')}>
                     <div className="w-full flex justify-center flex-col gap-5 py-2">
-                        {imageSrc ? 
+                        {imageSrc ?
                         (
+				{
+					pred ? (
+	
                         <Annotorious>
                             <DetectionImage src={imageSrc} pred={pred} />
                           </Annotorious>
+
+				
+					) : <p>Loading</p>
+				}
                         ) :
                         <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>    
                         } 
