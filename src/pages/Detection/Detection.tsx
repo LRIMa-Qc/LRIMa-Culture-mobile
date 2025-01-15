@@ -11,6 +11,8 @@ import { DetectionImage } from "./DetectionImage";
 import { ApiContext } from "@alivecode/core/api";
 import { useSerreStore } from "../../stores/serreStore";
 
+import Compressor from 'compressorjs';
+
 export default function Detection() {
     const {t} = useTranslation();
 
@@ -117,27 +119,17 @@ export default function Detection() {
         fetch(imageUrl)
             .then(res => res.blob())
             .then(async (blob) => {
-                const file = new File([blob], "my-image", { type: 'image/png' });
+                let file = new File([blob], "my-image", { type: 'image/png' });
 
-		console.log(blob);
-
-                const formData = new FormData();
-                formData.append('image', file);
-
-		console.log("formData", formData.get("image"));
-
-                const data = await axios.post(
-                    'diseases/prediction', 
-		    formData, {
-  			headers: {
-    				"Content-Type": "multipart/form-data",
-  			},
-  			data: formData, // Use the data option to specify the request body
-		    }	
-		    
-                );
+                new Compressor(file, {
+                    quality: 0.6,
                 
+                    // The compression process is asynchronous,
+                    // which means you have to access the `result` in the `success` hook function.
+                    async success(result) {
 
+                        file = result as File;
+                        
 		console.log("data:", data);
 
 		const pred = (await data.data)[0];
@@ -169,10 +161,31 @@ export default function Detection() {
 
 		console.log("Setting Pred...")
 		setPred(pred);
-            })
       
         // Can be set to the src of an image now
         setImageSrc(imageUrl || "");
+                    },
+                    error(err) {
+                      console.log(err.message);
+                    },
+                  });
+
+		        console.log(blob);
+
+                const formData = new FormData();
+                formData.append('image', file);
+
+		        console.log("formData", formData.get("image"));
+
+                const data = await axios.post(
+                    'diseases/prediction', 
+                formData, {
+                headers: {
+                        "Content-Type": "multipart/form-data",
+                },
+  			    data: formData, // Use the data option to specify the request body
+		    });
+        });
       };
 
 
