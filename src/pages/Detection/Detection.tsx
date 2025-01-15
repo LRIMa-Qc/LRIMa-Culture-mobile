@@ -114,7 +114,7 @@ export default function Detection() {
         // passed to the Filesystem API to read the raw data of the image,
         // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
         const imageUrl = "data:image/png;base64," + image.base64String;
-	console.log(imageUrl);
+	    console.log(imageUrl);
 
         fetch(imageUrl)
             .then(res => res.blob())
@@ -122,70 +122,70 @@ export default function Detection() {
                 let file = new File([blob], "my-image", { type: 'image/png' });
 
                 new Compressor(file, {
-                    quality: 0.6,
+                    quality: 0.3,
                 
                     // The compression process is asynchronous,
                     // which means you have to access the `result` in the `success` hook function.
                     async success(result) {
-
                         file = result as File;
-                        
-		console.log("data:", data);
+                            console.log(blob);
 
-		const pred = (await data.data)[0];
-
-        const imageFusion = await generateCombinedImageFile(
-            file,
-            pred.box,
-            pred.label,
-        );
-
-        const formDataFinal = new FormData();
-
-        if (imageFusion) {
-            formDataFinal.append('file', imageFusion);
-        } else {
-            console.error(t('iot.project.camera.no_camera'));
-            return;
-        }
-
-        await axios.post(
-            `dataset-bucket/upload/${serreId}/Result`, 
-            formDataFinal, {
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-            data: formDataFinal, // Use the data option to specify the request body
-            }	
-        );
-
-		console.log("Setting Pred...")
-		setPred(pred);
-      
-        // Can be set to the src of an image now
-        setImageSrc(imageUrl || "");
+                            const formData = new FormData();
+                            formData.append('image', file);
+            
+                            console.log("formData", formData.get("image"));
+            
+                            const data = await axios.post(
+                                'diseases/prediction', 
+                            formData, {
+                            headers: {
+                                    "Content-Type": "multipart/form-data",
+                            },
+                            data: formData, // Use the data option to specify the request body
+                        });
+                            
+            
+                    console.log("data:", data);
+            
+                    const pred = (await data.data)[0];
+            
+                    const imageFusion = await generateCombinedImageFile(
+                        file,
+                        pred.box,
+                        pred.label,
+                    );
+            
+                    const formDataFinal = new FormData();
+            
+                    if (imageFusion) {
+                        formDataFinal.append('file', imageFusion);
+                    } else {
+                        console.error(t('iot.project.camera.no_camera'));
+                        return;
+                    }
+            
+                    await axios.post(
+                        `dataset-bucket/upload/${serreId}/Result`, 
+                        formDataFinal, {
+                        headers: {
+                            "Content-Type": "multipart/form-data",
+                        },
+                        data: formDataFinal, // Use the data option to specify the request body
+                        }	
+                    );
+            
+                    console.log("Setting Pred...")
+                    setPred(pred);
+                                            
                     },
                     error(err) {
                       console.log(err.message);
                     },
                   });
-
-		        console.log(blob);
-
-                const formData = new FormData();
-                formData.append('image', file);
-
-		        console.log("formData", formData.get("image"));
-
-                const data = await axios.post(
-                    'diseases/prediction', 
-                formData, {
-                headers: {
-                        "Content-Type": "multipart/form-data",
-                },
-  			    data: formData, // Use the data option to specify the request body
-		    });
-        });
+        })
+      
+        // Can be set to the src of an image now
+        setImageSrc(imageUrl || "");
       };
 
 
