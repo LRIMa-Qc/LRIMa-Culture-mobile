@@ -35,7 +35,8 @@ export default function Languages() {
                             label: language,
                             color: 'sky',
                             Icon,
-                            children: <button onClick={() => {changeLanguage(language)}}><RightArrow/></button>
+                            onClick: () => changeLanguage(language),
+                            children: <button onClick={() => {changeLanguage(language)}}><RightArrow className="ltr:scale-100 rtl:-scale-100"/></button>
                         }))
                     }
                 />

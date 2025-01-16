@@ -39,7 +39,7 @@ export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elem
                 <div className="">
                     <Link to="/serres" className="flex items-center justify-between p-5 bg-emerald-300 rounded-t-xl">
                         <p>{t('msg.change_serre')}</p>
-                        <SerreIcon/>
+                        <SerreIcon className="ltr:scale-100 rtl:-scale-100"/>
                     </Link>
                     <div className="flex items-center justify-between p-5 bg-emerald-200 rounded-b-xl line-clamp-1">
                         <p>{project ? project.name : serreId}</p>
@@ -48,7 +48,7 @@ export function Nav({ onCloseClick, elements }: { onCloseClick: () => void, elem
                 <div className="">
                     <Link to="/languages" className="flex items-center justify-between p-5 bg-emerald-300 rounded-t-xl">
                         <p>{t('msg.change_langauge')}</p>
-                        <SerreIcon/>
+                        <SerreIcon className="ltr:scale-100 rtl:-scale-100"/>
                     </Link>
                     <div className="flex items-center justify-between p-5 bg-emerald-200 rounded-b-xl line-clamp-1">
                         <p>{i18n.language}</p>

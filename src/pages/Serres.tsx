@@ -35,6 +35,11 @@ export default function Serres() {
         )
     }, [])
 
+    const changeGreehouse = (id: string) => {
+        serre.updateSerreId(id); 
+        navigate('/overview');
+    }
+
     // TODO: Connect
     return (
         <div className="space-y-5">
@@ -46,9 +51,10 @@ export default function Serres() {
                             label: project.name,
                             color: 'sky',
                             Icon,
+                            onClick: () => changeGreehouse(project.id),
                             children: (
-                                <button onClick={() => {serre.updateSerreId(project.id); navigate('/overview')}}>
-                                    <RightArrow/>
+                                <button onClick={() => {changeGreehouse(project.id)}}>
+                                    <RightArrow className="ltr:scale-100 rtl:-scale-100"/>
                                 </button>
                             )
                         }))

@@ -19,6 +19,7 @@ export default function CapteursList({ capteurs }: CapteursType) {
                 return {
                     color: 'sky',
                     Icon: IconFromCateogry(capteur.category as CULTURE_TYPE),
+                    href: capteur.no,
                     children: <Link to={capteur.no}><RightArrow className="ltr:scale-100 rtl:-scale-100"/></Link>,
                     label: capteur.name || capteur.no
                 } satisfies IndicatorType

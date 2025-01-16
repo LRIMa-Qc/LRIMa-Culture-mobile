@@ -7,7 +7,6 @@ import { useIoTProject } from "@alivecode/core/iot";
 export default function Home() {
     const { project } = useIoTProject();
 
-
     return <Navigate to={project ? "/overview" : "/serres"} replace/>
 
     // return (

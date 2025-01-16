@@ -211,7 +211,7 @@ export default function Detection() {
                           </Annotorious>
 
 				
-					) : <p>Loading</p>
+					) : <p>{t('msg.loading')}</p>
                         ) :
                         <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>    
                         } 
