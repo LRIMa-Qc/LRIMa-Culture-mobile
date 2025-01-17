@@ -14,10 +14,13 @@ import { useSerreStore } from "../../stores/serreStore";
 import Compressor from 'compressorjs';
 import { toast } from "react-toastify";
 
+const WORKING_CULTURES = ['tomato', 'onion', 'potato'];
+
 export default function Detection() {
     const { t } = useTranslation();
 
     const [imageSrc, setImageSrc] = useState("");
+    const [culture, setCulture] = useState(WORKING_CULTURES[0]);
     const [pred, setPred] = useState(null);
 
     const { axios } = useContext(ApiContext);
@@ -137,7 +140,7 @@ export default function Detection() {
                         console.log("formData", formData.get("image"));
 
                         const data = await axios.post(
-                            'diseases/prediction/tomato',
+                            `diseases/prediction/${culture}`,
                             formData, {
                             headers: {
                                 "Content-Type": "multipart/form-data",
@@ -204,16 +207,18 @@ export default function Detection() {
                         {imageSrc ?
                             (
                                 pred ? (
-
                                     <Annotorious>
                                         <DetectionImage src={imageSrc} pred={pred} />
                                     </Annotorious>
-
-
                                 ) : <p>{t('msg.loading')}</p>
                             ) :
                             <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>
                         }
+                        <select defaultValue={culture} onChange={(e) => setCulture(e.currentTarget.value)} className="p-3 rounded-xl outline-none ring-[1px] ring-emerald-400">
+                            {WORKING_CULTURES.map(cl => 
+                                <option key={cl} value={cl}>{t(`culture.sensor.types.${cl}`)}</option>
+                            )}
+                        </select>
                         <button
                             onClick={takePicture}
                             className="bg-emerald-400 text-white rounded-xl p-3 hover:underline"
