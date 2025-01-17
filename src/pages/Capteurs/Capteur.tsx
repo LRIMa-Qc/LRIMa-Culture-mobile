@@ -32,16 +32,16 @@ export interface CapteurInfo {
 }
 
 export default function Capteur() {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
-    const {capteurId} = useParams();
-    const {serreId} = useSerreStore();
+    const { capteurId } = useParams();
+    const { serreId } = useSerreStore();
 
     const navigate = useNavigate();
 
 
     // TODO: Use AliveCore Abstraction.
-    const {axios} = useContext(ApiContext);
+    const { axios } = useContext(ApiContext);
 
     const [series, setSeries] = useState<LineSeriesType[]>([]);
     const [capteurInfo, setCapteurInfo] = useState<CapteurInfo>()
@@ -53,63 +53,63 @@ export default function Capteur() {
         ).then(
             (data) => {
                 const project = data.data;
-                const capteur = (project.layout as unknown as {capteurs: CultureCapteur[]}).capteurs.find(cap => cap.no === capteurId);
+                const capteur = (project.layout as unknown as { capteurs: CultureCapteur[] }).capteurs.find(cap => cap.no === capteurId);
                 const capteurInfo = project.document[capteurId!];
                 setCapteurInfo(capteurInfo);
                 setCapteur(capteur);
 
                 axios.get(`/iot/projects/${serreId}/datasets`)
-            .then(({data}) => {
-                console.log("data", data);
+                    .then(({ data }) => {
+                        console.log("data", data);
 
-                const capteurs = data as unknown as any[];
-                const c = capteurs.find(c => c.noCapteur === capteurId);
+                        const capteurs = data as unknown as any[];
+                        const c = capteurs.find(c => c.noCapteur === capteurId);
 
-                if (!c) {
-                    return navigate("/404");
-                }
-
-                axios.get(`datasets/${c.id}/rows/all`).then(data => {
-                    const rows = data.data as any[];
-
-                    const processed = _.unzip(
-                        rows
-                        .sort((a, b) => {
-                            const bDate = new Date(b.createDate);
-                            const aDate = new Date(a.createDate);
-
-                            return bDate.getTime() - aDate.getTime();
-                        })
-                        .slice(0, NUMBER_OF_ELEMENTS)
-                        .map(c => c.data)
-                    );
-
-                    const series: LineSeriesType[] = [
-                        {
-                            label: `${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`,
-                            data: processed[0] as number[],
-                            type: "line"
-                        },
-                        {
-                            label: `${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`,
-                            data: processed[1] as number[],
-                            type: "line"
-                        },
-                        {
-                            label: `${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`,
-                            data: processed[2] as number[],
-                            type: "line"
-                        },
-                        {
-                            label: t('culture.sensor.luminosity'),
-                            data: processed[3] as number[],
-                            type: "line"
+                        if (!c) {
+                            return navigate("/404");
                         }
-                    ]
 
-                    setSeries(series);
-                })
-            })
+                        axios.get(`datasets/${c.id}/rows/all`).then(data => {
+                            const rows = data.data as any[];
+
+                            const processed = _.unzip(
+                                rows
+                                    .sort((a, b) => {
+                                        const bDate = new Date(b.createDate);
+                                        const aDate = new Date(a.createDate);
+
+                                        return bDate.getTime() - aDate.getTime();
+                                    })
+                                    .slice(0, NUMBER_OF_ELEMENTS)
+                                    .map(c => c.data)
+                            );
+
+                            const series: LineSeriesType[] = [
+                                {
+                                    label: `${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`,
+                                    data: processed[0] as number[],
+                                    type: "line"
+                                },
+                                {
+                                    label: `${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`,
+                                    data: processed[1] as number[],
+                                    type: "line"
+                                },
+                                {
+                                    label: `${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`,
+                                    data: processed[2] as number[],
+                                    type: "line"
+                                },
+                                {
+                                    label: t('culture.sensor.luminosity'),
+                                    data: processed[3] as number[],
+                                    type: "line"
+                                }
+                            ]
+
+                            setSeries(series);
+                        })
+                    })
             }
         )
     }, [capteurId, serreId, axios, t, navigate])
@@ -118,14 +118,14 @@ export default function Capteur() {
         return "Wait..."
     }
 
-    const {batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature} = capteurInfo;
+    const { batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature } = capteurInfo;
 
     return (
         <div className="space-y-5">
             <AppBar label={`${t('iot.project.interface.name')}: ${capteur!.name || capteur!.no}`} />
             <div className="mx-5 space-y-10">
                 <Widget label={t('module.settings.stats.title')}>
-                <ChangeIndicatorList
+                    <ChangeIndicatorList
                         indicators={[
                             {
                                 Icon: Temperature,
@@ -161,8 +161,8 @@ export default function Capteur() {
                                 Icon: Battery,
                                 color: 'red',
                                 label: t('culture.sensor.battery'),
-                                value: (100*(Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
-                            },                            
+                                value: (100 * (Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                            },
                         ]}
                     />
                 </Widget>
@@ -175,12 +175,12 @@ export default function Capteur() {
                                 height={300}
                                 margin={{ top: 100, bottom: 50 }}
                                 className="[&>*]:-z-10"
-                            /> 
+                            />
                         ) : (
                             <p>{t('datasets.noData')}</p>
                         )
                     }
-                                                    
+
                 </Widget>
             </div>
         </div>
