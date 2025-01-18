@@ -17,6 +17,7 @@ import _ from "lodash";
 import { LineSeriesType } from "@mui/x-charts";
 import { useTranslation } from "react-i18next";
 import { useSerreStore } from "../../stores/serreStore";
+import { ThemeProvider } from "@mui/material";
 
 const NUMBER_OF_ELEMENTS = 15;
 
@@ -31,11 +32,19 @@ export interface CapteurInfo {
     temperature: number
 }
 
+import { createTheme } from '@mui/material/styles';
+import { Theme } from "@emotion/react";
+
+const getTheme = (document: Document) => createTheme({
+  direction: document.querySelector('html')?.dir || 'ltr',
+});
+
 export default function Capteur() {
     const { t } = useTranslation();
 
     const { capteurId } = useParams();
     const { serreId } = useSerreStore();
+    const [theme, setTheme] = useState<Theme>();
 
     const navigate = useNavigate();
 
@@ -48,6 +57,7 @@ export default function Capteur() {
     const [capteur, setCapteur] = useState<CultureCapteur>();
 
     useEffect(() => {
+        setTheme(getTheme(document));
         axios.get(
             `iot/projects/${serreId}`,
         ).then(
@@ -167,15 +177,18 @@ export default function Capteur() {
                     />
                 </Widget>
                 <Widget label={t('iot.project.interface.components.graph.name')}>
+                    
                     {
                         series && series[0]?.data ? (
-                            <LineChart
-                                // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
-                                series={series}
-                                height={300}
-                                margin={{ top: 100, bottom: 50 }}
-                                className="[&>*]:-z-10"
-                            />
+                            <ThemeProvider theme={theme}>                             
+                                <LineChart
+                                    // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
+                                    series={series}
+                                    height={300}
+                                    margin={{ top: 100, bottom: 50 }}
+                                    className="[&>*]:-z-10"
+                                />
+                            </ThemeProvider>
                         ) : (
                             <p>{t('datasets.noData')}</p>
                         )
