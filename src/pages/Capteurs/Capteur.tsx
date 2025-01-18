@@ -33,10 +33,9 @@ export interface CapteurInfo {
 }
 
 import { createTheme } from '@mui/material/styles';
-import { Theme } from "@emotion/react";
 
 const getTheme = (language: string) => createTheme({
-  direction: language === 'ar' ? 'rtl' : 'ltr',
+  direction: 'ltr',
 });
 
 export default function Capteur() {
@@ -56,6 +55,11 @@ export default function Capteur() {
     const [capteur, setCapteur] = useState<CultureCapteur>();
 
     useEffect(() => {
+
+        function reverse(label: string) {
+            return i18n.language === "aras" ? label.split("").reverse().join("") : label;
+        }
+
         axios.get(
             `iot/projects/${serreId}`,
         ).then(
@@ -94,22 +98,22 @@ export default function Capteur() {
 
                             const series: LineSeriesType[] = [
                                 {
-                                    label: `${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`,
+                                    label: reverse(`${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`),
                                     data: processed[0] as number[],
                                     type: "line"
                                 },
                                 {
-                                    label: `${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`,
+                                    label: reverse(`${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`),
                                     data: processed[1] as number[],
                                     type: "line"
                                 },
                                 {
-                                    label: `${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`,
+                                    label: reverse(`${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`),
                                     data: processed[2] as number[],
                                     type: "line"
                                 },
                                 {
-                                    label: t('culture.sensor.luminosity'),
+                                    label: reverse(t('culture.sensor.luminosity')),
                                     data: processed[3] as number[],
                                     type: "line"
                                 }
@@ -182,6 +186,12 @@ export default function Capteur() {
                                 <LineChart
                                     // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
                                     series={series}
+                                    sx={{
+                                        '& *': {
+                                          unicodeBidi: 'bidi-override',
+                                          direction: 'ltr',
+                                        },
+                                    }}
                                     height={300}
                                     margin={{ top: 100, bottom: 50 }}
                                     className="[&>*]:-z-10"
