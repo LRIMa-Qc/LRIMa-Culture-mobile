@@ -10,6 +10,8 @@ import { GiStrawberry as StrawberryIcon } from "react-icons/gi";
 
 import { GiTomato as TomatoIcon } from "react-icons/gi";  
 
+import { FaDotCircle as NotYet } from "react-icons/fa";
+
 export enum CULTURE_TYPE {
 	APPLE = 'apple',
 	CARROT = 'carrot',
@@ -17,6 +19,7 @@ export enum CULTURE_TYPE {
 	POTATO = 'potato',
 	STRAWBERRY = 'strawberry',
 	TOMATO = 'tomato',
+    ONION = 'onion'
 }
 
 export function IconFromCateogry(category: CULTURE_TYPE) {
@@ -33,5 +36,9 @@ export function IconFromCateogry(category: CULTURE_TYPE) {
             return StrawberryIcon;
         case CULTURE_TYPE.TOMATO:
             return TomatoIcon;
+        case CULTURE_TYPE.ONION:
+            return NotYet;
+        default:
+            return NotYet;
     }
 }
