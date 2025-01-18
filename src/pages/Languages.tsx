@@ -15,10 +15,8 @@ export interface Project {
 
 export default function Languages() {
     const navigate = useNavigate();
-    const {t} = useTranslation();
-
-    const {i18n} = useTranslation();
-
+    const {t, i18n} = useTranslation();
+    
     function changeLanguage(lng: string) {
         i18n.changeLanguage(lng);
         navigate('/');

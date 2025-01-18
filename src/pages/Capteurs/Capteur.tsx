@@ -35,16 +35,15 @@ export interface CapteurInfo {
 import { createTheme } from '@mui/material/styles';
 import { Theme } from "@emotion/react";
 
-const getTheme = (document: Document) => createTheme({
-  direction: document.querySelector('html')?.dir || 'ltr',
+const getTheme = (language: string) => createTheme({
+  direction: language === 'ar' ? 'rtl' : 'ltr',
 });
 
 export default function Capteur() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const { capteurId } = useParams();
     const { serreId } = useSerreStore();
-    const [theme, setTheme] = useState<Theme>();
 
     const navigate = useNavigate();
 
@@ -57,7 +56,6 @@ export default function Capteur() {
     const [capteur, setCapteur] = useState<CultureCapteur>();
 
     useEffect(() => {
-        setTheme(getTheme(document));
         axios.get(
             `iot/projects/${serreId}`,
         ).then(
@@ -180,7 +178,7 @@ export default function Capteur() {
                     
                     {
                         series && series[0]?.data ? (
-                            <ThemeProvider theme={theme}>                             
+                            <ThemeProvider theme={getTheme(i18n.language)}>                             
                                 <LineChart
                                     // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
                                     series={series}
