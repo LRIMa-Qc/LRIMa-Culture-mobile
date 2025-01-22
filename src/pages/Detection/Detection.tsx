@@ -11,17 +11,25 @@ import { DetectionImage } from "./DetectionImage";
 import { ApiContext } from "@alivecode/core/api";
 import { useSerreStore } from "../../stores/serreStore";
 
-import Compressor from 'compressorjs';
-import { toast } from "react-toastify";
-
 const WORKING_CULTURES = ['tomato', 'onion', 'potato'];
+
+export interface Prediction {
+    /// x, y, w, h
+    box: [number, number, number, number],
+    label: string;
+}
+
+export interface Picture {
+    file: File;
+    image: HTMLImageElement;
+}
 
 export default function Detection() {
     const { t } = useTranslation();
 
-    const [imageSrc, setImageSrc] = useState("");
+    const [picture, setPicture] = useState<Picture | undefined | 'no detection'>(undefined);
     const [culture, setCulture] = useState(WORKING_CULTURES[0]);
-    const [pred, setPred] = useState(null);
+    const [pred, setPred] = useState<Prediction | null>(null);
 
     const { axios } = useContext(ApiContext);
 
@@ -31,7 +39,7 @@ export default function Detection() {
     const generateCombinedImageFile = async (
         imageFile: File,
         positions: [number, number, number, number],
-        label: number,
+        label: string,
     ): Promise<File | null> => {
         const canvas = document.createElement('canvas');
         const [pos1, pos2, pos3, pos4] = positions;
@@ -104,98 +112,92 @@ export default function Detection() {
         });
     };
 
-
-    // TODO: Added required Info.plist elements for iPhones (see docs)
     const takePicture = async () => {
-        const image = await Camera.getPhoto({
+        const img = await Camera.getPhoto({
             quality: 90,
             allowEditing: false,
             resultType: CameraResultType.Base64
         });
 
-        // image.webPath will contain a path that can be set as an image src.
-        // You can access the original file using image.path, which can be
-        // passed to the Filesystem API to read the raw data of the image,
-        // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-        const imageUrl = "data:image/png;base64," + image.base64String;
-        console.log(imageUrl);
+        const imageUrl = "data:image/png;base64," + img.base64String;
+        const blob = await fetch(imageUrl)
+            .then(res => res.blob());
 
-        fetch(imageUrl)
-            .then(res => res.blob())
-            .then(async (blob) => {
-                let file = new File([blob], "my-image", { type: 'image/png' });
+        const file = new File([blob], "my-image", { type: 'image/png' });
 
-                new Compressor(file, {
-                    quality: 0.8,
+        const image = new Image();
+        image.src = imageUrl;
+        await image.decode();
 
-                    // The compression process is asynchronous,
-                    // which means you have to access the `result` in the `success` hook function.
-                    async success(result) {
-                        file = result as File;
-                        console.log(file);
+        return { file, image };
+    }
 
-                        const formData = new FormData();
-                        formData.append('image', file);
+    const getPrediction = async (file: File) => {
 
-                        console.log("formData", formData.get("image"));
+        const formData = new FormData();
+        formData.append('image', file);
 
-                        const data = await axios.post(
-                            `diseases/prediction/${culture}`,
-                            formData, {
-                            headers: {
-                                "Content-Type": "multipart/form-data",
-                            },
-                            data: formData, // Use the data option to specify the request body
-                        });
+        const data = await axios.post(
+            `diseases/prediction/${culture}`,
+            formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+            data: formData,
+        });
 
+        const pred = (await data.data)[0] as Prediction;
 
-                        console.log("data:", data);
+        return { pred };
+    }
 
-                        const pred = (await data.data)[0];
+    const uploadPrediction = async (img: File, pred: Prediction) => {
+        const imageFusion = await generateCombinedImageFile(
+            img,
+            pred.box,
+            pred.label,
+        );
 
-                        if (!pred) {
-                            toast.success(t('iot.project.camera.noDetection'))
-                            return;
-                        }
+        const formDataFinal = new FormData();
 
-                        const imageFusion = await generateCombinedImageFile(
-                            file,
-                            pred.box,
-                            pred.label,
-                        );
+        if (imageFusion) {
+            formDataFinal.append('file', imageFusion);
+        } else {
+            console.error(t('iot.project.camera.no_camera'));
+            return;
+        }
 
-                        const formDataFinal = new FormData();
+        await axios.post(
+            `dataset-bucket/upload/${serreId}/Result`,
+            formDataFinal, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+            data: formDataFinal, // Use the data option to specify the request body
+        });
+    }
 
-                        if (imageFusion) {
-                            formDataFinal.append('file', imageFusion);
-                        } else {
-                            console.error(t('iot.project.camera.no_camera'));
-                            return;
-                        }
+    // TODO: Added required Info.plist elements for iPhones (see docs)
+    const processPictureTaken = async () => {
 
-                        await axios.post(
-                            `dataset-bucket/upload/${serreId}/Result`,
-                            formDataFinal, {
-                            headers: {
-                                "Content-Type": "multipart/form-data",
-                            },
-                            data: formDataFinal, // Use the data option to specify the request body
-                        }
-                        );
+        setPicture(undefined);
+        setPred(null);
 
-                        console.log("Setting Pred...")
-                        setPred(pred);
+        const { file, image } = await takePicture();
 
-                    },
-                    error(err) {
-                        console.log(err.message);
-                    },
-                });
-            })
+        setPicture({ file, image });
 
-        // Can be set to the src of an image now
+        const { pred } = await getPrediction(file);
 
-        setImageSrc(imageUrl || "");
+        if (!pred) {
+            setPred(null);
+            setPicture('no detection');
+            return;
+        }
+
+        await uploadPrediction(file, pred);
+
+        setPred(pred);
     };
 
     return (
@@ -204,23 +206,25 @@ export default function Detection() {
             <div className="mx-5">
                 <Widget label={t('iot.project.camera.name')}>
                     <div className="w-full flex justify-center flex-col gap-5 py-2">
-                        {imageSrc ?
-                            (
-                                pred ? (
-                                    <Annotorious>
-                                        <DetectionImage src={imageSrc} pred={pred} />
-                                    </Annotorious>
-                                ) : <p>{t('msg.loading')}</p>
-                            ) :
-                            <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p>
+                        {picture === undefined ?
+                            <p className="text-center">{t('iot.project.camera.takePictureInstruction')}</p> :
+                            picture === 'no detection' ?
+                                <p>{t('iot.project.camera.noDetection')}</p> :
+                                (
+                                    pred ? (
+                                        <Annotorious>
+                                            <DetectionImage picture={picture} pred={pred} />
+                                        </Annotorious>
+                                    ) : <p className="animate-pulse">{t('msg.loading')}</p>
+                                )
                         }
                         <select defaultValue={culture} onChange={(e) => setCulture(e.currentTarget.value)} className="p-3 rounded-xl outline-none ring-[1px] ring-emerald-400">
-                            {WORKING_CULTURES.map(cl => 
+                            {WORKING_CULTURES.map(cl =>
                                 <option key={cl} value={cl}>{t(`culture.sensor.types.${cl}`)}</option>
                             )}
                         </select>
                         <button
-                            onClick={takePicture}
+                            onClick={processPictureTaken}
                             className="bg-emerald-400 text-white rounded-xl p-3 hover:underline"
                         >
                             {t('iot.project.camera.takePicture')}

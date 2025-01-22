@@ -35,8 +35,21 @@ export interface CapteurInfo {
 import { createTheme } from '@mui/material/styles';
 
 const getTheme = (language: string) => createTheme({
-  direction: 'ltr',
+  direction: language === 'ar' ? 'rtl' : 'ltr', 
 });
+
+function isIOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
 
 export default function Capteur() {
     const { t, i18n } = useTranslation();
@@ -57,7 +70,7 @@ export default function Capteur() {
     useEffect(() => {
 
         function reverse(label: string) {
-            return i18n.language === "aras" ? label.split("").reverse().join("") : label;
+            return isIOS() && i18n.language === "ar" ? label.split("").reverse().join("") : label;
         }
 
         axios.get(
@@ -188,8 +201,9 @@ export default function Capteur() {
                                     series={series}
                                     sx={{
                                         '& *': {
-                                          unicodeBidi: 'bidi-override',
-                                          direction: 'ltr',
+                                        //   unicodeBidi: 'plaintext',
+                                        //   direction: 'rtl',
+                                        //   textAlign: 'start',
                                         },
                                     }}
                                     height={300}

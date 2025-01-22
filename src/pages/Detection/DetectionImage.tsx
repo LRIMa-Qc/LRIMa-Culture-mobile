@@ -1,76 +1,70 @@
 import { Annotation, ImageAnnotationPopup, ImageAnnotator, PopupProps, useAnnotator } from "@annotorious/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Picture, Prediction } from "./Detection";
+import { red } from "@mui/material/colors";
 
 export interface IDetectionImage {
-    src: string;
-    pred: any;
+    picture: Picture;
+    pred: Prediction;
 }
 
-
-
-export function DetectionImage({src, pred}: IDetectionImage) {
+export function DetectionImage({ picture, pred }: IDetectionImage) {
     const anno = useAnnotator();
 
-    const {t} = useTranslation();
+    const [drawingEnabled, setDrawingEnabled] = useState(false);
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         anno?.on('createAnnotation', (a) => {
             const annotation = a as Annotation;
             console.log(a);
             anno?.setAnnotations([annotation], true);
-            // console.log('User created annotation: ', (annotation as Annotation).target.selector.geometry);
-          });
-	    const annot = {
+        });
+
+        const [x, y, w, h] = pred.box;
+
+        const annot = {
             id: '7fb76422-3a8c-4c87-bbad-7c8bb68399a0',
             target: {
                 selector: {
-                type: 'RECTANGLE',
-                geometry: {
-                    bounds: {
-                        minX: pred?.box[0],
-                        minY: pred?.box[1],
-                        maxX: pred?.box[2],
-                        maxY: pred?.box[3]
-                    },
-                    x: pred?.box[0],
-                    y: pred?.box[1],
-                    w: pred?.box[2],
-                    h: pred?.box[3],
-                }
+                    type: 'RECTANGLE',
+                    geometry: {
+                        bounds: {
+                            // Je crois qu'ils ne font rien :d
+                            minX: 0,
+                            minY: 0,
+                            maxX: 0,
+                            maxY: 0
+                        },
+                        x: x,
+                        y: y,
+                        w: w - x,
+                        h: h - y,
+                    }
                 }
             }
         }
         console.log(annot)
-	    anno?.setAnnotations([annot], true);
-    }, [pred]); 
+        anno?.setAnnotations([annot], true);
+    }, [pred, anno, picture]);
 
     return (
         <div className="">
             <ImageAnnotator
-            
+                drawingEnabled={drawingEnabled}
                 containerClassName=""
             >
-                <img className="rounded-xl ring-1 ring-zinc-400" src={src} alt="hmmm, not showing..."/>
+                <img className="rounded-xl ring-1 ring-zinc-400" src={picture.image.src} alt="hmmm, not showing..." />
             </ImageAnnotator>
-            <ImageAnnotationPopup
-                popup={(_: PopupProps) => (
-                    <div className="grid rounded-xl overflow-hidden">
-                        <p className="p-3 text-white bg-emerald-400">
-                            Indiquez la bonne maladie
-                        </p>
-                        <select className="bg-emerald-300 p-3 text-black outline-none">
-                            <option>Spiderman</option>
-                            <option>Batman</option>
-                            <option>Ironman</option>
-                        </select>
-                    </div>
-                )}
-            />
-	    {
-		    pred ? <div>Maladie: {pred?.label}</div> : <></>
+            {pred && (
+                <div className="space-y-2">
+                    <p>Maladie: <span className="underline">{pred?.label}</span></p>
+                    <button className="p-3 w-full bg-emerald-200 rounded-xl">Mauvaise Maladie? Contribuer</button>
+                </div>
+            )}
 
-	    }
-	    	    </div>
+        </div>
     )
 }

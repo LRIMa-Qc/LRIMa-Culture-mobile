@@ -129,9 +129,9 @@ export default function Overview() {
                         ]}
                     />
                 </Widget>
-                <Widget label="Log">
+                {/* <Widget label="Log">
                     <LogsList logs={[]} />
-                </Widget>
+                </Widget> */}
             </div>
         </div>
     );
