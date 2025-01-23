@@ -26,12 +26,14 @@ export default function IoTCapteurs() {
     const { serreId } = useSerreStore();
     const { project } = useProject(serreId);
 
-    const [iotSocket, setIoTSocket] = useState<IoTSocket | null>();
-
     const [capteurs, setCapteurs] = useState<CultureCapteur[]>([]);
-    const [sortType, setSortType] = useState<'number' | 'last_insert'>('number');
+    const [sortType, setSortType] = useState<'number' | 'last_insert'>(localStorage.getItem('sortType') || 'last_insert');
 
     const { axios } = useContext(ApiContext);
+
+    useEffect(() => {
+        localStorage.setItem('sortType', sortType);
+    }, [sortType]);
 
 
     useEffect(() => {
@@ -42,14 +44,14 @@ export default function IoTCapteurs() {
                 const capteurs = (project?.layout as unknown as { capteurs: CultureCapteur[] })?.capteurs;
                 setCapteurs(
                     capteurs?.map(c => ({
-                        last_insert: datasets.find(d => d.noCapteur === c.no).last_insert,
+                        last_insert: datasets.find(d => d.noCapteur === c.no).lastInsert,
                         ...c
                     })).sort((a, b) => {
                         switch (sortType) {
                             case 'last_insert': {
                                 const c = new Date(a.last_insert);
                                 const d = new Date(b.last_insert);
-                                return c.getTime() - d.getTime();
+                                return d.getTime() - c.getTime();
                             }
 
                             case "number": {
@@ -73,8 +75,8 @@ export default function IoTCapteurs() {
             <div className="mx-5 space-y-10">
                 <Widget label={t('iot.project.interface.name')}>
                     <div className="flex w-full bg-white rounded-2xl p-2 ring-1 ring-slate-200 ring-inset gap-1 mb-1">
-                        <button onClick={() => setSortType('last_insert')} className={`${sortType === 'last_insert' && activeClass} w-full px-4 py-3 rounded-2xl`}>{t('iot.project.interface.sort.number')}</button>
-                        <button onClick={() => setSortType('number')} className={`${sortType === 'number' && activeClass} w-full px-4 py-3 rounded-2xl`}>{t('iot.project.interface.sort.last_insert')}</button>
+                        <button onClick={() => setSortType('last_insert')} className={`${sortType === 'last_insert' && activeClass} w-full px-4 py-3 rounded-2xl`}>{t('iot.project.interface.sort.last_insert')}</button>
+                        <button onClick={() => setSortType('number')} className={`${sortType === 'number' && activeClass} w-full px-4 py-3 rounded-2xl`}>{t('iot.project.interface.sort.number')}</button>
                     </div>
                     {capteurs && capteurs.length !== 0 ? (
                         <CapteursList capteurs={capteurs} />
