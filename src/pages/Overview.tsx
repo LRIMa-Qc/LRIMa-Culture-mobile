@@ -18,14 +18,12 @@ import { useProject } from "../setup/AppDecorator/getProject";
 export default function Overview() {
     // const { project } = useIoTProject();
 
-    const {serreId} = useSerreStore();
-    const {project} = useProject(serreId);
+    const { serreId } = useSerreStore();
+    const { project } = useProject(serreId);
 
-    console.log(project);
+    const { t } = useTranslation();
 
-    const {t} = useTranslation();
-
-    const capteurs = (project?.layout as unknown as {capteurs: CultureCapteur[]})?.capteurs;
+    const capteurs = (project?.layout as unknown as { capteurs: CultureCapteur[] })?.capteurs;
     const capteursInfo = capteurs?.map(capteur => project?.document[capteur.no]);
 
     const average = (capteursInfo?.length !== 0 ? capteursInfo?.reduce((prev: any, curr: any) => ({
@@ -124,8 +122,8 @@ export default function Overview() {
                                 Icon: Battery,
                                 color: 'red',
                                 label: t('culture.sensor.battery'),
-                                value: (100*(Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
-                            },                            
+                                value: (100 * (Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                            },
                         ]}
                     />
                 </Widget>

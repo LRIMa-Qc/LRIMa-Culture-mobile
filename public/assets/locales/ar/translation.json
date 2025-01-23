@@ -1480,6 +1480,7 @@
 	},
 	"culture": {
 		"sensor": {
+			"timesince": "آخر البيانات المستلمة",
 			"sensor": "المستشعر",
 			"sleepTime": "وقت النوم",
 			"air": "هواء",

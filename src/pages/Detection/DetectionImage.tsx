@@ -2,7 +2,6 @@ import { Annotation, ImageAnnotationPopup, ImageAnnotator, PopupProps, useAnnota
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Picture, Prediction } from "./Detection";
-import { red } from "@mui/material/colors";
 
 export interface IDetectionImage {
     picture: Picture;
@@ -19,7 +18,6 @@ export function DetectionImage({ picture, pred }: IDetectionImage) {
     useEffect(() => {
         anno?.on('createAnnotation', (a) => {
             const annotation = a as Annotation;
-            console.log(a);
             anno?.setAnnotations([annotation], true);
         });
 
@@ -46,7 +44,6 @@ export function DetectionImage({ picture, pred }: IDetectionImage) {
                 }
             }
         }
-        console.log(annot)
         anno?.setAnnotations([annot], true);
     }, [pred, anno, picture]);
 

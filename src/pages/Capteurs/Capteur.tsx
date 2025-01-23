@@ -33,23 +33,40 @@ export interface CapteurInfo {
 }
 
 import { createTheme } from '@mui/material/styles';
+import { transformDate } from "../../utils/date";
 
 const getTheme = (language: string) => createTheme({
-  direction: language === 'ar' ? 'rtl' : 'ltr', 
+    direction: language === 'ar' ? 'rtl' : 'ltr',
 });
 
 function isIOS() {
     return [
-      'iPad Simulator',
-      'iPhone Simulator',
-      'iPod Simulator',
-      'iPad',
-      'iPhone',
-      'iPod'
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
     ].includes(navigator.platform)
-    // iPad on iOS 13 detection
-    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-  }
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
+export interface CapteurDataset {
+    cols: any[],
+    createDate: string;
+    description: string;
+    id: string;
+    insertOnUpdate: boolean;
+    lastInsert: string;
+    name: string;
+    nbGraphsCreated: number;
+    noCapteur: string;
+    order: number[];
+    originalId: never;
+    updateDate: string;
+    userId: string;
+}
 
 export default function Capteur() {
     const { t, i18n } = useTranslation();
@@ -66,9 +83,9 @@ export default function Capteur() {
     const [series, setSeries] = useState<LineSeriesType[]>([]);
     const [capteurInfo, setCapteurInfo] = useState<CapteurInfo>()
     const [capteur, setCapteur] = useState<CultureCapteur>();
+    const [capteurDataset, setCapteurDataset] = useState<CapteurDataset | undefined>(undefined);
 
     useEffect(() => {
-
         function reverse(label: string) {
             return isIOS() && i18n.language === "ar" ? label.split("").reverse().join("") : label;
         }
@@ -85,11 +102,9 @@ export default function Capteur() {
 
                 axios.get(`/iot/projects/${serreId}/datasets`)
                     .then(({ data }) => {
-                        console.log("data", data);
-
                         const capteurs = data as unknown as any[];
                         const c = capteurs.find(c => c.noCapteur === capteurId);
-
+                        setCapteurDataset(c);
                         if (!c) {
                             return navigate("/404");
                         }
@@ -150,6 +165,9 @@ export default function Capteur() {
             <AppBar label={`${t('iot.project.interface.name')}: ${capteur!.name || capteur!.no}`} />
             <div className="mx-5 space-y-10">
                 <Widget label={t('module.settings.stats.title')}>
+                    <time className="block py-2">
+                        {t('culture.sensor.timesince')} {transformDate(new Date(capteurDataset?.lastInsert || ""))}
+                    </time>
                     <ChangeIndicatorList
                         indicators={[
                             {
@@ -192,18 +210,18 @@ export default function Capteur() {
                     />
                 </Widget>
                 <Widget label={t('iot.project.interface.components.graph.name')}>
-                    
+
                     {
                         series && series[0]?.data ? (
-                            <ThemeProvider theme={getTheme(i18n.language)}>                             
+                            <ThemeProvider theme={getTheme(i18n.language)}>
                                 <LineChart
                                     // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
                                     series={series}
                                     sx={{
                                         '& *': {
-                                        //   unicodeBidi: 'plaintext',
-                                        //   direction: 'rtl',
-                                        //   textAlign: 'start',
+                                            //   unicodeBidi: 'plaintext',
+                                            //   direction: 'rtl',
+                                            //   textAlign: 'start',
                                         },
                                     }}
                                     height={300}
