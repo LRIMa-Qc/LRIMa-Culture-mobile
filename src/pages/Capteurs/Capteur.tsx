@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 import { useSerreStore } from "../../stores/serreStore";
 import { ThemeProvider } from "@mui/material";
 
-const NUMBER_OF_ELEMENTS = 15;
+const NUMBER_OF_ELEMENTS = 30;
 
 export const CAPTEUR_BATTERY_VOLTAGE = 3.3;
 
@@ -145,6 +145,7 @@ export default function Capteur() {
                                     data: processed[3] as number[],
                                     type: "line"
                                 }
+
                             ]
 
                             setSeries(series);
@@ -214,20 +215,24 @@ export default function Capteur() {
                     {
                         series && series[0]?.data ? (
                             <ThemeProvider theme={getTheme(i18n.language)}>
-                                <LineChart
-                                    // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
-                                    series={series}
-                                    sx={{
-                                        '& *': {
-                                            //   unicodeBidi: 'plaintext',
-                                            //   direction: 'rtl',
-                                            //   textAlign: 'start',
-                                        },
-                                    }}
-                                    height={300}
-                                    margin={{ top: 100, bottom: 50 }}
-                                    className="[&>*]:-z-10"
-                                />
+                                {series.map(serie => (
+                                    <LineChart
+                                        key={serie.id}
+                                        // xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
+                                        series={[serie]}
+                                        sx={{
+                                            '& *': {
+                                                //   unicodeBidi: 'plaintext',
+                                                //   direction: 'rtl',
+                                                //   textAlign: 'start',
+                                            },
+                                        }}
+                                        height={300}
+                                        margin={{ top: 100, bottom: 50 }}
+                                        className="[&>*]:-z-10"
+                                    />
+
+                                ))}
                             </ThemeProvider>
                         ) : (
                             <p>{t('datasets.noData')}</p>
