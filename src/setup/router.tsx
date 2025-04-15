@@ -4,6 +4,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 // import { Navigate } from 'react-router-dom';
 import Capteurs from '../pages/Capteurs/Capteurs';
+import Actuators from '../pages/Actuators/Actuators';
 import Serres from '../pages/Serres';
 import Capteur from '../pages/Capteurs/Capteur';
 import { Navigate } from 'react-router-dom';
@@ -52,6 +53,11 @@ const router = {
         exact: true,
         component: <Capteurs />,
       },
+      actuators: {
+        path: '/actuators',
+        exact: true,
+        component: <Actuators />,
+      },
       capteur: {
         path: '/capteurs/:capteurId',
         exact: true,
@@ -84,8 +90,8 @@ const router = {
     },
   },
   redirects: {
-    authRouteWhenNonAuth: <Navigate to="/signin" replace/>,
-    nonAuthRouteWhenAuth: <Navigate to="/serres" replace/>,
+    authRouteWhenNonAuth: <Navigate to="/signin" replace />,
+    nonAuthRouteWhenAuth: <Navigate to="/serres" replace />,
     // authRouteWhenNonAuth: <></>,
     // nonAuthRouteWhenAuth: <></>
   },

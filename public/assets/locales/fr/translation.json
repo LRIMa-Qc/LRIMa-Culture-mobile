@@ -2059,7 +2059,9 @@
 				"unlink": "Délier le script"
 			},
 			"actuators": {
-				"name": "Gestion des équipements"
+				"name": "Gestion des équipements",
+				"turn_on": "Allumer",
+				"turn_off": "Éteindre"
 			},
 			"scripts": {
 				"name": "Scripts",
@@ -2231,7 +2233,7 @@
 				"download": "Télécharger",
 				"takePictureInstruction": "Prenez une photo pour commencer la détection",
 				"takePicture": "Prendre une photo"
-			}			
+			}
 		},
 		"object": {
 			"name": "Objet IoT",

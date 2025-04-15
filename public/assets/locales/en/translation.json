@@ -774,10 +774,18 @@
 			},
 			"params": {
 				"title": "Parameters",
-				"name": { "label": "Name of the module" },
-				"desc": { "label": "Brief description of the module" },
-				"subject": { "label": "Subject of the module" },
-				"access": { "label": "Access to the module" },
+				"name": {
+					"label": "Name of the module"
+				},
+				"desc": {
+					"label": "Brief description of the module"
+				},
+				"subject": {
+					"label": "Subject of the module"
+				},
+				"access": {
+					"label": "Access to the module"
+				},
 				"bg": {
 					"label": "Background image of the module",
 					"help": "Choose your preferred background image for your module."
@@ -1871,7 +1879,9 @@
 				"change_target_dataset_success": "Targeted dataset updated successfully"
 			},
 			"actuators": {
-				"name": "Equipment management"
+				"name": "Equipment management",
+				"turn_on": "Turn on",
+				"turn_off": "Turn off"
 			},
 			"datasets": {
 				"name": "Graphs",

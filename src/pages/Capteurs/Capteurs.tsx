@@ -6,8 +6,6 @@ import { useSerreStore } from "../../stores/serreStore";
 import { useProject } from "../../setup/AppDecorator/getProject";
 import { ApiContext } from "@alivecode/core/api";
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from "@alivecode/core";
-import { IoTSocket } from "../../setup/IoTSocket";
 export interface CultureCapteur {
     batteryRef: string;
     category: string;
