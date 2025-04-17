@@ -1,33 +1,31 @@
 import { IndicatorList } from "../indicator-list/InidicatorList";
 import { IndicatorType } from "../indicator/Indicator";
-import { ActuatorComponent } from "../../pages/Actuators/Actuators";
+import { FullActuatorComponent } from "../../pages/Actuators/Actuators";
 import { TbSatellite as ActuatorOnline } from "react-icons/tb";
 import { TbSatelliteOff as ActuatorOffline } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
+import ActuatorItem from "./ActuatorItem";
+import { useProject } from "../../setup/AppDecorator/getProject";
+import { useSerreStore } from "../../stores/serreStore";
 
 export interface ActuatorsType {
-  actuators: ActuatorComponent[]
+  actuators: FullActuatorComponent[]
 }
 
 export default function ActuatorList({ actuators }: ActuatorsType) {
 
-
-  const { t } = useTranslation();
+  const { serreId } = useSerreStore();
+  const { project } = useProject(serreId);
 
   return (
     <IndicatorList
       indicators={actuators.map(a => {
+        const isOn = project?.document[a.actionId];
         return {
-          color: a.value === "true" ? 'emerald' : 'red',
-          Icon: a.value === "true" ? ActuatorOnline : ActuatorOffline,
+          color: isOn ? 'emerald' : 'red',
+          Icon: isOn ? ActuatorOnline : ActuatorOffline,
           // TODO: Add arabic to translation
-          children: (
-            <div>
-              <button className="p-3 bg-red-500 text-white rounded-2xl">
-                {a.value === "true" ? t('iot.project.actuators.turn_on') : t('iot.project.actuators.turn_off')}
-              </button>
-            </div>
-          ),
+          children: <ActuatorItem key={a.targetId} {...a} />,
           label: a.name || a.uid || "unknown"
         } satisfies IndicatorType
 

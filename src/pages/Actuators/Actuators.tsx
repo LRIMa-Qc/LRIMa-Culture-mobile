@@ -1,5 +1,4 @@
 import { AppBar } from "../../components/appbar/AppBar";
-import CapteursList from "../../components/capteurs/CapteursList";
 import { Widget } from "../../components/dashboard/widget/Widget";
 import { useTranslation } from "react-i18next";
 import { useSerreStore } from "../../stores/serreStore";
@@ -7,6 +6,7 @@ import { useProject } from "../../setup/AppDecorator/getProject";
 import { ApiContext } from "@alivecode/core/api";
 import { useContext, useEffect, useState } from "react";
 import ActuatorList from "../../components/actuators/ActuatorList";
+import { useActuatorStore } from "../../stores/actuatorStore";
 
 export interface ActuatorComponent {
   actionData: string;
@@ -23,29 +23,13 @@ export interface ActuatorComponent {
   value: string;
 }
 
+export type FullActuatorComponent = ActuatorComponent & {
+  isOn: boolean;
+}
+
 export default function IoTActuators() {
 
-  const { serreId } = useSerreStore();
-  const { project } = useProject(serreId);
-
-  const [actuators, setActuators] = useState<ActuatorComponent[]>([]);
-
-  const { axios } = useContext(ApiContext);
-
-  useEffect(() => {
-
-    axios.get(`/iot/projects/${serreId}`)
-      .then(({ data }) => {
-        console.log(data);
-
-
-        const c = (project?.layout as unknown as { components: ActuatorComponent[] })?.components;
-        setActuators(c);
-
-      });
-
-
-  }, [project, axios, serreId])
+  const actuators = useActuatorStore((state) => state.actuators);
 
   const { t } = useTranslation();
 
