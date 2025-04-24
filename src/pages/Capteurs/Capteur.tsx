@@ -124,30 +124,35 @@ export default function Capteur() {
                                     .map(c => c.data)
                             );
 
+                            console.log(rows, processed);
+
                             const series: LineSeriesType[] = [
                                 {
                                     label: reverse(`${t('culture.sensor.temperature')} (${t('culture.sensor.air')})`),
                                     data: processed[0] as number[],
+                                    color: '#0ea5e9',
                                     type: "line"
                                 },
                                 {
                                     label: reverse(`${t('culture.sensor.temperature')} (${t('culture.sensor.ground')})`),
                                     data: processed[1] as number[],
+                                    color: '#0ea5e9',
                                     type: "line"
                                 },
                                 {
                                     label: reverse(`${t('culture.sensor.humidity')} (${t('culture.sensor.ground')})`),
                                     data: processed[2] as number[],
+                                    color: '#6366f1',
                                     type: "line"
                                 },
                                 {
                                     label: reverse(t('culture.sensor.luminosity')),
                                     data: processed[3] as number[],
+                                    color: '#10b981',
                                     type: "line"
-                                }
-
+                                },
+                                // TODO: Add processed[4] and processed[5]
                             ]
-
                             setSeries(series);
                         })
                     })

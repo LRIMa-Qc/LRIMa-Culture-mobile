@@ -4,7 +4,6 @@ import { useContext, useEffect, useReducer, useState } from "react";
 import { IOT_EVENT, IoTSocket, useIoTProject } from "@alivecode/core/iot";
 import { useSerreStore } from "../../stores/serreStore";
 import { useProject } from "../../setup/AppDecorator/getProject";
-import { useAppSocketWithScopedEvents, UserContext } from "@alivecode/core";
 import { ApiContext } from "@alivecode/core/api";
 import { APP_SOCKET_URL, IOT_SOCKET_URL } from "../../setup/api";
 import { toast } from "react-toastify";
@@ -16,6 +15,7 @@ export default function ActuatorItem(actuator: FullActuatorComponent) {
   const { serreId } = useSerreStore();
   const { axios } = useContext(ApiContext);
   const { project, fetchProject, refech } = useProject(serreId);
+  const [state, setState] = useState(false);
 
   const [socket, setSocket] = useState<WebSocket | null>(null);
 
@@ -28,8 +28,8 @@ export default function ActuatorItem(actuator: FullActuatorComponent) {
     );
   }
 
-  useEffect(() => {
-    const s = new WebSocket(IOT_SOCKET_URL);
+  const openSocket = () => {
+   const s = new WebSocket(IOT_SOCKET_URL);
 
     s.onopen = async (ev) => {
 
@@ -56,15 +56,27 @@ export default function ActuatorItem(actuator: FullActuatorComponent) {
       console.error("error", ev);
     };
 
-    s.onclose = console.log;
+    s.onclose = () => {
+      openSocket();
+    };
+  }
 
-  }, [axios, project, serreId]);
+  useEffect(() => {
+    openSocket();
+    fetchProject().then(p => {
+        const s = p?.document[actuator.actionId];
+        setState(s);
+      })
+
+
+   }, [axios, project, serreId]);
 
 
   const onClick = () => {
     if (socket?.OPEN) {
       fetchProject().then(p => {
         const value = !p?.document[actuator.actionId];
+        setState(state => !state);
         sendEvent(IOT_EVENT.SEND_ACTION, { targetId: actuator.targetId, actionId: actuator.actionId, value });
       })
 
@@ -73,7 +85,7 @@ export default function ActuatorItem(actuator: FullActuatorComponent) {
 
   return (
     <button className="p-3 bg-red-500 text-white rounded-2xl" onClick={onClick}>
-      {!actuator.isOn ? t('iot.project.actuators.turn_on') : t('iot.project.actuators.turn_off')}
+      {!state ? t('iot.project.actuators.turn_on') : t('iot.project.actuators.turn_off')}
     </button>
 
 

@@ -39,26 +39,26 @@ const Root = createALIVEcoreApp({
                     supportedLngs: ['fr', 'en', 'ar'],
                     fallbackLng: 'fr',
                     detection: {
-                      order: [
-                        'querystring',
-                        'path',
-                        'cookie',
-                        // 'localStorage',
-                        // 'sessionStorage',
-                        // 'navigator',
-                        // 'htmlTag',
-                        // 'subdomain',
-                      ],
-                      caches: ['cookie'],
+                        order: [
+                            'querystring',
+                            'path',
+                            'cookie',
+                            // 'localStorage',
+                            // 'sessionStorage',
+                            // 'navigator',
+                            // 'htmlTag',
+                            // 'subdomain',
+                        ],
+                        caches: ['cookie'],
                     },
                     interpolation: {
-                      escapeValue: false,
+                        escapeValue: false,
                     },
                     backend: {
-                      loadPath: `/assets/locales/{{lng}}/{{ns}}.json`,
+                        loadPath: `/assets/locales/{{lng}}/{{ns}}.json`,
                     },
                     defaultNS: 'translation',
-                  }
+                }
             }
         ),
         reactToastDecorator(ToastContainer),
