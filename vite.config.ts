@@ -8,9 +8,9 @@ export default defineConfig({
     registerType: 'autoUpdate',
     includeAssets: ['favicon.png', 'maskable-icon.png', 'mask-icon.svg'],
     manifest: {
-      name: 'AliveCulture',
-      short_name: 'AliveCulture',
-      description: 'An interface for the AliveCulture sensors',
+      name: 'LRIMACulture',
+      short_name: 'LRIMACulture',
+      description: 'An interface for the LRIMACulture sensors',
       theme_color: '#ffffff',
       icons: [
         {

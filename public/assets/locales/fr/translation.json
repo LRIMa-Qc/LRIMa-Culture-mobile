@@ -1009,10 +1009,10 @@
 			"hi": "Salut, {{first}} {{last}}"
 		},
 		"header": {
-			"msg": "Bienvenue sur <accent>ALIVEculture</accent>",
+			"msg": "Bienvenue sur <accent>LRIMACulture</accent>",
 			"msg2": "La gestion en ligne de vos serres connectées",
 			"learnmore": "Savoir plus",
-			"what": "Qu'est ce qu'<accent>ALIVEculture</accent>",
+			"what": "Qu'est ce qu'<accent>LRIMACulture</accent>",
 			"online_managing": "La gestion en ligne de vos serres connectées.",
 			"distance": "Surveillance à distance",
 			"ressource": "Optimisation des ressources",
@@ -1027,15 +1027,15 @@
 		},
 		"realtime": {
 			"title": "Surveillance agricole en temps réel",
-			"text": "Avec ALIVEculture, vous pouvez surveiller vos serres en temps réel. Vous restez informé sur l'évolution de vos plantations sans avoir à vous déplacer constamment.",
+			"text": "Avec LRIMACulture, vous pouvez surveiller vos serres en temps réel. Vous restez informé sur l'évolution de vos plantations sans avoir à vous déplacer constamment.",
 			"title1": "Accessible d'où que vous soyez",
 			"text1": "Restez connecté peu importe où vous êtes dans le monde. Contrôler votre serre n'aura jamais été aussi facile."
 		},
 		"security": {
 			"title": "Sécurité des cultures",
-			"text": "Avec les alertes d'ALIVEculture, vous pouvez être assuré que vos serres ont les meilleures conditions de croissance.",
+			"text": "Avec les alertes d'LRIMACulture, vous pouvez être assuré que vos serres ont les meilleures conditions de croissance.",
 			"title1": "Alertes de climat",
-			"text1": "ALIVEculture vous laisse configurer des alertes pour surveiller plusieurs paramètres de croissance, incluant la température et l'humidité."
+			"text1": "LRIMACulture vous laisse configurer des alertes pour surveiller plusieurs paramètres de croissance, incluant la température et l'humidité."
 		},
 		"graph": {
 			"title": "Analyse approfondie",
@@ -1044,7 +1044,7 @@
 			"text1": "Nos graphiques vous permettent de zoomer, de faire défiler et de sélectionner des plages de données spécifiques."
 		},
 		"footer": {
-			"msg": "<accent>ALIVEculture</accent> - Transformez votre expérience agricole dès maintenant !",
+			"msg": "<accent>LRIMACulture</accent> - Transformez votre expérience agricole dès maintenant !",
 			"learnmore": "Savoir plus",
 			"home": "Accueil",
 			"collab": "Collaboration",
@@ -1194,7 +1194,7 @@
 		},
 		"ask_admin": {
 			"title": "Rejoignez en tant qu'administrateur pour plus de <accent>fonctionnalités</accent>!",
-			"desc": "Devenez administrateur sur ALIVEculture et prenez le contrôle : modifiez les données,  les graphiques, créez des actionneurs et bien plus encore. Rejoignez-nous dès aujourd'hui !",
+			"desc": "Devenez administrateur sur LRIMACulture et prenez le contrôle : modifiez les données,  les graphiques, créez des actionneurs et bien plus encore. Rejoignez-nous dès aujourd'hui !",
 			"contact_us": "Nous contacter",
 			"name": {
 				"label": "Votre nom",
@@ -1204,7 +1204,7 @@
 			"reason": {
 				"label": "Raison du contact",
 				"admin": "Je souhaite devenir administrateur d'une ou plusieurs serre(s)",
-				"learn_more": "Je souhaite en apprendre plus sur ALIVEculture",
+				"learn_more": "Je souhaite en apprendre plus sur LRIMACulture",
 				"other": "Autre raison"
 			},
 			"message": {

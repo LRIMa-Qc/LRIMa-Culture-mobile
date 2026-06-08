@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'ca.aliveculture.app',
-  appName: 'aliveculture',
+  appId: 'ca.lrimaculture.app',
+  appName: 'lrimaculture',
   webDir: 'dist',
   plugins: {
     CapacitorHttp: {

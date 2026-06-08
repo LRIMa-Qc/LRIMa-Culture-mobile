@@ -1005,10 +1005,10 @@
 			"signup": "Sign up"
 		},
 		"header": {
-			"msg": "Welcome to <accent>ALIVEculture</accent>",
+			"msg": "Welcome to <accent>LRIMACulture</accent>",
 			"msg2": "Revolutionize your agricultural experience",
 			"learnmore": "Learn more",
-			"what": "What is <accent>ALIVEculture</accent>",
+			"what": "What is <accent>LRIMACulture</accent>",
 			"online_managing": "Online management of your connected greenhouses.",
 			"distance": "Remote monitoring",
 			"ressource": "Resource Optimization",
@@ -1021,15 +1021,15 @@
 		},
 		"realtime": {
 			"title": "Real-Time Agricultural Monitoring",
-			"text": "With ALIVEculture, you can monitor your crops in real time. You stay informed about the progress of your plantations without having to travel constantly.",
+			"text": "With LRIMACulture, you can monitor your crops in real time. You stay informed about the progress of your plantations without having to travel constantly.",
 			"title1": "Accessible from wherever you are",
 			"text1": "Stay connected no matter where you are in the world. Controlling your greenhouse has never been easier."
 		},
 		"security": {
 			"title": "Remote crop security",
-			"text": "With ALIVEculture's alerts, you can rest assured that your crops are in good growing conditions even when you are not physically present on your farm.",
+			"text": "With LRIMACulture's alerts, you can rest assured that your crops are in good growing conditions even when you are not physically present on your farm.",
 			"title1": "Temperature and humidity alerts",
-			"text1": "ALIVEculture lets you configure alerts to monitor different growing parameters, including temperature and humidity"
+			"text1": "LRIMACulture lets you configure alerts to monitor different growing parameters, including temperature and humidity"
 		},
 		"graph": {
 			"title": "In-depth analysis",
@@ -1038,7 +1038,7 @@
 			"text1": "Our charts allow you to zoom, scroll, and select specific data ranges."
 		},
 		"footer": {
-			"msg": "<accent>ALIVEculture</accent> - Transform your farming experience now!",
+			"msg": "<accent>LRIMACulture</accent> - Transform your farming experience now!",
 			"learnmore": "Learn more",
 			"home": "Home",
 			"collab": "Collaboration",
