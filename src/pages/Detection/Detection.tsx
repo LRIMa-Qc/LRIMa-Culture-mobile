@@ -212,9 +212,11 @@ export default function Detection() {
                                 <p>{t('iot.project.camera.noDetection')}</p> :
                                 (
                                     pred ? (
-                                        <Annotorious>
-                                            <DetectionImage picture={picture} pred={pred} />
-                                        </Annotorious>
+                                        <div>
+                                            <Annotorious>
+                                                <DetectionImage picture={picture} pred={pred} />
+                                            </Annotorious>
+                                        </div>
                                     ) : <p className="animate-pulse">{t('msg.loading')}</p>
                                 )
                         }

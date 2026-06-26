@@ -2232,6 +2232,7 @@
 				"delete": "Supprimer",
 				"download": "Télécharger",
 				"takePictureInstruction": "Prenez une photo pour commencer la détection",
+				"getRecommendation": "Que faire?",
 				"takePicture": "Prendre une photo"
 			}
 		},

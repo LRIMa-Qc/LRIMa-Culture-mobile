@@ -2094,6 +2094,7 @@
 				"upload": "Upload",
 				"delete": "Delete",
 				"download": "Download",
+				"getRecommendation": "View Recommendations",
 				"takePictureInstruction": "Please take a picture to begin AI detection",
 				"takePicture": "Take a picture"
 			}

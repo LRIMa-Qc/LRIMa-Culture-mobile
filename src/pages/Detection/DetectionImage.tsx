@@ -2,6 +2,7 @@ import { Annotation, ImageAnnotationPopup, ImageAnnotator, PopupProps, useAnnota
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Picture, Prediction } from "./Detection";
+import { Recommendation } from "./Recommendation";
 
 export interface IDetectionImage {
     picture: Picture;
@@ -58,7 +59,8 @@ export function DetectionImage({ picture, pred }: IDetectionImage) {
             {pred && (
                 <div className="space-y-2">
                     <p>Maladie: <span className="underline">{pred?.label}</span></p>
-                    <button className="p-3 w-full bg-emerald-200 rounded-xl">Mauvaise Maladie? Contribuer</button>
+                    <button onClick={() => setDrawingEnabled(true)} className="p-3 w-full bg-emerald-200 rounded-xl">Mauvaise Maladie? Contribuer</button>
+                    <Recommendation />
                 </div>
             )}
 
