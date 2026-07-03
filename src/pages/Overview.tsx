@@ -10,6 +10,8 @@ import { TbTemperature as Temperature } from "react-icons/tb";
 import { TbDroplet as Humidity } from "react-icons/tb";
 import { TbBulb as Luminosity } from "react-icons/tb";
 import { TbBolt as Battery } from "react-icons/tb";
+import { MdCo2 as CO2 } from "react-icons/md";
+
 import { useTranslation } from "react-i18next";
 
 import { useSerreStore } from "../stores/serreStore";
@@ -26,14 +28,51 @@ export default function Overview() {
     const capteurs = (project?.layout as unknown as { capteurs: CultureCapteur[] })?.capteurs;
     const capteursInfo = capteurs?.map(capteur => project?.document[capteur.no]);
 
-    const average = (capteursInfo?.length !== 0 ? capteursInfo?.reduce((prev: any, curr: any) => ({
-        temperature: prev.temperature || 0 + curr.temperature / capteursInfo.length,
-        batterie: prev.batterie || 0 + curr.batterie / capteursInfo.length,
-        gnd_humidity: prev.gnd_humidity || 0 + curr.gnd_humidity / capteursInfo.length,
-        gnd_temperature: prev.gnd_temperature || 0 + curr.gnd_temperature / capteursInfo.length,
-        humidity: prev.humidity || 0 + curr.humidity / capteursInfo.length,
-        luminosite: prev.luminosite || 0 + curr.luminosite / capteursInfo.length,
-    })) : undefined) as unknown as CapteurInfo | undefined;
+    console.log(project);
+
+    const average =
+        capteursInfo?.length
+            ? (() => {
+                const result = capteursInfo.reduce(
+                    (acc: any, curr: any) => {
+                        acc.temperature += curr.temperature;
+                        acc.batterie += curr.batterie;
+                        acc.gnd_humidity += curr.gnd_humidity;
+                        acc.gnd_temperature += curr.gnd_temperature;
+                        acc.humidity += curr.humidity;
+                        acc.luminosite += curr.luminosite;
+
+                        if (curr.co2 != null && curr.co2 !== 0) {
+                            acc.co2 += curr.co2;
+                            acc.co2Count++;
+                        }
+
+
+                        return acc;
+                    },
+                    {
+                        temperature: 0,
+                        batterie: 0,
+                        gnd_humidity: 0,
+                        gnd_temperature: 0,
+                        humidity: 0,
+                        luminosite: 0,
+                        co2: 0,
+                        co2Count: 0,
+                    }
+                );
+
+                return {
+                    temperature: result.temperature / capteursInfo.length,
+                    batterie: result.batterie / capteursInfo.length,
+                    gnd_humidity: result.gnd_humidity / capteursInfo.length,
+                    gnd_temperature: result.gnd_temperature / capteursInfo.length,
+                    humidity: result.humidity / capteursInfo.length,
+                    luminosite: result.luminosite / capteursInfo.length,
+                    co2: result.co2Count > 0 ? result.co2 / result.co2Count : 0,
+                };
+            })()
+            : undefined;
 
     const {
         batterie = t('datasets.noData'),
@@ -41,7 +80,8 @@ export default function Overview() {
         gnd_temperature = t('datasets.noData'),
         humidity = t('datasets.noData'),
         luminosite = t('datasets.noData'),
-        temperature = t('datasets.noData')
+        temperature = t('datasets.noData'),
+        co2 = t('datasets.noData')
     } = average || {};
 
     // const DUMMY_LOGS = [
@@ -105,6 +145,12 @@ export default function Overview() {
                                 color: 'emerald',
                                 label: t('culture.sensor.luminosity'),
                                 value: Number(luminosite).toFixed(2) + '%'
+                            },
+                            {
+                                Icon: CO2,
+                                color: 'emerald',
+                                label: 'CO2',
+                                value: Number(co2).toFixed(0) + ' ppm',
                             },
                             {
                                 Icon: Humidity,

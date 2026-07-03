@@ -1824,6 +1824,11 @@
 					"last_insert": "Last insert",
 					"not_found": "No sensor found",
 					"button": "Filter, sort and create"
+				},
+				"filter": {
+					"all": "All",
+					"CO2": "With CO2",
+					"NoCO2": "Without CO2"
 				}
 			},
 			"summary": {

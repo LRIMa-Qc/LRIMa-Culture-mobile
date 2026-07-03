@@ -3,6 +3,7 @@ import { Widget } from "../../components/dashboard/widget/Widget";
 import { AppBar } from "../../components/appbar/AppBar";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { MdCo2 as CO2 } from "react-icons/md";
 import { TbTemperature as Temperature } from "react-icons/tb";
 import { TbDroplet as Humidity } from "react-icons/tb";
 import { TbBulb as Luminosity } from "react-icons/tb";
@@ -29,7 +30,10 @@ export interface CapteurInfo {
     gnd_temperature: number,
     humidity: number,
     luminosite: number,
-    temperature: number
+    temperature: number,
+    co2: number | undefined,
+    id: number,
+    sleep_duration_sec: number
 }
 
 import { createTheme } from '@mui/material/styles';
@@ -164,7 +168,7 @@ export default function Capteur() {
         return "Wait..."
     }
 
-    const { batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature } = capteurInfo;
+    const { batterie, gnd_humidity, gnd_temperature, humidity, luminosite, temperature, co2 } = capteurInfo;
 
     return (
         <div className="space-y-5">
@@ -193,6 +197,12 @@ export default function Capteur() {
                                 color: 'emerald',
                                 label: t('culture.sensor.luminosity'),
                                 value: luminosite + '%'
+                            },
+                            {
+                                Icon: CO2,
+                                color: 'emerald',
+                                label: 'CO2',
+                                value: co2,
                             },
                             {
                                 Icon: Humidity,

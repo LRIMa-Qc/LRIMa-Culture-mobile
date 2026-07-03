@@ -1960,6 +1960,11 @@
 					"last_insert": "Dernière insertion",
 					"not_found": "Aucun capteur trouvé",
 					"button": "Voir filtres"
+				},
+				"filter": {
+					"all": "Tous",
+					"CO2": "Avec CO2",
+					"NoCO2": "Sans CO2"
 				}
 			},
 			"summary": {

@@ -5,7 +5,7 @@ import { LinkCompactIndicator } from "./LinkCompactIndicator";
 
 // NOTE: These colors have been safelisted in tailwind.config.ts for bg, text at 100, 200 only
 // TODO: Add more colors
-type Color = "sky" | "red" | "emerald" | "indigo";
+type Color = "sky" | "red" | "emerald" | "indigo" | "yellow";
 
 export interface IndicatorType extends React.HTMLAttributes<HTMLElement> {
     Icon: JSX.ElementType;
@@ -19,6 +19,6 @@ export interface IndicatorType extends React.HTMLAttributes<HTMLElement> {
 }
 
 export function Indicator({ variant = "compact", ...props }: IndicatorType) {
-    if (variant === "compact") return props.href ? <LinkCompactIndicator {...props}/> : <CompactIndicator {...props} />
+    if (variant === "compact") return props.href ? <LinkCompactIndicator {...props} /> : <CompactIndicator {...props} />
     return <LargeIndicator {...props} />
 }

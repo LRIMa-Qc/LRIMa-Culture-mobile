@@ -7,7 +7,7 @@ export default {
   ],
   safelist: [
     {
-      pattern: /(bg|text|to)-(sky|emerald|red|indigo)-(100|500)/,
+      pattern: /(bg|text|to)-(sky|emerald|red|indigo|yellow)-(100|500)/,
     },
   ],
   theme: {

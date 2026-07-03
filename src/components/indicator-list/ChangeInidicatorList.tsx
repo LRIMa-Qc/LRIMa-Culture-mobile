@@ -7,7 +7,7 @@ export interface ChangeIndicatorListType {
 export function ChangeIndicatorList({ indicators }: ChangeIndicatorListType) {
     return (
         <div className={`bg-white rounded-2xl ring-1 ring-slate-200 ring-inset divide-y w-full`}>
-            {indicators.map(indicator => <ChangeIndicator key={indicator.label} {...indicator} />)}
+            {indicators.filter(indicator => indicator.value).map(indicator => <ChangeIndicator key={indicator.label} {...indicator} />)}
         </div>
     )
 }
