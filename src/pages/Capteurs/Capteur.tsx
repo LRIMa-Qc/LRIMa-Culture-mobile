@@ -3,6 +3,7 @@ import { Widget } from "../../components/dashboard/widget/Widget";
 import { AppBar } from "../../components/appbar/AppBar";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { TbClock as SleepTime } from "react-icons/tb";
 import { MdCo2 as CO2 } from "react-icons/md";
 import { TbTemperature as Temperature } from "react-icons/tb";
 import { TbDroplet as Humidity } from "react-icons/tb";
@@ -126,9 +127,7 @@ export default function Capteur() {
                                     })
                                     .slice(0, NUMBER_OF_ELEMENTS)
                                     .map(c => c.data)
-                            );
-
-                            console.log(rows, processed);
+                            ) as any[];
 
                             const series: LineSeriesType[] = [
                                 {
@@ -155,7 +154,6 @@ export default function Capteur() {
                                     color: '#10b981',
                                     type: "line"
                                 },
-                                // TODO: Add processed[4] and processed[5]
                             ]
                             setSeries(series);
                         })
@@ -202,7 +200,7 @@ export default function Capteur() {
                                 Icon: CO2,
                                 color: 'emerald',
                                 label: 'CO2',
-                                value: co2,
+                                value: co2?.toFixed(0) + " ppm",
                             },
                             {
                                 Icon: Humidity,
@@ -221,6 +219,12 @@ export default function Capteur() {
                                 color: 'red',
                                 label: t('culture.sensor.battery'),
                                 value: (100 * (Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                            },
+                            {
+                                Icon: SleepTime,
+                                color: 'red',
+                                label: t('culture.sensor.sleep'),
+                                value: capteurInfo.sleep_duration_sec.toFixed(0) + " s",
                             },
                         ]}
                     />

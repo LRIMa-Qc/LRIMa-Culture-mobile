@@ -1488,6 +1488,7 @@
 			"humidity": "رطوبة",
 			"luminosity": "إضاءة",
 			"battery": "بطارية",
+			"sleep": "وقت النوم",
 			"name": "المستشعر {{number}}",
 			"number": "حدد رقم المستشعر",
 			"create": {

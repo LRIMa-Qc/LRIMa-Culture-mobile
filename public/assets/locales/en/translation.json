@@ -1422,6 +1422,7 @@
 			"humidity": "Humidity",
 			"luminosity": "Luminosity",
 			"battery": "Battery",
+			"sleep": "Sleep time",
 			"name": "Sensor {{number}}",
 			"number": "Number",
 			"delete": "Deletion of sensor {{number}}",

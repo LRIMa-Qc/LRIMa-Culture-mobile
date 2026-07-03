@@ -1504,6 +1504,7 @@
 			"humidity": "Humidité",
 			"luminosity": "Luminosité",
 			"battery": "Batterie",
+			"sleep": "Temps de sommeil",
 			"name": "Capteur {{number}}",
 			"number": "Numéro",
 			"delete": "Suppression du capteur {{number}}",

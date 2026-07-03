@@ -28,8 +28,6 @@ export default function Overview() {
     const capteurs = (project?.layout as unknown as { capteurs: CultureCapteur[] })?.capteurs;
     const capteursInfo = capteurs?.map(capteur => project?.document[capteur.no]);
 
-    console.log(project);
-
     const average =
         capteursInfo?.length
             ? (() => {
