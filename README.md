@@ -1,4 +1,37 @@
-# React + TypeScript + Vite
+# LRIMa Culture mobile
+
+## Deploying the web app
+
+Run `npm run build` and publish the complete `dist/` directory, including
+`sw.js`, `workbox-*.js`, `index.html`, and the hashed assets. Never publish
+`dev-dist/`: it contains a development service worker, not a production build.
+Publish each release atomically so clients cannot fetch a mixture of releases.
+Keep previous hashed assets available during the transition for open clients.
+
+Configure the web host or CDN to revalidate `index.html` (including SPA route
+fallbacks), `sw.js`, and `manifest.webmanifest` with `Cache-Control: no-cache`.
+Do not apply a long-lived asset cache policy to these files. Missing service
+worker scripts must return 404, not the SPA HTML fallback. Purge any previously
+cached copies of these entry files from the CDN when correcting deployment.
+
+The app checks for service worker updates at startup, when brought back to the
+foreground, when connectivity returns, and hourly while visible. A new worker
+activates automatically and reloads open clients; offline clients keep their
+cached version until they can fetch an update. Development mode does not install
+a service worker; use `npm run build` and `npm run preview` to test PWA updates.
+
+If an older interface reappears, compare a fresh browser profile with the affected
+one and inspect Application > Service Workers in browser developer tools. If only
+the affected profile is stale, unregister its worker and reload as a one-time
+recovery. If a fresh profile also receives the old build, inspect the deployed
+files, CDN, and all origin instances for inconsistent releases. An old `sw.js`
+can install an old app shell even after a newer page has loaded.
+
+The checked-in `ngnix.conf` currently proxies to `ghost:2368`; it is not a static
+hosting configuration for this app. Confirm the actual production host before
+using or modifying that configuration.
+
+## Vite template notes
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
