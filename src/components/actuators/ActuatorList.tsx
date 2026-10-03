@@ -20,8 +20,7 @@ export default function ActuatorList({ actuators }: ActuatorsType) {
   return (
     <IndicatorList
       indicators={actuators.map(a => {
-        // const isOn = project?.document[a.actionId];
-        const isOn = true;
+        const isOn = Boolean(project?.document[a.actionId] ?? a.isOn);
         return {
           color: isOn ? 'emerald' : 'red',
           Icon: isOn ? ActuatorOnline : ActuatorOffline,

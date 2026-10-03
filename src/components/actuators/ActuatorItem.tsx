@@ -28,52 +28,62 @@ export default function ActuatorItem(actuator: FullActuatorComponent) {
     );
   }
 
-  const openSocket = () => {
-   const s = new WebSocket(IOT_SOCKET_URL);
+  useEffect(() => {
+    if (!project?.name) return;
 
-    s.onopen = async (ev) => {
+    let closed = false;
+    let s: WebSocket | null = null;
 
-      const ticket = (
-        await axios.get(
-          `users/socket/iotTicket?projectId=${serreId}&projectName=${project?.name}`,
-        )
-      ).data;
+    const openSocket = () => {
+      s = new WebSocket(IOT_SOCKET_URL);
 
-      s.send(
-        JSON.stringify({
-          event: IOT_EVENT.CONNECT_FRONTEND,
-          data: {
-            ticket,
-          },
-        }),
-      );
+      s.onopen = async () => {
+        const ticket = (
+          await axios.get(
+            `users/socket/iotTicket?projectId=${serreId}&projectName=${project.name}`,
+          )
+        ).data;
 
-      setSocket(s);
-      console.log("open", ev);
+        s?.send(
+          JSON.stringify({
+            event: IOT_EVENT.CONNECT_FRONTEND,
+            data: {
+              ticket,
+            },
+          }),
+        );
+
+        setSocket(s);
+      };
+
+      s.onerror = (ev: Event) => {
+        console.error("error", ev);
+      };
+
+      s.onclose = () => {
+        setSocket(null);
+        if (!closed) setTimeout(openSocket, 1000);
+      };
     };
 
-    s.onerror = (ev: Event) => {
-      console.error("error", ev);
-    };
+    openSocket();
 
-    s.onclose = () => {
-      openSocket();
+    return () => {
+      closed = true;
+      s?.close();
     };
-  }
+  }, [axios, serreId, project?.name]);
 
   useEffect(() => {
-    openSocket();
     fetchProject().then(p => {
-        const s = p?.document[actuator.actionId];
-        setState(s);
-      })
-
-
-   }, [axios, project, serreId]);
+      const s = p?.document[actuator.actionId];
+      setState(s);
+    })
+  }, [serreId]);
 
 
   const onClick = () => {
-    if (socket?.OPEN) {
+    if (socket?.readyState === WebSocket.OPEN) {
       fetchProject().then(p => {
         const value = !p?.document[actuator.actionId];
         setState(state => !state);

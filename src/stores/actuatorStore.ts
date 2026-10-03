@@ -14,7 +14,7 @@ export const useActuatorStore = create<ActuatorStoreState>()(
       updateActuators: (actuators) => set(() => ({ actuators }))
     }),
     {
-      name: 'serre-storage', // name of the item in the storage (must be unique)
+      name: 'actuator-storage', // name of the item in the storage (must be unique)
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     },
   )
