@@ -1,103 +1,28 @@
 import { useTranslation } from "react-i18next";
-import { ActuatorComponent, FullActuatorComponent } from "../../pages/Actuators/Actuators";
-import { useContext, useEffect, useReducer, useState } from "react";
-import { IOT_EVENT, IoTSocket, useIoTProject } from "@alivecode/core/iot";
-import { useSerreStore } from "../../stores/serreStore";
-import { useProject } from "../../setup/AppDecorator/getProject";
-import { ApiContext } from "@alivecode/core/api";
-import { APP_SOCKET_URL, IOT_SOCKET_URL } from "../../setup/api";
-import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
+import { FullActuatorComponent } from "../../pages/Actuators/Actuators";
 
+export type ActuatorItemProps = FullActuatorComponent & {
+  state: boolean;
+  disabled?: boolean;
+  onToggle: (actuator: FullActuatorComponent) => Promise<boolean | undefined>;
+}
 
-export default function ActuatorItem(actuator: FullActuatorComponent) {
+export default function ActuatorItem({ state: remoteState, disabled, onToggle, ...actuator }: ActuatorItemProps) {
 
   const { t } = useTranslation();
-  const { serreId } = useSerreStore();
-  const { axios } = useContext(ApiContext);
-  const { project, fetchProject, refech } = useProject(serreId);
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(remoteState);
 
-  const [socket, setSocket] = useState<WebSocket | null>(null);
+  useEffect(() => setState(remoteState), [remoteState]);
 
-  const sendEvent = (event: IOT_EVENT, data: any) => {
-    socket?.send(
-      JSON.stringify({
-        event,
-        data,
-      }),
-    );
-  }
-
-  useEffect(() => {
-    if (!project?.name) return;
-
-    let closed = false;
-    let s: WebSocket | null = null;
-
-    const openSocket = () => {
-      s = new WebSocket(IOT_SOCKET_URL);
-
-      s.onopen = async () => {
-        const ticket = (
-          await axios.get(
-            `users/socket/iotTicket?projectId=${serreId}&projectName=${project.name}`,
-          )
-        ).data;
-
-        s?.send(
-          JSON.stringify({
-            event: IOT_EVENT.CONNECT_FRONTEND,
-            data: {
-              ticket,
-            },
-          }),
-        );
-
-        setSocket(s);
-      };
-
-      s.onerror = (ev: Event) => {
-        console.error("error", ev);
-      };
-
-      s.onclose = () => {
-        setSocket(null);
-        if (!closed) setTimeout(openSocket, 1000);
-      };
-    };
-
-    openSocket();
-
-    return () => {
-      closed = true;
-      s?.close();
-    };
-  }, [axios, serreId, project?.name]);
-
-  useEffect(() => {
-    fetchProject().then(p => {
-      const s = p?.document[actuator.actionId];
-      setState(s);
-    })
-  }, [serreId]);
-
-
-  const onClick = () => {
-    if (socket?.readyState === WebSocket.OPEN) {
-      fetchProject().then(p => {
-        const value = !p?.document[actuator.actionId];
-        setState(state => !state);
-        sendEvent(IOT_EVENT.SEND_ACTION, { targetId: actuator.targetId, actionId: actuator.actionId, value });
-      })
-
-    }
+  const onClick = async () => {
+    const value = await onToggle(actuator as FullActuatorComponent);
+    if (value !== undefined) setState(value);
   }
 
   return (
-    <button className="p-3 bg-red-500 text-white rounded-2xl" onClick={onClick}>
+    <button className="p-3 bg-red-500 text-white rounded-2xl disabled:opacity-50" disabled={disabled} onClick={onClick}>
       {!state ? t('iot.project.actuators.turn_on') : t('iot.project.actuators.turn_off')}
     </button>
-
-
   )
 }
