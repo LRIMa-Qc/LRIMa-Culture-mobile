@@ -3,7 +3,7 @@ import { ChangeIndicatorList } from "../components/indicator-list/ChangeInidicat
 import { Widget } from "../components/dashboard/widget/Widget";
 import { LogsList } from "../components/loggings/LogsList";
 import { CultureCapteur } from "./Capteurs/Capteurs";
-import { CAPTEUR_BATTERY_VOLTAGE, CapteurInfo } from "./Capteurs/Capteur";
+import { batteryPercent, CapteurInfo } from "./Capteurs/Capteur";
 
 
 import { TbTemperature as Temperature } from "react-icons/tb";
@@ -166,7 +166,7 @@ export default function Overview() {
                                 Icon: Battery,
                                 color: 'red',
                                 label: t('culture.sensor.battery'),
-                                value: (100 * (Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                                value: batteryPercent(Number(batterie)) + '%',
                             },
                         ]}
                     />

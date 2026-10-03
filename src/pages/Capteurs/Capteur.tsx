@@ -23,7 +23,17 @@ import { ThemeProvider } from "@mui/material";
 
 const NUMBER_OF_ELEMENTS = 30;
 
-export const CAPTEUR_BATTERY_VOLTAGE = 3.3;
+export const CAPTEUR_BATTERY_MIN_VOLTAGE = 2;
+export const CAPTEUR_BATTERY_MAX_VOLTAGE = 3.4;
+
+export const batteryPercent = (voltage: number) =>
+    Math.min(
+        100,
+        Math.max(
+            0,
+            Math.round((100 * (voltage - CAPTEUR_BATTERY_MIN_VOLTAGE)) / (CAPTEUR_BATTERY_MAX_VOLTAGE - CAPTEUR_BATTERY_MIN_VOLTAGE)),
+        ),
+    );
 
 export interface CapteurInfo {
     batterie: number,
@@ -218,7 +228,7 @@ export default function Capteur() {
                                 Icon: Battery,
                                 color: 'red',
                                 label: t('culture.sensor.battery'),
-                                value: (100 * (Number(batterie) / CAPTEUR_BATTERY_VOLTAGE)).toFixed(2) + '%',
+                                value: batteryPercent(Number(batterie)) + '%',
                             },
                             {
                                 Icon: SleepTime,

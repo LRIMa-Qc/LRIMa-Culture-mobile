@@ -4,6 +4,12 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    allowedHosts: ['mculture.lrima.ca'],
+  },
+  preview: {
+    allowedHosts: ['mculture.lrima.ca'],
+  },
   plugins: [react(), VitePWA({
     registerType: 'autoUpdate',
     includeAssets: ['favicon.png', 'maskable-icon.png', 'mask-icon.svg'],
