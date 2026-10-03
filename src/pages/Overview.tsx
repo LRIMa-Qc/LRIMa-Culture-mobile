@@ -34,7 +34,7 @@ export default function Overview() {
                 const result = capteursInfo.reduce(
                     (acc: any, curr: any) => {
                         acc.temperature += curr.temperature;
-                        acc.batterie += curr.batterie;
+                        acc.batterie += batteryPercent(Number(curr.batterie));
                         acc.gnd_humidity += curr.gnd_humidity;
                         acc.gnd_temperature += curr.gnd_temperature;
                         acc.humidity += curr.humidity;
@@ -166,7 +166,7 @@ export default function Overview() {
                                 Icon: Battery,
                                 color: 'red',
                                 label: t('culture.sensor.battery'),
-                                value: batteryPercent(Number(batterie)) + '%',
+                                value: (Number.isFinite(Number(batterie)) ? Math.round(Number(batterie)) : batterie) + '%',
                             },
                         ]}
                     />
