@@ -17,7 +17,7 @@ export default function ActuatorList({ actuators }: ActuatorsType) {
 
   const { serreId } = useSerreStore();
   const { project, fetchProject } = useProject(serreId);
-  const { send, ready } = useIoTSocket(serreId, project?.name);
+  const { send } = useIoTSocket(serreId, project?.name);
 
   const onToggle = async (a: FullActuatorComponent) => {
     const p = await fetchProject();
@@ -34,7 +34,7 @@ export default function ActuatorList({ actuators }: ActuatorsType) {
           color: isOn ? 'emerald' : 'red',
           Icon: isOn ? ActuatorOnline : ActuatorOffline,
           // TODO: Add arabic to translation
-          children: <ActuatorItem key={a.targetId} {...a} state={isOn} disabled={!ready} onToggle={onToggle} />,
+          children: <ActuatorItem key={a.targetId} {...a} state={isOn} onToggle={onToggle} />,
           label: a.name || a.uid || "unknown"
         } satisfies IndicatorType
 

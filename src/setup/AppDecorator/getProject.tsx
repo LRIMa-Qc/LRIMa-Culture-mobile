@@ -1,7 +1,7 @@
 import { ApiContext } from "@alivecode/core/api";
 import { IoTProject } from "@alivecode/core/api/models/Iot";
 import { IoTComponent } from "@alivecode/core/iot";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useActuatorStore } from "../../stores/actuatorStore";
 import { ActuatorComponent, FullActuatorComponent } from "../../pages/Actuators/Actuators";
 
@@ -9,11 +9,13 @@ export function useProject(id: string) {
     const [project, setProject] = useState<IoTProject<IoTComponent>>();
     const [shouldRefresh, refresh] = useState({});
     const { axios } = useContext(ApiContext);
+    const axiosRef = useRef(axios);
+    axiosRef.current = axios;
 
     const { updateActuators } = useActuatorStore();
 
     const fetchProject = async () => {
-        const data = await axios.get(
+        const data = await axiosRef.current.get(
             `iot/projects/${id}`,
         );
 
@@ -35,7 +37,7 @@ export function useProject(id: string) {
     useEffect(() => {
         console.log("Fetching...");
         fetchProject().then(data => setProject(data));
-    }, [axios, id, shouldRefresh])
+    }, [id, shouldRefresh])
 
     return { project, fetchProject, refresh };
 }

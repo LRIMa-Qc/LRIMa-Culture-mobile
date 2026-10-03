@@ -5,6 +5,8 @@ import { IOT_SOCKET_URL } from "../../setup/api";
 
 export function useIoTSocket(serreId: string, projectName?: string) {
   const { axios } = useContext(ApiContext);
+  const axiosRef = useRef(axios);
+  axiosRef.current = axios;
   const socketRef = useRef<WebSocket | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -13,6 +15,7 @@ export function useIoTSocket(serreId: string, projectName?: string) {
 
     let closed = false;
     let timeout: ReturnType<typeof setTimeout>;
+    let attempts = 0;
 
     const open = () => {
       const s = new WebSocket(IOT_SOCKET_URL);
@@ -20,7 +23,7 @@ export function useIoTSocket(serreId: string, projectName?: string) {
       s.onopen = async () => {
         try {
           const ticket = (
-            await axios.get(
+            await axiosRef.current.get(
               `users/socket/iotTicket?projectId=${serreId}&projectName=${projectName}`,
             )
           ).data;
@@ -35,6 +38,7 @@ export function useIoTSocket(serreId: string, projectName?: string) {
           );
 
           socketRef.current = s;
+          attempts = 0;
           setReady(true);
         } catch (e) {
           console.error("iotTicket error", e);
@@ -44,12 +48,13 @@ export function useIoTSocket(serreId: string, projectName?: string) {
 
       s.onerror = (ev) => console.error("error", ev);
 
-      s.onclose = () => {
+      s.onclose = (ev) => {
+        console.warn("iot socket closed", ev.code, ev.reason);
         if (socketRef.current === s) {
           socketRef.current = null;
           setReady(false);
         }
-        if (!closed) timeout = setTimeout(open, 2000);
+        if (!closed) timeout = setTimeout(open, Math.min(30000, 2000 * 2 ** attempts++));
       };
 
       return s;
@@ -64,7 +69,7 @@ export function useIoTSocket(serreId: string, projectName?: string) {
       socketRef.current = null;
       setReady(false);
     };
-  }, [axios, serreId, projectName]);
+  }, [serreId, projectName]);
 
   const send = useCallback((event: IOT_EVENT, data: any) => {
     const s = socketRef.current;
