@@ -21,7 +21,7 @@ export default function ActuatorItem({ state: remoteState, disabled, onToggle, .
   }
 
   return (
-    <button className="p-3 bg-red-500 text-white rounded-2xl disabled:opacity-50" disabled={disabled} onClick={onClick}>
+    <button className={`p-3 text-white rounded-2xl disabled:opacity-50 ${state ? "bg-emerald-500" : "bg-red-500"}`} disabled={disabled} onClick={onClick}>
       {!state ? t('iot.project.actuators.turn_on') : t('iot.project.actuators.turn_off')}
     </button>
   )
