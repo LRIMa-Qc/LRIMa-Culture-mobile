@@ -15,7 +15,7 @@ import { appDecorator } from './AppDecorator/decorator';
 
 const Root = createALIVEcoreApp({
     meta: {
-        name: 'AliveCulture Mobile',
+        name: 'LRIMa Mobile',
     },
     app: {
         api,
